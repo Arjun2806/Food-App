@@ -1,7 +1,40 @@
-.body{
-  background-color: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+*{
   margin: 0;
   padding: 0;
+  font-family: "Poetsen One", sans-serif;
 }
 
+.body{
+  background-color: #dadbdd;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #e0cccc;
+}
+
+.navbar img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar h1{
+  font-size: 40px;
+}
+
+.navbar input{
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+}
 
