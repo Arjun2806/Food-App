@@ -1,13 +1,20 @@
 import { createContext,useState } from "react";
 import FoodData from "../FoodData";
 
-export const FoodContext = createContext(FoodData);
+export const FoodContext = createContext();
 
 const FoodContextProvider = ({ children }) => {
 
   const [input, setInput] = useState("");
-  const [category, setCategory] = useState();
-  const [displayFood, setDisplayFood] = useState([FoodData]);
+  const [category, setCategory] = useState({
+    All:true,
+    Lunch:false,
+    Breakfast:false,
+    Dinner:false,
+    Snacks:false,
+    Drinks:false
+  });
+  const [displayFood, setDisplayFood] = useState(FoodData);
   
   
   

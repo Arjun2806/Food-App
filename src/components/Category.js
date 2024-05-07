@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Category = () => {
   return (
-    <div className='category'>
+    <div className="category">
       <h2>Find your favorite food</h2>
       <div className="category-buttons">
         <button>All</button>
@@ -11,9 +11,9 @@ const Category = () => {
         <button>Dinner</button>
         <button>Snacks</button>
         <button>Drinks</button>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;

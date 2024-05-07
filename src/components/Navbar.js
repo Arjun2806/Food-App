@@ -13,7 +13,7 @@ const handleSearch = (e) => {
 
   // Filter the cards to display based on the search input
   const filteredCards = displayFood.filter(foodItem =>
-    foodItem.name && foodItem.name.toLowerCase().includes(inputValue.toLowerCase())
+  foodItem.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
   setDisplayFood(filteredCards);

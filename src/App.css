@@ -71,6 +71,7 @@ body {
 .category-buttons button:hover {
   background-color: rgb(126, 237, 126);
   color: white;
+  cursor: pointer;
 }
 
 .category-buttons button:active {
