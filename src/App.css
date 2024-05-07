@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: "Poetsen One", sans-serif;
 }
 
-.body{
-  background-color: #dadbdd;
+body {
+  background: rgb(235, 229, 229);
 }
 
-.navbar{
+/* NAVBAR */
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,23 +20,126 @@
   background-color: #e0cccc;
 }
 
-.navbar img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    cursor: pointer;
+.navbar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.navbar h1{
+.navbar h1 {
   font-size: 40px;
 }
 
-.navbar input{
+.navbar input {
   width: 200px;
   height: 40px;
   border-radius: 5px;
   border: none;
   padding: 10px;
   font-size: 20px;
+}
+
+/* CATEGORY */  
+
+.category {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-buttons button {
+  width: 100px;
+  height: 40px;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.95rem;
+  margin-right: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.category-buttons button:hover {
+  background-color: rgb(126, 237, 126);
+  color: white;
+}
+
+.category-buttons button:active {
+  background-color: rgb(126, 237, 126);
+  color: white;
+}
+
+
+/* CARD */
+
+
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: calc(20% - 20px); /* Adjust card width based on number of cards in one row and gap */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.food-image {
+  width: 260PX;
+  height: 150px; 
+  object-fit: cover;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.details h2 {
+  margin: 0;
+}
+
+.price {
+  color: #34d399; /* Green color */
+}
+
+.description {
+  font-size: 0.875rem;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating .star {
+  fill: #ffd700; 
+  height: 25px;
+  width: 25px;
+  margin-top: 15px;
+}
+
+.add-to-cart {
+  padding: 8px 16px;
+  background-color: #34d399; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #059669; /* Dark green color */
 }
 

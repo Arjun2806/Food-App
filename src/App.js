@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import FoodContextProvider from "./context/foodContext";
 import './App.css';
 import Category from "./components/Category";
+import Card from "./components/Card";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
     <div>
       <Navbar />
       <Category />
+      <Card/>
     </div>
    </FoodContextProvider>
   );
