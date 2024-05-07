@@ -33,6 +33,24 @@ const FoodContextProvider = ({ children }) => {
     }
   }, [input]);
 
+  const handleClick = (data) => {
+    for (const key in category) {
+      category[key] = false;
+    }
+    setCategory({ ...category, [data]: true });
+  };
+
+  useEffect(() => {
+    const newArray = Object.keys(category);
+    const trueCategory = newArray.filter((data) => {
+      return category[data] === true;
+    })[0];
+    const filterCategory = displayFood.filter(
+      (foodItem) => trueCategory === "All" || foodItem.category === trueCategory
+    );
+    setDisplayFood(filterCategory);
+  }, [category]);
+
   const values = {
     input,
     setInput,
@@ -41,6 +59,7 @@ const FoodContextProvider = ({ children }) => {
     displayFood,
     setDisplayFood,
     handleSearch,
+    handleClick,
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;
