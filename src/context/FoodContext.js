@@ -1,4 +1,4 @@
-// eslint-disable-next-line
+
 import { createContext, useEffect, useState } from "react";
 import FoodData from "../FoodData";
 
@@ -42,13 +42,12 @@ const FoodContextProvider = ({ children }) => {
 
   useEffect(() => {
     const newArray = Object.keys(category);
-    const trueCategory = newArray.filter((data) => {
-      return category[data] === true;
-    })[0];
-    const filterCategory = displayFood.filter(
+    const trueCategory = newArray.filter((data) =>category[data] === true)[0];
+    const filterCategory = FoodData.filter(
       (foodItem) => trueCategory === "All" || foodItem.category === trueCategory
     );
     setDisplayFood(filterCategory);
+    setInput("");
   }, [category]);
 
   const values = {
