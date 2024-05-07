@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { FoodContext } from '../context/foodContext';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
   
@@ -21,7 +22,9 @@ const Card = () => {
             <AiFillStar className="star" />
             {rating}
           </span>
-          <button className="add-to-cart">Go to Recipe</button>
+          <Link to={`/recipe/${(name)}`} className="add-to-cart">
+              Go to Recipe
+            </Link>
         </div>
       </div>
     ))}
