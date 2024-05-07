@@ -3,7 +3,7 @@ import { FoodContext } from "../context/foodContext";
 
 const Navbar = () => {
 
-  const {displayFood, setDisplayFood, handleSearch, input} = useContext(FoodContext);
+  const {handleSearch, input} = useContext(FoodContext);
 
   return (
     <div className="navbar">

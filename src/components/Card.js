@@ -1,11 +1,14 @@
-import React from 'react'
-import FoodData from '../FoodData'
+import React, { useContext } from 'react'
 import { AiFillStar } from 'react-icons/ai'
+import { FoodContext } from '../context/foodContext';
 
 const Card = () => {
+  
+  const {displayFood} = useContext(FoodContext);
+
   return (
     <div className="food-container">
-    {FoodData.map(({ id, img, name, desc, price, rating }) => (
+    {displayFood.map(({ id, img, name, desc, price, rating }) => (
       <div key={id} className="card">
         <img src={img} alt="" className="food-image" />
         <div className="details">
