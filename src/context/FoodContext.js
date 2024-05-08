@@ -5,26 +5,29 @@ import FoodReducer from "./FoodReducer";
 export const FoodContext = createContext();
 
 const FoodContextProvider = ({ children }) => {
+  const intialCategories = {
+    All: false,
+    Lunch: false,
+    Breakfast: false,
+    Dinner: false,
+    Snacks: false,
+    Drinks: false,
+  };
+
   const [input, setInput] = useState("");
-  const [category, setCategory] = useState({
-    All: true,
-    Lunch: false,
-    Breakfast: false,
-    Dinner: false,
-    Snacks: false,
-    Drinks: false,
-  });
+
+  const intializeFucc = (args) => {
+    args.All = true;
+    return args;
+  };
+
+  const [category, dispatch] = useReducer(
+    FoodReducer,
+    intialCategories,
+    intializeFucc
+  );
+
   const [displayFood, setDisplayFood] = useState(FoodData);
-
-  const [state, dispatch] = useReducer(FoodReducer, {
-    All: true,
-    Lunch: false,
-    Breakfast: false,
-    Dinner: false,
-    Snacks: false,
-    Drinks: false,
-  });
-
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -44,15 +47,16 @@ const FoodContextProvider = ({ children }) => {
   }, [input]);
 
   const handleClick = (data) => {
-    for (const key in category) {
-      category[key] = false;
-    }
-    setCategory({ ...category, [data]: true });
+    // for (const key in category) {
+    //   category[key] = false;
+    // }
+    // setCategory({ ...category, [data]: true });
+    dispatch({ type: data, intialCategories });
   };
 
   useEffect(() => {
     const newArray = Object.keys(category);
-    const trueCategory = newArray.filter((data) =>category[data] === true)[0];
+    const trueCategory = newArray.filter((data) => category[data] === true)[0];
     const filterCategory = FoodData.filter(
       (foodItem) => trueCategory === "All" || foodItem.category === trueCategory
     );
@@ -64,7 +68,6 @@ const FoodContextProvider = ({ children }) => {
     input,
     setInput,
     category,
-    setCategory,
     displayFood,
     setDisplayFood,
     handleSearch,

@@ -1,11 +1,20 @@
-const FoodReducer = (state,action) => {
+const FoodReducer = (state, action) => {
+
+    const intialCategories = action.intialCategories;
+
     switch (action.type) {
-        // case "SET_INPUT":
-        //     return {...state, input: action.payload};
-        // case "SET_CATEGORY":
-        //     return {...state, category: action.payload};
-        // case "SET_DISPLAY_FOOD":
-        //     return {...state, displayFood: action.payload};
+       case "All":
+            return {...intialCategories, All: true};
+        case "Lunch":
+            return {...intialCategories, Lunch: true};
+        case "Breakfast":
+            return {...intialCategories, Breakfast: true};
+        case "Dinner":
+            return {...intialCategories, Dinner: true};
+        case "Snacks":
+            return {...intialCategories, Snacks: true};
+        case "Drinks":
+            return {...intialCategories, Drinks: true};
         default:
             return state;
     }
