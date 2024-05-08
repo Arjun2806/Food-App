@@ -5,6 +5,8 @@ import FoodReducer from "./FoodReducer";
 export const FoodContext = createContext();
 
 const FoodContextProvider = ({ children }) => {
+
+  // for intial value
   const intialCategories = {
     All: false,
     Lunch: false,
@@ -16,11 +18,14 @@ const FoodContextProvider = ({ children }) => {
 
   const [input, setInput] = useState("");
 
+
   const intializeFucc = (args) => {
     args.All = true;
     return args;
   };
 
+  
+  //  userReducer to change the state
   const [category, dispatch] = useReducer(
     FoodReducer,
     intialCategories,
@@ -46,11 +51,8 @@ const FoodContextProvider = ({ children }) => {
     }
   }, [input]);
 
+ // click event to change the state
   const handleClick = (data) => {
-    // for (const key in category) {
-    //   category[key] = false;
-    // }
-    // setCategory({ ...category, [data]: true });
     dispatch({ type: data, intialCategories });
   };
 

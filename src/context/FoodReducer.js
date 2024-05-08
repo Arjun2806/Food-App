@@ -2,6 +2,8 @@ const FoodReducer = (state, action) => {
 
     const intialCategories = action.intialCategories;
 
+
+// in below case, we are changing the state of the category
     switch (action.type) {
        case "All":
             return {...intialCategories, All: true};
