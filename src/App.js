@@ -1,25 +1,22 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import FoodContextProvider from "./context/foodContext";
 import './App.css';
-import Category from "./components/Category";
 import Card from "./components/Card";
 import Recipe from "./components/Recipe";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
+import Layout from "./components/Layout";
 
 
 const App = () => {
   return (
    <FoodContextProvider>
     <Router>
-      <Navbar />
-      <Category />
       <Routes>
+        <Route element={<Layout/>}>
         <Route path="/" element={<Card />} />
         <Route path="/recipe/:name" element={<Recipe />} />
+        </Route>
       </Routes>
-      <Footer />
     </Router>
    </FoodContextProvider>
   );

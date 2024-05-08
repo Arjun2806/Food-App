@@ -125,6 +125,20 @@ body {
   margin-top: 15px;
 }
 
+.go-to-recipe {
+  padding: 8px 16px;
+  background-color: #34d399; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.go-to-recipe:hover {
+  background-color: #059669; /* Dark green color */
+}
+
 .add-to-cart {
   padding: 8px 16px;
   background-color: #34d399; 

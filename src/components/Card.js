@@ -22,9 +22,10 @@ const Card = () => {
             <AiFillStar className="star" />
             {rating}
           </span>
-          <Link to={`/recipe/${(name)}`} className="add-to-cart">
+          <Link to={`/recipe/${(name)}`} className="go-to-recipe">
               Go to Recipe
             </Link>
+            <button className="add-to-cart">Add to Cart</button>
         </div>
       </div>
     ))}
