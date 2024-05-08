@@ -1,6 +1,6 @@
-
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import FoodData from "../FoodData";
+import FoodReducer from "./FoodReducer";
 
 export const FoodContext = createContext();
 
@@ -15,6 +15,16 @@ const FoodContextProvider = ({ children }) => {
     Drinks: false,
   });
   const [displayFood, setDisplayFood] = useState(FoodData);
+
+  const [state, dispatch] = useReducer(FoodReducer, {
+    All: true,
+    Lunch: false,
+    Breakfast: false,
+    Dinner: false,
+    Snacks: false,
+    Drinks: false,
+  });
+
 
   const handleSearch = (e) => {
     e.preventDefault();
