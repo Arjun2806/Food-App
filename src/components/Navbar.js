@@ -18,10 +18,9 @@ const Navbar = () => {
       <img src="./logo.png" className="App-logo" alt="logo" />
       <h1>Yummly</h1>
       <TiShoppingCart className="cart-icon" onClick={handlevisible}  />
-      {/* <div className={`cart-panel ${showCart ? "open" : ""}`}>
+      <div className={`cart-panel ${showCart ? "open" : ""}`}>
         <CartPanel />
-      </div> */}
-      {showCart && <CartPanel />}
+      </div>
       <input
         type="search"
         name="search"
