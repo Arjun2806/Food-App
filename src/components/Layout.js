@@ -8,7 +8,7 @@ import CartPanel from './CartPanel';
 
 const Layout = () => {
   return (
-    <div style={{position:"absolute"}}>
+    <div style={{position:"relative", maxwidth:"100vw", overflow:"hidden"}}>
     <CartPanel />
     <Navbar/>
     <Category/>

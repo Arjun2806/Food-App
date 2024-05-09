@@ -18,7 +18,7 @@ body {
   align-items: center;
   padding: 20px;
   background-color: #e0cccc;
-  height:70px;
+  height: 70px;
 }
 
 .navbar img {
@@ -32,13 +32,12 @@ body {
   font-size: 40px;
 }
 
-.cart-icon{
+.cart-icon {
   width: 40px;
   height: 40px;
   margin-right: -350px;
   cursor: pointer;
 }
-
 
 .navbar input {
   width: 200px;
@@ -49,7 +48,7 @@ body {
   font-size: 20px;
 }
 
-/* CATEGORY */  
+/* CATEGORY */
 
 .category {
   display: flex;
@@ -85,7 +84,6 @@ body {
 
 /* CARD */
 
-
 .food-container {
   display: flex;
   flex-wrap: wrap;
@@ -93,7 +91,9 @@ body {
 }
 
 .card {
-  width: calc(20% - 20px); /* Adjust card width based on number of cards in one row and gap */
+  width: calc(
+    20% - 20px
+  ); /* Adjust card width based on number of cards in one row and gap */
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -101,8 +101,8 @@ body {
 }
 
 .food-image {
-  width: 260PX;
-  height: 150px; 
+  width: 260px;
+  height: 150px;
   object-fit: cover;
   border-radius: 5px;
   align-items: center;
@@ -128,7 +128,7 @@ body {
 }
 
 .rating .star {
-  fill: #ffd700; 
+  fill: #ffd700;
   height: 25px;
   width: 25px;
   margin-top: 15px;
@@ -136,7 +136,7 @@ body {
 
 .go-to-recipe {
   padding: 8px 16px;
-  background-color: #34d399; 
+  background-color: #34d399;
   color: white;
   border: none;
   border-radius: 8px;
@@ -150,7 +150,7 @@ body {
 
 .add-to-cart {
   padding: 8px 16px;
-  background-color: #34d399; 
+  background-color: #34d399;
   color: white;
   border: none;
   border-radius: 8px;
@@ -161,7 +161,6 @@ body {
 .add-to-cart:hover {
   background-color: #059669; /* Dark green color */
 }
-
 
 /* RECIPE PAGE */
 
@@ -186,10 +185,10 @@ body {
   background-color: #059669; /* Dark green color */
 }
 
-.recipe-page h2{
- margin-top: 15px;
- margin-left: 15px;
- font-size: 35px;
+.recipe-page h2 {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 35px;
 }
 
 .video-container {
@@ -203,32 +202,32 @@ body {
   height: 100%;
 }
 
-.recipe-details h2{
+.recipe-details h2 {
   margin-top: 15px;
   margin-left: 15px;
   font-size: 2.3rem;
 }
 
-.recipe-details ol{
+.recipe-details ol {
   margin-top: 15px;
   margin-left: 4rem;
   font-size: 1.3rem;
 }
 
-.recipe-details ol li::marker{
-content: "☞";
+.recipe-details ol li::marker {
+  content: "☞";
 }
 
-.recipe-details ol li{
+.recipe-details ol li {
   margin-left: 1rem;
 }
 
 /* FOOTER */
 
 .footer {
-  padding: 1.25rem; 
+  padding: 1.25rem;
   background-color: #e0cccc; /* Equivalent to bg-base-200 */
-  color:black; /* Equivalent to text-base-content */
+  color: black; /* Equivalent to text-base-content */
 }
 
 .footer aside img {
@@ -246,18 +245,43 @@ content: "☞";
   text-align: center;
 }
 
-.copyright p{
+.copyright p {
   font-size: 1.1rem;
 }
 
 /* CART PANEL */
 
-.cart-panel{
-  top: calc(100vh- 70px);
-  right:0;
+.cart-panel {
+  top:110px;
   width: clamp(200px, 30%, 600px);
   background-color: white;
-  position: relative;
-  height: 200px;
+  position: absolute;
+  right: 0;
+  height:calc(100vh - 70px);
+  border:1px solid black;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
 }
 
+.open {
+  transform: translateX(0);
+}
+
+.cart-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-details h3 {
+  margin-top:10px;
+  margin-left: 10rem;
+  font-size: 1.5rem;
+}
+
+.close-icon {
+  cursor: pointer;
+  margin-left: auto;
+  font-size: 2rem;
+}
