@@ -34,6 +34,10 @@ const FoodContextProvider = ({ children }) => {
 
   const [displayFood, setDisplayFood] = useState(FoodData);
 
+// we set the carItems
+
+const [cartItems, setCartItems] = useState([]);
+
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
@@ -74,6 +78,8 @@ const FoodContextProvider = ({ children }) => {
     setDisplayFood,
     handleSearch,
     handleClick,
+    cartItems,
+    setCartItems,
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

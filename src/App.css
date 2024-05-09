@@ -260,13 +260,11 @@ body {
   height:calc(100vh - 70px);
   border:1px solid black;
   z-index: 1000;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(100%);
+  transition: right 0.4s ease-in-out;
+  /* transition: transform 0.3s ease-in-out;
+  transform: translateX(100%); */
 }
 
-.open {
-  transform: translateX(0);
-}
 
 .cart-details {
   display: flex;

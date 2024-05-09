@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import { FoodContext } from '../context/foodContext';
 import { Link } from 'react-router-dom';
+import { AiFillStar } from 'react-icons/ai';
 
 const Card = () => {
   
-  const {displayFood} = useContext(FoodContext);
+  const {displayFood, setCartItems} = useContext(FoodContext);
 
   return (
     <div className="food-container">
@@ -17,14 +18,14 @@ const Card = () => {
         </div>
         <p className="description">{desc.slice(0, 50)}...</p>
         <div className="rating-container">
-          {/* <span className="rating">
+          <span className="rating">
             <AiFillStar className="star" />
             {rating}
-          </span> */}
+          </span>
           <Link to={`/recipe/${(name)}`} className="go-to-recipe">
               Go to Recipe
             </Link>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" onClick={()=> setCartItems(prev=> ([...prev, {id, img, name, price}]))}>Add to Cart</button>
         </div>
       </div>
     ))}
