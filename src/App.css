@@ -18,6 +18,7 @@ body {
   align-items: center;
   padding: 20px;
   background-color: #e0cccc;
+  height:70px;
 }
 
 .navbar img {
@@ -30,6 +31,14 @@ body {
 .navbar h1 {
   font-size: 40px;
 }
+
+.cart-icon{
+  width: 40px;
+  height: 40px;
+  margin-right: -350px;
+  cursor: pointer;
+}
+
 
 .navbar input {
   width: 200px;
@@ -240,3 +249,15 @@ content: "☞";
 .copyright p{
   font-size: 1.1rem;
 }
+
+/* CART PANEL */
+
+.cart-panel{
+  top: calc(100vh- 70px);
+  right:0;
+  width: clamp(200px, 30%, 600px);
+  background-color: white;
+  position: relative;
+  height: 200px;
+}
+
