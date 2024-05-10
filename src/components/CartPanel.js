@@ -6,14 +6,14 @@ import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 
 const CartPanel = ({ showCart }) => {
-  const { cartItems } = useContext(FoodContext);
+  const { cartItems,visibleCart,setVisibleCart } = useContext(FoodContext);
 
   return (
     <div className="cart-panel" style={{ right: showCart ? "0px" : "-600px" }}>
       <div className="cart-details">
         <div className="cart-heading">
           <h3>Cart Details</h3>
-          <IoCloseSharp className="close-icon" />
+          <IoCloseSharp className="close-icon" onClick={()=>setVisibleCart(!visibleCart)} />
         </div>
         <div className="cart-items">
           {cartItems.map((item) => (
@@ -32,17 +32,11 @@ const CartPanel = ({ showCart }) => {
             </div>
           ))}
         </div>
-        <div class="checkout-summary">
-          <h3 >
-            Items: <span >1</span>
-          </h3>
-          <h3 >
-            Total Amount: <span >₹100</span>
-          </h3>
+        <div className="checkout-summary">
+          <h3>Items:1</h3>
+          <h3>Total Amount:500</h3>
           <hr />
-          <button >
-            Checkout
-          </button>
+          <button className="checkout-button">Checkout</button>
         </div>
       </div>
     </div>

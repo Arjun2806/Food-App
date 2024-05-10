@@ -38,6 +38,9 @@ const FoodContextProvider = ({ children }) => {
 
 const [cartItems, setCartItems] = useState([]);
 
+// for show the cart panel
+const [visibleCart, setVisibleCart] = useState(false);
+
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
@@ -80,6 +83,8 @@ const [cartItems, setCartItems] = useState([]);
     handleClick,
     cartItems,
     setCartItems,
+    visibleCart,
+    setVisibleCart,
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;
