@@ -63,6 +63,16 @@ const [visibleCart, setVisibleCart] = useState(false);
     dispatch({ type: data, intialCategories });
   };
 
+
+// for delete the item from the cart
+
+  const handleDelete = (id) => {
+    const newCartItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(newCartItems);
+  };
+
+
+
   useEffect(() => {
     const newArray = Object.keys(category);
     const trueCategory = newArray.filter((data) => category[data] === true)[0];
@@ -85,6 +95,7 @@ const [visibleCart, setVisibleCart] = useState(false);
     setCartItems,
     visibleCart,
     setVisibleCart,
+    handleDelete
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

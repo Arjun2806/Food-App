@@ -6,7 +6,7 @@ import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 
 const CartPanel = ({ showCart }) => {
-  const { cartItems,visibleCart,setVisibleCart } = useContext(FoodContext);
+  const { cartItems,visibleCart,setVisibleCart, handleDelete } = useContext(FoodContext);
 
   return (
     <div className="cart-panel" style={{ right: showCart ? "0px" : "-600px" }}>
@@ -28,7 +28,7 @@ const CartPanel = ({ showCart }) => {
                   <FiPlusCircle className="plus-icon" />
                 </div>
               </div>
-              <MdDelete className="delete-icon" />
+              <MdDelete className="delete-icon" onClick={()=>handleDelete(item.id)} />
             </div>
           ))}
         </div>
