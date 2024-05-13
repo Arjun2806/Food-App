@@ -96,9 +96,7 @@ body {
 }
 
 .card {
-  width: calc(
-    20% - 20px
-  ); /* Adjust card width based on number of cards in one row and gap */
+  width: calc(20% - 20px); /* Adjust card width based on number of cards in one row and gap */
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -112,7 +110,13 @@ body {
   border-radius: 5px;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
+
+.food-image:hover {
+  transform: scale(1.1);
+}
+
 
 .details h2 {
   margin: 0;
@@ -310,6 +314,7 @@ body {
 flex-grow: 1;
 overflow-y:auto;
 padding: 10px;
+overflow: auto;
 }
 
 .cart-item {
@@ -378,18 +383,6 @@ padding: 10px;
 
 /* CHECK OUT SUMMARY */
 
-/* .checkout-summary {
-  margin-top: 25.8rem;
-  padding: 20px;
-  background-color: #f9f9f9;
-  width: 26rem;
-  bottom: 0;
-} */
-
-/* .checkout-summary{
-  position: relative;
-  margin-top: 28.5rem;
-} */
 
 .checkout-summary {
   position: sticky;
