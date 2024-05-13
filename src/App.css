@@ -315,6 +315,7 @@ flex-grow: 1;
 overflow-y:auto;
 padding: 10px;
 overflow: auto;
+height:400px;
 }
 
 .cart-item {
@@ -360,7 +361,6 @@ overflow: auto;
   font-size: 1.2rem;
   font-weight: 100;
 }
-
 
 .cart-item-details .quantity .minus-icon {
   cursor: pointer;
