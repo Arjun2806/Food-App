@@ -285,15 +285,13 @@ body {
   z-index: 1;
   align-items: center; */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 1rem;
 }
 
 .cart-details h3 {
   margin-top: 10px;
   font-size: 1.5rem;
-  margin-left: 9rem;
+  margin-left: 9.9rem;
 }
 
 .close-icon {
@@ -315,7 +313,7 @@ flex-grow: 1;
 overflow-y:auto;
 padding: 10px;
 overflow: auto;
-height:400px;
+height:412px;
 }
 
 .cart-item {
@@ -393,7 +391,7 @@ height:400px;
   z-index: 1;
 }
 
-.checkout-summary h3 {
+.checkout-summary h4 {
   font-size: 1.2rem;
   margin-bottom: 5px;
 }

@@ -41,11 +41,37 @@ const [cartItems, setCartItems] = useState([]);
 // for show the cart panel
 const [visibleCart, setVisibleCart] = useState(false);
 
+const toggleCartVisibility = () => {
+  setVisibleCart(!visibleCart);
+};
+
+// for handle search input
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
     setInput(inputValue);
   };
+
+
+// increase the quantity based on item is present in cart or not 
+
+const addToCart = (itemToAdd) => {
+  const existingItem = cartItems.find(item => item.id === itemToAdd.id);
+
+  if (existingItem) {
+    // Item already exists in the cart, increase quantity
+    const updatedCartItems = cartItems.map(item =>
+      item.id === itemToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCartItems(updatedCartItems);
+  } else {
+    // Item doesn't exist in the cart, add with quantity 1
+    const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
+    setCartItems(updatedCartItems);
+  }
+};
+
+
 
   useEffect(() => {
     if (input === "") {
@@ -93,9 +119,8 @@ const [visibleCart, setVisibleCart] = useState(false);
     handleClick,
     cartItems,
     setCartItems,
-    visibleCart,
-    setVisibleCart,
-    handleDelete
+    handleDelete,
+    addToCart,toggleCartVisibility
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;
