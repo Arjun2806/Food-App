@@ -3,9 +3,10 @@ import { FoodContext } from '../context/foodContext';
 import { Link } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 
+
 const Card = () => {
   
-  const {displayFood, setCartItems} = useContext(FoodContext);
+  const {displayFood, addToCart} = useContext(FoodContext);
 
   return (
     <div className="food-container">
@@ -25,7 +26,7 @@ const Card = () => {
           <Link to={`/recipe/${(name)}`} className="go-to-recipe">
               Go to Recipe
             </Link>
-            <button className="add-to-cart" onClick={()=> setCartItems(prev=> ([...prev, {id, img, name, price}]))}>Add to Cart</button>
+            <button className="add-to-cart" onClick={() => addToCart({ id, img, name, desc, price, rating })}>Add to Cart</button>
         </div>
       </div>
     ))}

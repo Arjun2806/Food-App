@@ -1,42 +1,27 @@
 import React, { useContext } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/foodContext";
-import { MdDelete } from "react-icons/md";
-import { FiMinusCircle } from "react-icons/fi";
-import { FiPlusCircle } from "react-icons/fi";
+import CartItem from "./CartItems";
 
-const CartPanel = ({ showCart }) => {
-  const { cartItems,toggleCartVisibility, handleDelete } = useContext(FoodContext);
+
+const CartPanel = ({ showCart, toggle }) => {
+  const { cartItems, quantity } = useContext(FoodContext);
 
   return (
     <div className="cart-panel" style={{ right: showCart ? "0px" : "-600px" }}>
       <div className="cart-details">
         <div className="cart-heading">
           <h3>Cart Details</h3>
-          <IoCloseSharp className="close-icon" onClick={toggleCartVisibility} />
+          <IoCloseSharp className="close-icon" onClick={toggle} />
         </div>
         <div className="cart-items">
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
-              <img src={item.img} alt="img" />
-              <div className="cart-item-details">
-                <h4>{item.name}</h4>
-                <h5>₹{item.price}</h5>
-                <div className="quantity">
-                  <FiMinusCircle className="minus-icon" />
-                  <span>1</span>
-                  <FiPlusCircle className="plus-icon" />
-                </div>
-              </div>
-              <MdDelete className="delete-icon" onClick={()=>handleDelete(item.id)} />
-            </div>
-          ))}
+        {cartItems.map(item => <CartItem key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} quantity={quantity[item.id]} />)}
         </div>
         <div className="checkout-summary">
           <h4>Items:1</h4>
           <h4>Total Amount:500</h4>
           <hr />
-          <button className="checkout-button">Checkout</button>
+          <button className="checkout-button">Buy Now</button>
         </div>
       </div>
     </div>

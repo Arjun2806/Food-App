@@ -2,6 +2,7 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import FoodData from "../FoodData";
 import FoodReducer from "./FoodReducer";
 
+
 export const FoodContext = createContext();
 
 const FoodContextProvider = ({ children }) => {
@@ -38,12 +39,8 @@ const FoodContextProvider = ({ children }) => {
 
 const [cartItems, setCartItems] = useState([]);
 
-// for show the cart panel
-const [visibleCart, setVisibleCart] = useState(false);
+const [quantity, setQuantity] = useState({});
 
-const toggleCartVisibility = () => {
-  setVisibleCart(!visibleCart);
-};
 
 // for handle search input
   const handleSearch = (e) => {
@@ -56,19 +53,26 @@ const toggleCartVisibility = () => {
 // increase the quantity based on item is present in cart or not 
 
 const addToCart = (itemToAdd) => {
-  const existingItem = cartItems.find(item => item.id === itemToAdd.id);
 
-  if (existingItem) {
-    // Item already exists in the cart, increase quantity
-    const updatedCartItems = cartItems.map(item =>
-      item.id === itemToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
-    );
-    setCartItems(updatedCartItems);
-  } else {
-    // Item doesn't exist in the cart, add with quantity 1
-    const updatedCartItems = [...cartItems, { ...itemToAdd, quantity: 1 }];
-    setCartItems(updatedCartItems);
+  const testIdFucntion = (input) => {
+    return input.id === itemToAdd.id
   }
+
+  const index = cartItems.findIndex(testIdFucntion);
+
+  if (index === -1) {
+    const updatedCartItems = [...cartItems, itemToAdd];
+    setCartItems(updatedCartItems);
+    setQuantity(prev => ({...prev, [itemToAdd.id]: 1}));
+  } else {
+    setQuantity(prev => ({...prev, [itemToAdd.id]: prev[itemToAdd.id] + 1}))
+  }
+};  
+
+// decerese the quantity based on item is present in cart or not
+
+const decreaseQuantity = (itemToRemove) => {
+ 
 };
 
 
@@ -120,7 +124,9 @@ const addToCart = (itemToAdd) => {
     cartItems,
     setCartItems,
     handleDelete,
-    addToCart,toggleCartVisibility
+    addToCart,
+    quantity,
+    decreaseQuantity
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

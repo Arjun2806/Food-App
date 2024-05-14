@@ -16,7 +16,7 @@ const handlevisible = () =>{
 
   return (
     <div style={{position:"relative", maxwidth:"100vw", overflow:"hidden"}}>
-    <CartPanel showCart={showCart} />
+    <CartPanel showCart={showCart} toggle={handlevisible} />
     <Navbar toggle={handlevisible} />
     <Category/>
     <Outlet/>
