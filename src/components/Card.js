@@ -1,10 +1,25 @@
 import React, { useContext } from "react";
 import { FoodContext } from "../context/foodContext";
 import { AiFillStar } from "react-icons/ai";
-import Model from "./Modal";
+import Modal from "react-modal";
+import Recipe from "./Recipe";
+
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+
 
 const Card = () => {
-  const { displayFood, addToCart,showModal } = useContext(FoodContext);
+  const { displayFood, addToCart,showModal} = useContext(FoodContext);
  
 
   return (
@@ -12,7 +27,9 @@ const Card = () => {
       <div className="food-container">
         {displayFood.map(({ id, img, name, desc, price, rating }) => (
           <div key={id} className="card">
-            <Model />
+             <Modal isOpen={showModal} style={customStyles}>
+        <Recipe />
+      </Modal>
             <img src={img} alt="" className="food-image" />
             <div className="details">
               <h2>{name}</h2>
