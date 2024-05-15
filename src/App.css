@@ -271,16 +271,15 @@ body {
   background-color: white;
   /* position: absolute; */
   position: fixed;
-  right: 0;
+  /* right: 0; */
   height: calc(100vh - 70px);
-  /* border: 1px solid black; */
-  transition: right 0.6s ease-in-out;
+  /* transition: right 0.6s ease-in-out; */
 }
 
 .cart-details {
  display: flex;
  flex-direction: column;
-  position: relative;
+ position: relative;
 }
 
 .cart-heading {
