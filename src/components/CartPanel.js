@@ -7,6 +7,12 @@ import CartItem from "./CartItems";
 const CartPanel = ({ showCart, toggle }) => {
   const { cartItems, quantity } = useContext(FoodContext);
 
+// Calculate total number of items
+const totalItems = cartItems.reduce((sum, item) => sum + quantity[item.id], 0);
+
+// Calculate total amount
+const totalAmount = cartItems.reduce((sum, item) => sum + (item.price * quantity[item.id]), 0);
+
   return (
     <div className="cart-panel" style={{ right: showCart ? "0px" : "-600px" }}>
       <div className="cart-details">
@@ -18,8 +24,8 @@ const CartPanel = ({ showCart, toggle }) => {
         {cartItems.map(item => <CartItem key={item.id} id={item.id} img={item.img} name={item.name} price={item.price} quantity={quantity[item.id]} />)}
         </div>
         <div className="checkout-summary">
-          <h4>Items:1</h4>
-          <h4>Total Amount:500</h4>
+          <h4>Items:<span>{totalItems}</span></h4>
+          <h4>Total Amount:₹<span>{totalAmount}</span></h4>
           <hr />
           <button className="checkout-button">Buy Now</button>
         </div>

@@ -410,6 +410,10 @@ height:412px;
   margin-bottom: 5px;
 }
 
+.checkout-summary h4 span {
+  color: red;
+}
+
 .checkout-summary hr {
   border: 0;
   border-top: 1px solid #000000;
