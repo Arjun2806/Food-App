@@ -23,6 +23,7 @@ const Recipe = () => {
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
+
       </div>
       <div className="recipe-details">
         <h2>Ingredients to used in this recipe</h2>
