@@ -7,7 +7,7 @@ import Recipe from "./Recipe";
 
 const customStyles = {
   content: {
-    top: "50%",
+    top: "70%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -19,7 +19,7 @@ const customStyles = {
 
 
 const Card = () => {
-  const { displayFood, addToCart,showModal} = useContext(FoodContext);
+  const { displayFood, addToCart,showModal,setShowModal} = useContext(FoodContext);
  
 
   return (
@@ -28,7 +28,7 @@ const Card = () => {
         {displayFood.map(({ id, img, name, desc, price, rating }) => (
           <div key={id} className="card">
              <Modal isOpen={showModal} style={customStyles}>
-        <Recipe />
+        <Recipe name={name}  desc={desc} />
       </Modal>
             <img src={img} alt="" className="food-image" />
             <div className="details">
@@ -41,7 +41,7 @@ const Card = () => {
                 <AiFillStar className="star" />
                 {rating}
               </span>
-              <button className="go-to-recipe" onClick={showModal}>Go to Recipe</button>
+              <button className="go-to-recipe" onClick={()=>setShowModal(true)}>Go to Recipe</button>
               <button
                 className="add-to-cart"
                 onClick={() =>

@@ -11,7 +11,6 @@ const Recipe = () => {
 
   return (
     <div className="recipe-page">
-      {/* Home button to navigate back to the home page */}
       <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon" />
       <h2>Recipe Details of {name}</h2>
       <div className="video-container">
