@@ -1,18 +1,17 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { FoodContext } from "../context/foodContext";
 import { IoCloseSharp } from "react-icons/io5";
 
 
 
 const Recipe = () => {
-  const { name } = useParams();
   const {setShowModal} = useContext(FoodContext);
 
   return (
     <div className="recipe-page">
       <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon" />
-      <h2>Recipe Details of {name}</h2>
+      <h2>Recipe Details of </h2>
       <div className="video-container">
         <iframe
           width="650"

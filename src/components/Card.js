@@ -4,32 +4,34 @@ import { AiFillStar } from "react-icons/ai";
 import Modal from "react-modal";
 import Recipe from "./Recipe";
 
-
 const customStyles = {
   content: {
-    top: "70%",
+    top: "110px",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    height: "99vh",
+    width:"99vw",
+    maxHeight: "80vh", // Limit the height to 80% of the viewport height
+    overflow: "auto",
+    zIndex:"1"
   },
 };
 
-
-
 const Card = () => {
-  const { displayFood, addToCart,showModal,setShowModal} = useContext(FoodContext);
- 
+  const { displayFood, addToCart, showModal, setShowModal } =
+    useContext(FoodContext);
 
   return (
     <>
       <div className="food-container">
         {displayFood.map(({ id, img, name, desc, price, rating }) => (
           <div key={id} className="card">
-             <Modal isOpen={showModal} style={customStyles}>
-        <Recipe name={name}  desc={desc} />
-      </Modal>
+            <Modal isOpen={showModal} style={customStyles}>
+            <Recipe name={name} desc={desc} />
+            </Modal>
             <img src={img} alt="" className="food-image" />
             <div className="details">
               <h2>{name}</h2>
@@ -41,7 +43,12 @@ const Card = () => {
                 <AiFillStar className="star" />
                 {rating}
               </span>
-              <button className="go-to-recipe" onClick={()=>setShowModal(true)}>Go to Recipe</button>
+              <button
+                className="go-to-recipe"
+                onClick={() => setShowModal(true)}
+              >
+                Go to Recipe
+              </button>
               <button
                 className="add-to-cart"
                 onClick={() =>
