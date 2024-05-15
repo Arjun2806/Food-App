@@ -320,6 +320,14 @@ overflow: auto;
 height:412px;
 }
 
+.empty-cart h3 {
+  font-size: 2rem;
+  margin-top: 10rem;
+  color: rgb(152, 148, 148);
+  font-weight: 100;
+  margin-left: 8rem;
+}
+
 .cart-item {
   display: flex;
   gap: 1.3rem;
