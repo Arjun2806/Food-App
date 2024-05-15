@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Recipe = () => {
   const { name } = useParams();
@@ -6,9 +6,9 @@ const Recipe = () => {
   return (
     <div className="recipe-page">
       {/* Home button to navigate back to the home page */}
-      <Link to="/" className="home-button">
+      {/* <Link to="/" className="home-button">
         Back to Home
-      </Link>
+      </Link> */}
       <h2>Recipe Details of {name}</h2>
       <div className="video-container">
         <iframe

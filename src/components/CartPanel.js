@@ -4,7 +4,7 @@ import { FoodContext } from "../context/foodContext";
 import CartItem from "./CartItems";
 import { Transition } from "react-transition-group";
 
-const duration = 400;
+const duration = 250;
 
 const defaultStyle = {
   transition: `right ${duration}ms ease-in-out`,

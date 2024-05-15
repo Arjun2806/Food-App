@@ -39,7 +39,11 @@ const FoodContextProvider = ({ children }) => {
 
 const [cartItems, setCartItems] = useState([]);
 
+// for quantity
 const [quantity, setQuantity] = useState({});
+
+// for show modal in card 
+const [showModal, setShowModal] = useState(false);
 
 
 // for handle search input
@@ -148,7 +152,9 @@ const decreaseQuantity = (itemId) => {
     handleDelete,
     addToCart,
     quantity,
-    decreaseQuantity
+    decreaseQuantity,
+    showModal,
+    setShowModal
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;
