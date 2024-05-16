@@ -96,21 +96,25 @@ body {
 
 .food-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .card {
-  width: calc(
-    20% - 20px
-  ); /* Adjust card width based on number of cards in one row and gap */
+  width: calc(20% - 20px); 
   background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  margin: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  height:300px;
 }
 
 .food-image {
+  display: flex;
+  flex:5;
   width: 260px;
   height: 150px;
   object-fit: cover;
@@ -124,17 +128,23 @@ body {
   transform: scale(1.1);
 }
 
-.details h2 {
-  margin: 0;
+.heading-details{
+  display:flex;
+  flex:3;
+  justify-content: space-around;
 }
 
+.heading-details h2{
+  font-size: 1.5rem;
+}
+
+
 .price {
+  font-size: 1.4rem;
+  font-weight: 10;
   color: #34d399; /* Green color */
 }
 
-.description {
-  font-size: 0.875rem;
-}
 
 .rating-container {
   display: flex;

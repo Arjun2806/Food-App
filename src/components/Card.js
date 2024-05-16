@@ -32,16 +32,17 @@ const handleClick = (name,desc) =>{
           <div key={id} className="card">
             
             <img src={img} alt="" className="food-image" />
-            <div className="details">
+            <div className="heading-details">
               <h2>{name}</h2>
-              <span className="price">₹{price}</span>
+              <h3 className="price">₹{price}</h3>
             </div>
             <p className="description">{desc.slice(0, 50)}...</p>
-            <div className="rating-container">
-              <span className="rating">
+            <span className="rating">
                 <AiFillStar className="star" />
                 {rating}
               </span>
+            <div className="rating-container">
+              
               <button
                 className="go-to-recipe"
                 onClick={()=>handleClick(name,desc)}
