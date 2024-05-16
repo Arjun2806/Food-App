@@ -25,7 +25,8 @@ const Layout = () => {
       right: "0",
       bottom: "0",
       border: "none",
-      background: "transparent",
+      background: "#00000047",
+      paddingTop:"8.2rem",
     },
   };
 

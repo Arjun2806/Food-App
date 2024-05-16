@@ -10,7 +10,7 @@ const Recipe = () => {
 
   return (
     <div className="recipe-page">
-      <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon" />
+      <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon1" />
       <h2>Recipe Details of {recipeItems?.name} </h2>
 
       <h4>Description:<span>{recipeItems?.desc}</span> </h4>
