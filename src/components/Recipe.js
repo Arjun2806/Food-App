@@ -3,18 +3,17 @@ import { FoodContext } from "../context/foodContext";
 import { IoCloseSharp } from "react-icons/io5";
 
 
-
 const Recipe = () => {
   const {setShowModal,recipeItems} = useContext(FoodContext);
 
-  console.log(recipeItems)
+  // console.log(recipeItems)
 
   return (
     <div className="recipe-page">
       <IoCloseSharp onClick={()=>setShowModal(false)} className="close-icon" />
       <h2>Recipe Details of {recipeItems?.name} </h2>
 
-      <h4>Description of this food: {recipeItems?.desc}</h4>
+      <h4>Description:<span>{recipeItems?.desc}</span> </h4>
       <div className="details">
       <div className="video-container">
         <iframe

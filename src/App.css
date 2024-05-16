@@ -182,11 +182,13 @@ body {
 .recipe-page {
   display: flex;
   flex-direction: column;
+  padding: 2.5rem;
 }
 
 .recipe-page h2 {
   align-self: center;
-  font-size: 35px;
+  font-size: 45px;
+  margin-bottom: 1.2rem;
 }
 
 .recipe-page h4 {
