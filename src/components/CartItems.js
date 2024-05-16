@@ -31,7 +31,9 @@ const {handleDelete, addToCart,decreaseQuantity} = useContext(FoodContext);
         }}/>
           </div>
         </div>
-        <MdDelete className="delete-icon" onClick={()=>handleDelete(id)}/>
+        <MdDelete className="delete-icon" onClick={()=>{handleDelete(id)
+          toast.error(`${name} deleted from cart`);
+        }}/>
       </div>
   )
 }
