@@ -10,7 +10,7 @@ body {
   background: rgb(235, 229, 229);
 }
 
-::selection{
+::selection {
   background-color: #d33434;
   color: yellow;
 }
@@ -101,7 +101,9 @@ body {
 }
 
 .card {
-  width: calc(20% - 20px); /* Adjust card width based on number of cards in one row and gap */
+  width: calc(
+    20% - 20px
+  ); /* Adjust card width based on number of cards in one row and gap */
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -121,7 +123,6 @@ body {
 .food-image:hover {
   transform: scale(1.1);
 }
-
 
 .details h2 {
   margin: 0;
@@ -183,30 +184,29 @@ body {
   flex-direction: column;
 }
 
-.home-button {
-  background-color: #34d399;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 19px;
-  padding: 10px 20px;
-  text-decoration: none;
-  width: fit-content;
-  margin-left: 20px;
-}
-
-.home-button:hover {
-  background-color: #059669; /* Dark green color */
-}
-
 .recipe-page h2 {
-  margin-top: 15px;
-  margin-left: 15px;
+  align-self: center;
   font-size: 35px;
 }
 
+.recipe-page h4 {
+  align-self: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 9px;
+  margin-top: 2rem;
+
+}
+
 .video-container {
-  width: 100%;
+  grid-area: 1/1/2/2;
+  width: 750px;
   height: 400px;
   margin-top: 28px;
 }
@@ -214,6 +214,10 @@ body {
 .video-container iframe {
   width: 100%;
   height: 100%;
+}
+
+.recipe-details {
+  grid-area: 1/2/2/3;
 }
 
 .recipe-details h2 {
@@ -277,9 +281,9 @@ body {
 }
 
 .cart-details {
- display: flex;
- flex-direction: column;
- position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .cart-heading {
@@ -312,11 +316,11 @@ body {
 
 /*  cart item */
 
-.cart-items{
-flex-grow: 1;
-padding: 10px;
-overflow: auto;
-height:412px;
+.cart-items {
+  flex-grow: 1;
+  padding: 10px;
+  overflow: auto;
+  height: 412px;
 }
 
 .empty-cart h3 {
@@ -357,7 +361,7 @@ height:412px;
 .cart-item-details h5 {
   margin: 5px 0;
   font-size: 16px;
-  color:rgb(36, 212, 36);
+  color: rgb(36, 212, 36);
 }
 
 .cart-item-details .quantity {
@@ -397,16 +401,15 @@ height:412px;
   cursor: pointer;
   font-size: 1.8rem;
   color: #a0aec0;
-  margin-bottom:3.2rem;
+  margin-bottom: 3.2rem;
 }
 
 /* CHECK OUT SUMMARY */
 
-
 .checkout-summary {
   position: sticky;
   bottom: 0;
-  left: 0; 
+  left: 0;
   background-color: #fefcfc;
   padding: 20px;
   z-index: 1;
@@ -439,7 +442,5 @@ height:412px;
 }
 
 .checkout-summary button:hover {
-  background-color: #059669;;
+  background-color: #059669;
 }
-
-

@@ -53,6 +53,15 @@ const [showModal, setShowModal] = useState(false);
     setInput(inputValue);
   };
 
+  
+// for set the recipe items in modal
+
+const [recipeItems, setRecipeItems] = useState(null);
+
+
+
+
+
 
 // increase the quantity based on item is present in cart or not 
 
@@ -154,7 +163,9 @@ const decreaseQuantity = (itemId) => {
     quantity,
     decreaseQuantity,
     showModal,
-    setShowModal
+    setShowModal,
+    recipeItems,
+    setRecipeItems
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

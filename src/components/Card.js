@@ -30,6 +30,7 @@ const customStyles = {
     right: "0",
     bottom: "0",
     border: "none",
+    height:""
     // overflow: 'auto',
     // WebkitOverflowScrolling: 'touch',
   },
@@ -38,6 +39,11 @@ const customStyles = {
 const Card = () => {
   const { displayFood, addToCart, showModal, setShowModal } =
     useContext(FoodContext);
+
+const handleClick = () =>{
+  setShowModal(true);
+}
+
 
   return (
     <>
@@ -60,7 +66,7 @@ const Card = () => {
               </span>
               <button
                 className="go-to-recipe"
-                onClick={() => setShowModal(true)}
+                onClick={handleClick}
               >
                 Go to Recipe
               </button>
