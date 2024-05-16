@@ -94,13 +94,17 @@ body {
 
 /* CARD */
 
-.food-container {
+/* .food-container {
   display: flex;
-  flex-flow: wrap;
-  gap: 20px;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .card {
@@ -142,7 +146,7 @@ body {
 .price {
   font-size: 1.4rem;
   font-weight: 10;
-  color: #34d399; /* Green color */
+  color: #34d399; 
 }
 
 
@@ -170,7 +174,7 @@ body {
 }
 
 .go-to-recipe:hover {
-  background-color: #059669; /* Dark green color */
+  background-color: #059669; 
 }
 
 .add-to-cart {
@@ -184,8 +188,99 @@ body {
 }
 
 .add-to-cart:hover {
-  background-color: #059669; /* Dark green color */
+  background-color: #059669; 
+} */
+
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.food-image {
+  flex: 5;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+}
+
+.food-image:hover {
+  transform: scale(1.1);
+}
+
+.content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.heading-details {
+  text-align: center;
+}
+
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price{
+  font-size: 1.4rem;
+  font-weight: 10;
+  color: #34d399;
+}
+
+.rating .star {
+  fill: #ffd700;
+  font-size: 1.4rem;
+}
+
+.description {
+  margin: 10px 0;
+  flex: 1;
+}
+
+.button-controller {
+  display: flex;
+  justify-content: space-between;
+}
+
+.go-to-recipe,
+.add-to-cart {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #34d399;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.go-to-recipe:hover,
+.add-to-cart:hover {
+  background-color: #059669;
+}
+
+
+
 
 /* RECIPE PAGE */
 .close-icon1 {
