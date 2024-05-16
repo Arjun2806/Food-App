@@ -24,7 +24,7 @@ body {
   padding: 20px;
   background-color: #e0cccc;
   height: 70px;
-  z-index: 1000;
+  /* z-index: 1; */
   width: 100%;
   position: fixed;
 }
