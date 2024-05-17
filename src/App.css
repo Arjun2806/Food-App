@@ -204,18 +204,26 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 500px;
+  height: 320px;
   border-radius: 20px;
   overflow: hidden;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.container{
+  display: flex;
+  flex:2;
+  width: 150px;
+  align-self: center;
+  align-items: center;
+}
+
+
 .food-image {
-  flex: 5;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 130px;
+  object-fit: contain; 
 
 }
 
@@ -224,7 +232,7 @@ body {
 }
 
 .content {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -235,6 +243,10 @@ body {
   text-align: center;
 }
 
+.heading-details h2{
+  font-size: 1.4rem;
+}
+
 .price-rating {
   display: flex;
   justify-content: space-between;
@@ -242,19 +254,18 @@ body {
 }
 
 .price{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 10;
   color: #34d399;
 }
 
 .rating .star {
   fill: #ffd700;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
-.description {
-  margin: 10px 0;
-  flex: 1;
+.description{
+  font-size: 0.8rem;
 }
 
 .button-controller {
