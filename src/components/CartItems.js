@@ -20,14 +20,10 @@ const {handleDelete, addToCart,decreaseQuantity} = useContext(FoodContext);
           <div className="quantity">
           <FiMinusCircle
                   className="minus-icon"
-                  onClick={() => {
-                    decreaseQuantity(id);
-                    toast.info(`Decreased quantity of ${name}`);
-                  }}
+                  onClick={() => decreaseQuantity(id)}
                 />
           <span>{quantity}</span>
-          <FiPlusCircle className="plus-icon" onClick={() => {addToCart({ id, name, price, quantity, img});
-            toast.success(`Increased quantity of ${name}`);
+          <FiPlusCircle className="plus-icon" onClick={() => {addToCart({ id, name, price, quantity, img})
         }}/>
           </div>
         </div>

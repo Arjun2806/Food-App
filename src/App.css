@@ -24,7 +24,6 @@ body {
   padding: 20px;
   background-color: #e0cccc;
   height: 70px;
-  /* z-index: 1; */
   width: 100%;
   position: fixed;
 }
@@ -47,6 +46,15 @@ body {
   margin-right: -300px;
   cursor: pointer;
 }
+
+
+
+/* .cart .cart-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: -300px;
+  cursor: pointer;
+} */
 
 .navbar input {
   width: 200px;
@@ -92,104 +100,8 @@ body {
   cursor: pointer;
 }
 
+
 /* CARD */
-
-/* .food-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.card {
-  width: calc(20% - 20px); 
-  background-color: white;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 10px;
-  height:300px;
-}
-
-.food-image {
-  display: flex;
-  flex:5;
-  width: 260px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.food-image:hover {
-  transform: scale(1.1);
-}
-
-.heading-details{
-  display:flex;
-  flex:3;
-  justify-content: space-around;
-}
-
-.heading-details h2{
-  font-size: 1.5rem;
-}
-
-
-.price {
-  font-size: 1.4rem;
-  font-weight: 10;
-  color: #34d399; 
-}
-
-
-.rating-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.rating .star {
-  fill: #ffd700;
-  height: 25px;
-  width: 25px;
-  margin-top: 15px;
-}
-
-.go-to-recipe {
-  padding: 8px 16px;
-  background-color: #34d399;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.go-to-recipe:hover {
-  background-color: #059669; 
-}
-
-.add-to-cart {
-  padding: 8px 16px;
-  background-color: #34d399;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.add-to-cart:hover {
-  background-color: #059669; 
-} */
 
 .food-container {
   display: flex;
@@ -224,7 +136,6 @@ body {
   width: 100%;
   height: 130px;
   object-fit: contain; 
-
 }
 
 .food-image:hover {
@@ -283,6 +194,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin: 0 5px;
+  transition: background-color 0.3s ease;
 }
 
 .go-to-recipe:hover,
@@ -292,14 +204,14 @@ body {
 
 
 
-
 /* RECIPE PAGE */
 .close-icon1 {
   position: absolute;
-  top: 5rem;
+  top: 3.5rem;
   right: 2rem;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size:3rem;
+  transition: background-color 0.3s ease;
 }
 
 .close-icon1:hover {
@@ -310,6 +222,7 @@ body {
   flex-direction: column;
   background-color: white;
   height:calc(100vh - 160px);
+  padding: 0.5rem;
 }
 
 .recipe-page h2 {
@@ -373,8 +286,8 @@ body {
 
 .footer {
   padding: 1.25rem;
-  background-color: #e0cccc; /* Equivalent to bg-base-200 */
-  color: black; /* Equivalent to text-base-content */
+  background-color: #e0cccc; 
+  color: black; 
 }
 
 .footer aside img {
@@ -402,11 +315,8 @@ body {
   top: 110px;
   width: clamp(200px, 30%, 600px);
   background-color: white;
-  /* position: absolute; */
   position: fixed;
-  /* right: 0; */
   height: calc(100vh - 70px);
-  /* transition: right 0.6s ease-in-out; */
 }
 
 .cart-details {
@@ -416,11 +326,6 @@ body {
 }
 
 .cart-heading {
-  /* position: sticky;
-  top:0;
-  padding: 10px 20px;
-  z-index: 1;
-  align-items: center; */
   display: flex;
   margin-top: 1rem;
 }
@@ -559,17 +464,152 @@ body {
   margin: 10px 0;
 }
 
-.checkout-summary button {
+.checkout-summary .checkout-button {
   background-color: rgb(52, 211, 153);
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  width: 100%;
+  width: 386px;
   font-size: 1.2rem;
+  text-align: center;
+  display: inline-block; 
+  text-decoration: none; 
+  transition: background-color 0.3s ease;
 }
 
-.checkout-summary button:hover {
+.checkout-summary .checkout-button:hover {
   background-color: #059669;
+}
+
+          /* RESPONSIVE CODE*/
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+    height: auto;
+  }
+
+  .navbar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navbar h1 {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+
+  .navbar input {
+    width: 122px;
+    margin-right: 20px;
+
+  }
+
+  .navbar input::placeholder{
+  font-size:15px;
+  }
+  .cart-icon {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    bottom: 20px;
+    right: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    background-color: rgb(191, 188, 188);
+    border-radius: 50%;
+  }
+  
+  .category-buttons {
+    flex-direction: row;
+    overflow-x: scroll;
+   scroll-behavior: smooth;
+  }
+
+  .category-buttons button {
+    padding: 0.8rem;
+  }
+
+  .food-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-panel{
+    height:100vh;
+    width:100%;
+    top:0;
+    z-index:1;
+  }
+  
+  .cart-heading h3{
+    /* text-align: center; */
+    margin-left: 7rem;
+    font-size: 1.7rem;
+  }
+  
+  .cart-items{
+    height: 570px;
+  }
+
+  .empty-cart h3{
+    margin-top: 17rem;
+    margin-left: 5rem;
+  }
+
+  .checkout-summary .checkout-button{
+    width: 295px;
+  }
+
+  .close-icon1{
+    margin-top:0.8rem;
+    font-size: 2.5rem;
+  }
+
+
+  .recipe-page{
+   padding: 1rem;
+  }
+
+  .recipe-page h2{
+    font-size: 1.7rem;
+    margin-bottom: 3px;
+  }
+ 
+  .recipe-page h4{
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+  .recipe-page h4 span{
+    font-size: 0.9rem;
+    display: flex;
+    font-weight: 10;
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-container{
+    width: 300px;
+    height: 200px;
+    margin-top: -10px;
+  }
+
+  .recipe-details h2{
+  font-size: 1.3rem;
+  font-weight: 20;
+  }
+
+  .recipe-details ol{
+    font-size: 0.7rem;
+    margin-left: 1rem;
+  }
+
 }

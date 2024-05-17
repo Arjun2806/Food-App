@@ -9,7 +9,9 @@ const Navbar = ({ toggle }) => {
     <div className="navbar">
       <img src="./logo.png" className="App-logo" alt="logo" />
       <h1>Yummly</h1>
+      {/* <div className="cart" onClick={toggle}> */}
       <TiShoppingCart className="cart-icon" onClick={toggle} />
+      {/* </div> */}
       <input
         type="search"
         name="search"

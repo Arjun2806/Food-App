@@ -8,6 +8,7 @@ const Category = () => {
   const categoryArr = Object.keys(category);
   
   return (
+    <div>
     <div className="category">
       <h2>Find your favorite food</h2>
       <div className="category-buttons">
@@ -18,6 +19,8 @@ const Category = () => {
         }
       </div>
     </div>
+    </div>
+
   );
 };
 

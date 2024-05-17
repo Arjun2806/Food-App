@@ -19,14 +19,17 @@ const Layout = () => {
 
   const customStyles = {
     content: {
-      // top: "120px",
       top: "0",
       left: "0",
       right: "0",
       bottom: "0",
       border: "none",
       background: "#00000047",
-      paddingTop:"8.2rem",
+      paddingTop: "7rem",
+      ...(window.innerWidth <= 768 && {
+        marginTop:"-50px",
+       
+      }),
     },
   };
 

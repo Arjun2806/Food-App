@@ -3,6 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/foodContext";
 import CartItem from "./CartItems";
 import { Transition } from "react-transition-group";
+import { Link } from "react-router-dom";
 
 const duration = 250;
 
@@ -71,7 +72,8 @@ const CartPanel = ({ showCart, toggle }) => {
               <h4>Items: {totalItems}</h4>
               <h4>Total Amount: ₹{totalAmount.toFixed(2)}</h4>
               <hr />
-              <button className="checkout-button">Buy Now</button>
+              <Link to="/checkout" 
+               className="checkout-button">Buy Now</Link>
             </div>
           </div>
         </div>
