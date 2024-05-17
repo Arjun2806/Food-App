@@ -67,7 +67,9 @@ const Card = () => {
       <div className="food-container">
         {displayFood.map(({ id, img, name, desc, price, rating }) => (
           <div key={id} className="card">
+           <div className="container">
             <img src={img} alt={name} className="food-image" />
+           </div>
             <div className="content">
               <div className="heading-details">
                 <h2>{name}</h2>
