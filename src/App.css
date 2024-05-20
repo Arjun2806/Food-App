@@ -1,14 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poetsen One", sans-serif;
+  /* font-family: "Poetsen One", sans-serif; */
+  font-family: "Oswald", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   background: rgb(235, 229, 229);
 }
+
 
 ::selection {
   background-color: #d33434;
@@ -136,10 +145,12 @@ body {
   width: 100%;
   height: 130px;
   object-fit: contain; 
+  transition: transform 0.3s ease-in-out;
 }
 
 .food-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 .content {
@@ -482,6 +493,147 @@ body {
 .checkout-summary .checkout-button:hover {
   background-color: #059669;
 }
+
+/* CHECKOUT PAGE */
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  
+}
+
+.heading h1{
+  font-size: 2.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.checkout-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-end;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.delivery-section,
+.payment-section,
+.order-review {
+  width: 680px;
+  margin-bottom: 1rem;
+}
+
+.delivery-section {
+  background-color: #ffffff;
+  height: 420px;
+}
+
+ /* DELEVERY SECTION STARTS */
+
+.delivery-heading{
+  color:white;
+  font-size: 1rem;
+  font-weight: 10;
+  padding:0.7rem;
+  background-color: black;
+}
+
+.address-section{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.address-section .name{
+   height:2.2rem;
+   border: 2px solid #e6e2e2;
+}
+
+.Mobile-number{
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Mobile-number .number {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
+  width: 15rem;
+}
+
+.Mobile-number .email {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
+  width: 24rem;
+  margin-left: 1rem;
+}
+
+.address-section .address{
+  border: 2px solid #e6e2e2;
+}
+
+.save-button{
+  margin-left:33rem;
+  background-color: #34d399;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;  
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.save-button:hover{
+  background-color: #059669;
+}
+
+
+ /* DELEVERY SECTION ENDS */
+
+.payment-section {
+  background-color: #000000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 10;
+  padding:0.6rem;
+  height: 40px;
+  width:660px;
+}
+
+.order-review {
+  background-color: #000000;
+  color: #fff;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 10;
+  padding:0.6rem;
+  width:660px;
+}
+
+
+.cartpage{
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  background-color: #d33434;
+  width:300px;
+  height: calc(100vh - 14rem);
+}
+
+
 
           /* RESPONSIVE CODE*/
 
