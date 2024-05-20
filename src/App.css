@@ -494,6 +494,7 @@ body {
   background-color: #059669;
 }
 
+
 /* CHECKOUT PAGE */
 
 .checkout{
@@ -514,7 +515,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   align-content: flex-end;
 }
@@ -523,6 +524,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-right: 1rem;
+  width:60%;
 }
 
 .delivery-section,
@@ -600,21 +602,70 @@ body {
 
  /* DELEVERY SECTION ENDS */
 
-.payment-section {
+ /* PAYMENT SECTION STARTS   */
+.payment-section h2 {
   background-color: #000000;
   color: #fff;
-  font-size: 1rem;
-  font-weight: 10;
-  padding:0.6rem;
   height: 40px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding:0.6rem;
   width:660px;
+
 }
+
+.payment-section form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+}
+
+.payment-section hr {
+  border: 1px solid #e6e2e2;
+  margin-bottom: 0.5rem;
+}
+
+.payment-method {
+  margin-bottom: 15px;
+}
+
+.payment-method label{
+  margin-left: 1rem;
+}
+
+.payment-method small{
+  margin-left: 1.9rem;
+}
+
+
+.payment-method img {
+  height: 28px;
+}
+
+.review-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #34d399;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.review-button:hover {
+  background-color: #059669;
+}
+
+/* PAYMENT SECTION ENDS */
 
 .order-review {
   background-color: #000000;
   color: #fff;
   height: 40px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 10;
   padding:0.6rem;
   width:660px;
@@ -652,25 +703,28 @@ body {
   margin: 0;
 }
 
-.cart-total p span1{
-  margin-left: 8.8rem;
-}
-
-.cart-total p span2{
-  margin-left: 7rem;
+.cart-items-container {
+  max-height: 320px; /* Adjust as needed */
+  overflow-y: auto;
 }
 
 .cart-total h4 span{
-  margin-left: 11rem;
   color: #34d399;
 }
 
 .cart-heading2{
   color:black;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.7rem;
 }
 
+.empty-cart1{
+  font-size: 1.7rem;
+  margin-top: 6.5rem;
+  color: rgb(152, 148, 148);
+  font-weight: 10;
+  margin-left: 4rem;
+}
 
 
 
