@@ -29,7 +29,7 @@ const handlePaymentChange = (e) => {
 
 
 // for transtion of checkout page
-const [containerOpen, setContainerOpen] = useState(1);
+const [containerOpen, setContainerOpen] = useState(null);
 
 
 const handleSaveAndContinue = () => {
@@ -77,13 +77,14 @@ const totalAmount = cartItems.reduce(
 
             
             <div className="delivery-section">
-              <h2>1. DELIVERY OPTIONS</h2>
+              <h2 onClick={() => setContainerOpen(1)}>1. DELIVERY OPTIONS</h2>
               <CSSTransition 
               in={containerOpen === 1} 
               timeout={1000} 
               classNames="section"
               unmountOnExit
               nodeRef={deliveryRef}
+              appear
               >
               <div className="address-section">
                 <input
@@ -131,13 +132,14 @@ const totalAmount = cartItems.reduce(
 
             {/* PAYMENT SECTION STARTS FROM HERE */}
             <div className="payment-section">
-              <h2>2. PAYMENT OPTIONS</h2>
+              <h2 onClick={() => setContainerOpen(2)}>2. PAYMENT OPTIONS</h2>
               <CSSTransition 
               in={containerOpen === 2} 
               timeout={1000} 
               classNames="section"
               unmountOnExit
               nodeRef={paymentRef}
+              appear
               >
               <form>
                 <div className="payment-method">
@@ -246,13 +248,14 @@ const totalAmount = cartItems.reduce(
 
             {/* ORDER REVIEW SECTION STARTS FROM HERE */}
             <div className="order-review">
-              <h2>3. ORDER REVIEW</h2>
+              <h2 onClick={() => setContainerOpen(3)}>3. ORDER REVIEW</h2>
               <CSSTransition 
               in={containerOpen === 3} 
               timeout={1000} 
               classNames="section"
               unmountOnExit
               nodeRef={orderReviewRef}
+              appear
               >
               <div className="order-info">
                 <h4>Delivery Information</h4>
