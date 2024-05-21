@@ -541,10 +541,10 @@ body {
 
  /* DELEVERY SECTION STARTS */
 
-.delivery-heading{
+.delivery-section h2{
   color:white;
-  font-size: 1rem;
-  font-weight: 10;
+  font-size: 1.6rem;
+  font-weight: 800;
   padding:0.7rem;
   background-color: black;
 }
@@ -585,13 +585,13 @@ body {
 }
 
 .save-button{
+  margin-top: 0.8rem;
   margin-left:33rem;
-  margin-top: -1rem;
+  font-size: 0.78rem;
   background-color: #34d399;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
-  text-align: center;  
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
@@ -722,6 +722,7 @@ body {
 .order-info p{
   margin-top:1.2rem;
   font-size: 1.2rem;
+  flex-wrap: wrap;
 }
 
 .order-info h5{
@@ -730,9 +731,31 @@ body {
 }
 
 
-
 /* ORDER REVIEW SECTION ENDS */
 
+
+/* CSS TRANSITION STARTS */
+
+.section-enter {
+  height: 0;
+  overflow: hidden;
+}
+.section-enter-active {
+  height: auto;
+  transition: height 1.5s ease-in;
+}
+.section-exit {
+  height: auto;
+}
+.section-exit-active {
+  height: 0;
+  overflow: hidden;
+  transition: height 1.5s ease-out;
+}
+
+/* CSS TANSTION ENDS */
+
+/* CART SECTION STARTS FROM HERE */
 .cartpage{
   display: block;
   flex-grow: 0;
@@ -791,7 +814,7 @@ body {
   margin-left: 4rem;
 }
 
-
+/* CART SECTION ENDS */
 
 
           /* RESPONSIVE CODE*/

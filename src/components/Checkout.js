@@ -1,5 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { FoodContext } from "../context/foodContext";
+import { CSSTransition } from "react-transition-group";
+
 
 const Checkout = () => {
   const { cartItems, quantity } = useContext(FoodContext);
@@ -25,15 +27,31 @@ const handlePaymentChange = (e) => {
   setPaymentMethod(e.target.value);
 };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+
+// for transtion of checkout page
+const [containerOpen, setContainerOpen] = useState(1);
+
+
+const handleSaveAndContinue = () => {
+  setContainerOpen(2); //  Switch to payment section
 };
 
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  setContainerOpen(3);  // Switch to order review section
+};
+
+// define ref for transition
+
+const deliveryRef = useRef(null);
+const paymentRef = useRef(null);
+const orderReviewRef = useRef(null);
 
 
-  // Calculate total amount
-  const totalAmount = cartItems.reduce(
+
+// Calculate total amount
+const totalAmount = cartItems.reduce(
     (sum, item) => sum + item.price * quantity[item.id],
     0
   );
@@ -51,15 +69,22 @@ const handleSubmit = (e) => {
     <main>
       <div className="checkout">
         <div className="heading">
-          <h1>Checkout</h1>
+          <h1>CHECKOUT</h1>
         </div>
         <div className="checkout-container">
-          {/* DELIVERY SECTION STARTS FROM HERE */}
           <div className="left-section">
+          {/* DELIVERY SECTION STARTS FROM HERE */}
+
+            
             <div className="delivery-section">
-              <div className="delivery-heading">
-                <h2>1. DELIVERY OPTIONS</h2>
-              </div>
+              <h2>1. DELIVERY OPTIONS</h2>
+              <CSSTransition 
+              in={containerOpen === 1} 
+              timeout={1000} 
+              classNames="section"
+              unmountOnExit
+              nodeRef={deliveryRef}
+              >
               <div className="address-section">
                 <input
                   type="text"
@@ -97,15 +122,25 @@ const handleSubmit = (e) => {
                   value={deliveryInfo.address}
                   onChange={handleDeliveryChange}
                 ></textarea>
+              <button className="save-button"
+              onClick={handleSaveAndContinue}
+              >SAVE & CONTINUE</button>
               </div>
-              <button className="save-button">SAVE & CONTINUE</button>
+              </CSSTransition>
             </div>
 
             {/* PAYMENT SECTION STARTS FROM HERE */}
-            <div class="payment-section">
+            <div className="payment-section">
               <h2>2. PAYMENT OPTIONS</h2>
+              <CSSTransition 
+              in={containerOpen === 2} 
+              timeout={1000} 
+              classNames="section"
+              unmountOnExit
+              nodeRef={paymentRef}
+              >
               <form>
-                <div class="payment-method">
+                <div className="payment-method">
                   <input
                     type="checkbox"
                     id="disney-gift-card"
@@ -113,14 +148,14 @@ const handleSubmit = (e) => {
                     value="Disney Gift Card"
                     onChange={handlePaymentChange}
                   />
-                  <label for="disney-gift-card">Yummly Gift Card</label>
-                  <div class="images">
+                  <label htmlFor="disney-gift-card">Yummly Gift Card</label>
+                  <div className="images">
                     <img
                       src="./gift-card.png"
                       alt="Disney Rewards Redemption Card"
                     />
                   </div>
-                  <div class="text">
+                  <div className="text">
                     <small>
                       New! You can now use up to 5 gift cards on orderYummly!
                     </small>
@@ -128,7 +163,7 @@ const handleSubmit = (e) => {
                 </div>
                 <hr />
 
-                <div class="payment-method">
+                <div className="payment-method">
                   <input
                     type="checkbox"
                     id="disney-rewards"
@@ -136,10 +171,10 @@ const handleSubmit = (e) => {
                     value="Disney Rewards Redemption Card"
                     onChange={handlePaymentChange}
                   />
-                  <label for="disney-rewards">
+                  <label htmlFor="disney-rewards">
                     Yummly Rewards Redemption Card
                   </label>
-                  <div class="images">
+                  <div className="images">
                     <img
                       src="./rewardcard.png"
                       alt="Disney Rewards Redemption Card"
@@ -148,7 +183,7 @@ const handleSubmit = (e) => {
                 </div>
                 <hr />
 
-                <div class="payment-method">
+                <div className="payment-method">
                   <input
                     type="radio"
                     id="credit-card"
@@ -156,8 +191,8 @@ const handleSubmit = (e) => {
                     value="Credit or Debit Card"
                     onChange={handlePaymentChange}
                   />
-                  <label for="credit-card">Credit or Debit Card</label>
-                  <div class="images">
+                  <label htmlFor="credit-card">Credit or Debit Card</label>
+                  <div className="images">
                     <img
                       src="mastercard.png"
                       alt="Credit or Debit Card logos"
@@ -171,7 +206,7 @@ const handleSubmit = (e) => {
                 </div>
                 <hr />
 
-                <div class="payment-method">
+                <div className="payment-method">
                   <input
                     type="radio"
                     id="netbanking"
@@ -179,14 +214,14 @@ const handleSubmit = (e) => {
                     value="Net Banking"
                     onChange={handlePaymentChange}
                   />
-                  <label for="netbanking">Net Banking</label>
-                  <div class="images">
+                  <label htmlFor="netbanking">Net Banking</label>
+                  <div className="images">
                     <img src="netbanking.png" alt="Net Banking" />
                   </div>
                 </div>
                 <hr />
 
-                <div class="payment-method">
+                <div className="payment-method">
                   <input
                    type="radio"
                    id="upi"
@@ -194,22 +229,31 @@ const handleSubmit = (e) => {
                    value="Upi"
                    onChange={handlePaymentChange}
                    />
-                  <label for="upi">UPI</label>
-                  <div class="images">
+                  <label htmlFor="upi">UPI</label>
+                  <div className="images">
                     <img src="google-pay.png" alt="Upi" />
                   </div>
                 </div>
 
 
-                <button type="submit" class="review-button" onClick={handleSubmit}>
+                <button type="submit" className="review-button"
+                 onClick={handleSubmit}>
                   Review Order
                 </button>
               </form>
+              </CSSTransition>
             </div>
 
             {/* ORDER REVIEW SECTION STARTS FROM HERE */}
             <div className="order-review">
               <h2>3. ORDER REVIEW</h2>
+              <CSSTransition 
+              in={containerOpen === 3} 
+              timeout={1000} 
+              classNames="section"
+              unmountOnExit
+              nodeRef={orderReviewRef}
+              >
               <div className="order-info">
                 <h4>Delivery Information</h4>
                 <p>Name: {deliveryInfo.name}</p>
@@ -219,9 +263,7 @@ const handleSubmit = (e) => {
                 <h4>Payment Method</h4>
                 <h5>{paymentMethod}</h5>
               </div>
-              <div className="order-payment-info">
-                
-              </div>
+              </CSSTransition>
             </div>
           </div>
 
