@@ -521,10 +521,10 @@ body {
 }
 
 .left-section {
-  display: flex;
-  flex-direction: column;
-  margin-right: 1rem;
-  width:60%;
+  /* display: flex;
+  flex-direction: column; */
+  margin-right: -2.5rem;
+  width:100%;
 }
 
 .delivery-section,
@@ -738,7 +738,7 @@ body {
 
 /* CSS TRANSITION STARTS */
 
-.section-enter {
+/* .section-enter {
   height: 0;
   overflow: hidden;
   opacity:0;
@@ -772,6 +772,43 @@ body {
   height: auto;
   opacity:1;
   transition: height 1.5s ease-in, opacity 1.5s ease-in;
+} */
+
+
+.section-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out, opacity 1s ease-out;
+}
+
+.section-enter-active {
+  max-height: 1000px; /* a value large enough to accommodate the content */
+  opacity: 1;
+}
+
+.section-exit {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.section-exit-active {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in, opacity 1s ease-in;
+}
+
+.section-appear {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.section-appear-active {
+  max-height: 1000px; /* a value large enough to accommodate the content */
+  opacity: 1;
+  transition: max-height 1.5s ease-in, opacity 1.5s ease-in;
 }
 
 
