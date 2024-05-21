@@ -84,7 +84,7 @@ const totalAmount = cartItems.reduce(
               classNames="section"
               unmountOnExit
               nodeRef={deliveryRef}
-              appear
+              appear={true}
               >
               <div className="address-section">
                 <input
@@ -139,7 +139,7 @@ const totalAmount = cartItems.reduce(
               classNames="section"
               unmountOnExit
               nodeRef={paymentRef}
-              appear
+              appear = {true}
               >
               <form>
                 <div className="payment-method">
@@ -255,7 +255,7 @@ const totalAmount = cartItems.reduce(
               classNames="section"
               unmountOnExit
               nodeRef={orderReviewRef}
-              appear
+              appear={true}
               >
               <div className="order-info">
                 <h4>Delivery Information</h4>
