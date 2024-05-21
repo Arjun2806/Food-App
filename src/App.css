@@ -177,7 +177,7 @@ body {
 
 .price{
   font-size: 1.2rem;
-  font-weight: 10;
+  font-weight: 500;
   color: #34d399;
 }
 
@@ -586,6 +586,7 @@ body {
 
 .save-button{
   margin-left:33rem;
+  margin-top: -1rem;
   background-color: #34d399;
   color: white;
   padding: 10px 20px;
@@ -602,6 +603,7 @@ body {
 
  /* DELEVERY SECTION ENDS */
 
+ 
  /* PAYMENT SECTION STARTS   */
 .payment-section h2 {
   background-color: #000000;
@@ -627,21 +629,40 @@ body {
 }
 
 .payment-method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+  flex-wrap:wrap;
 }
 
 .payment-method label{
+  display: flex;
+  flex: 1;
+  align-items: center;
   margin-left: 1rem;
 }
 
 .payment-method small{
-  margin-left: 1.9rem;
+  margin-top: 1.5rem;
 }
 
+.payment-method .text {
+  flex-basis: 100%;
+  margin-left: 30px;
+}
+
+.payment-method .images {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
 
 .payment-method img {
-  height: 28px;
+  margin-left: 10px;
+  height:38px;
 }
+
 
 .review-button {
   width: 100%;
@@ -661,15 +682,56 @@ body {
 
 /* PAYMENT SECTION ENDS */
 
+/* ORDER REVIEW SECTION STARTS FROM HERE */
+
 .order-review {
-  background-color: #000000;
+  /* background-color: #000000;
   color: #fff;
   height: 40px;
   font-size: 1.3rem;
   font-weight: 10;
   padding:0.6rem;
-  width:660px;
+  width:660px; */
+  background: white;
+  margin-bottom: 20px;
+  width:680px;
 }
+
+.order-review h2{
+  background-color: #000000;
+  color: #fff;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding:0.6rem;
+}
+
+.order-info{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.order-info h4{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.order-info p{
+  margin-top:1.2rem;
+  font-size: 1.2rem;
+}
+
+.order-info h5{
+  font-size: 1.4rem;
+  font-weight: 450;
+}
+
+
+
+/* ORDER REVIEW SECTION ENDS */
 
 .cartpage{
   display: block;
@@ -699,18 +761,21 @@ body {
 }
 
 .cart-total p,h4{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1rem;
   margin: 0;
-}
-
-.cart-items-container {
-  max-height: 320px; /* Adjust as needed */
-  overflow-y: auto;
 }
 
 .cart-total h4 span{
   color: #34d399;
 }
+.cart-items-container {
+  max-height: 320px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
 
 .cart-heading2{
   color:black;

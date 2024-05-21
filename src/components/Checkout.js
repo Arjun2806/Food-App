@@ -1,8 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FoodContext } from "../context/foodContext";
 
 const Checkout = () => {
   const { cartItems, quantity } = useContext(FoodContext);
+
+// delivery section info store in state
+const [deliveryInfo, setDeliveryInfo] = useState({
+  name: "",
+  mobileNumber: "",
+  email: "",
+  address: "",
+});
+
+// selected payment method stored in state
+
+const [paymentMethod, setPaymentMethod] = useState("");
+
+const handleDeliveryChange = (e) => {
+  const { name, value } = e.target;
+  setDeliveryInfo({ ...deliveryInfo, [name]: value });
+};
+
+const handlePaymentChange = (e) => {
+  setPaymentMethod(e.target.value);
+};
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+};
+
+
+
 
   // Calculate total amount
   const totalAmount = cartItems.reduce(
@@ -30,24 +58,33 @@ const Checkout = () => {
           <div className="left-section">
             <div className="delivery-section">
               <div className="delivery-heading">
-                <h3>1. DELIVERY OPTIONS</h3>
+                <h2>1. DELIVERY OPTIONS</h2>
               </div>
               <div className="address-section">
                 <input
                   type="text"
                   className="name"
                   placeholder="Enter Full Name"
+                  name="name"
+                  value={deliveryInfo.name}
+                  onChange={handleDeliveryChange}
                 />
                 <div className="Mobile-number">
                   <input
                     type="number"
                     className="number"
                     placeholder="Mobile Number"
+                    name="mobileNumber"
+                    value={deliveryInfo.mobileNumber}
+                    onChange={handleDeliveryChange}
                   />
                   <input
                     type="text"
                     className="email"
                     placeholder="Email Address"
+                    name="email"
+                    value={deliveryInfo.email}
+                    onChange={handleDeliveryChange}
                   />
                 </div>
                 <textarea
@@ -57,6 +94,8 @@ const Checkout = () => {
                   rows="9"
                   cols="60"
                   placeholder="Enter Your Address"
+                  value={deliveryInfo.address}
+                  onChange={handleDeliveryChange}
                 ></textarea>
               </div>
               <button className="save-button">SAVE & CONTINUE</button>
@@ -72,21 +111,22 @@ const Checkout = () => {
                     id="disney-gift-card"
                     name="payment"
                     value="Disney Gift Card"
+                    onChange={handlePaymentChange}
                   />
-                  <label for="disney-gift-card">
-                    Yummly Gift Card
-                    
+                  <label for="disney-gift-card">Yummly Gift Card</label>
+                  <div class="images">
                     <img
                       src="./gift-card.png"
                       alt="Disney Rewards Redemption Card"
                     />
-                    <br/>
+                  </div>
+                  <div class="text">
                     <small>
                       New! You can now use up to 5 gift cards on orderYummly!
                     </small>
-                  </label>
+                  </div>
                 </div>
-                <hr/>
+                <hr />
 
                 <div class="payment-method">
                   <input
@@ -94,70 +134,74 @@ const Checkout = () => {
                     id="disney-rewards"
                     name="payment"
                     value="Disney Rewards Redemption Card"
+                    onChange={handlePaymentChange}
                   />
                   <label for="disney-rewards">
                     Yummly Rewards Redemption Card
+                  </label>
+                  <div class="images">
                     <img
                       src="./rewardcard.png"
                       alt="Disney Rewards Redemption Card"
                     />
-                  </label>
+                  </div>
                 </div>
-                <hr/>
+                <hr />
+
                 <div class="payment-method">
                   <input
                     type="radio"
                     id="credit-card"
                     name="payment"
                     value="Credit or Debit Card"
+                    onChange={handlePaymentChange}
                   />
-                  <label for="credit-card">
-                    Credit or Debit Card
+                  <label for="credit-card">Credit or Debit Card</label>
+                  <div class="images">
                     <img
                       src="mastercard.png"
                       alt="Credit or Debit Card logos"
                     />
-                    <img
-                      src="visa.png"
-                      alt="Credit or Debit Card logos"
-                    />
+                    <img src="visa.png" alt="Credit or Debit Card logos" />
                     <img
                       src="american-express.png"
                       alt="Credit or Debit Card logos"
                     />
-                  </label>
+                  </div>
                 </div>
-                <hr/>
+                <hr />
+
                 <div class="payment-method">
                   <input
                     type="radio"
                     id="netbanking"
                     name="payment"
                     value="Net Banking"
+                    onChange={handlePaymentChange}
                   />
-                  <label for="netbanking">
-                    Net Banking
-                    <img
-                      src="netbanking.png"
-                      alt="Net Banking"
-                    />
-                  </label>
+                  <label for="netbanking">Net Banking</label>
+                  <div class="images">
+                    <img src="netbanking.png" alt="Net Banking" />
+                  </div>
                 </div>
-                <hr/>
+                <hr />
+
                 <div class="payment-method">
                   <input
-                    type="radio"
-                    id="upi"
-                    name="payment"
-                    value="Upi"
-                  />
-                  <label for="upi">
-                    UPI
+                   type="radio"
+                   id="upi"
+                   name="payment"
+                   value="Upi"
+                   onChange={handlePaymentChange}
+                   />
+                  <label for="upi">UPI</label>
+                  <div class="images">
                     <img src="google-pay.png" alt="Upi" />
-                  </label>
+                  </div>
                 </div>
 
-                <button type="submit" class="review-button">
+
+                <button type="submit" class="review-button" onClick={handleSubmit}>
                   Review Order
                 </button>
               </form>
@@ -165,7 +209,19 @@ const Checkout = () => {
 
             {/* ORDER REVIEW SECTION STARTS FROM HERE */}
             <div className="order-review">
-              <h3>3. ORDER REVIEW</h3>
+              <h2>3. ORDER REVIEW</h2>
+              <div className="order-info">
+                <h4>Delivery Information</h4>
+                <p>Name: {deliveryInfo.name}</p>
+                <p>Mobile Number: {deliveryInfo.mobileNumber}</p>
+                <p>Email: {deliveryInfo.email}</p>
+                <p>Address: {deliveryInfo.address}</p>
+                <h4>Payment Method</h4>
+                <h5>{paymentMethod}</h5>
+              </div>
+              <div className="order-payment-info">
+                
+              </div>
             </div>
           </div>
 
