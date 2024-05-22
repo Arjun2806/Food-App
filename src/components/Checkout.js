@@ -44,6 +44,7 @@ const Checkout = () => {
   );
 
   const estimatedDelivery = 110;
+  const duration = 800;
 
   const today = new Date();
   const options = { weekday: "short", day: "numeric", month: "short" };
@@ -63,7 +64,7 @@ const Checkout = () => {
               <h2 onClick={() => setContainerOpen(1)}>1. DELIVERY OPTIONS</h2>
               <CSSTransition
                 in={containerOpen === 1}
-                timeout={1000}
+                timeout={duration}
                 classNames="section"
                 unmountOnExit
                 nodeRef={deliveryRef}
@@ -117,7 +118,7 @@ const Checkout = () => {
               <h2 onClick={() => setContainerOpen(2)}>2. PAYMENT OPTIONS</h2>
               <CSSTransition
                 in={containerOpen === 2}
-                timeout={1000}
+                timeout={duration}
                 classNames="section"
                 unmountOnExit
                 nodeRef={paymentRef}
@@ -230,7 +231,7 @@ const Checkout = () => {
               <h2 onClick={() => setContainerOpen(3)}>3. ORDER REVIEW</h2>
               <CSSTransition
                 in={containerOpen === 3}
-                timeout={1000}
+                timeout={duration}
                 classNames="section"
                 unmountOnExit
                 nodeRef={orderReviewRef}
@@ -283,7 +284,7 @@ const Checkout = () => {
                   </div>
                 ))
               ) : (
-                <div className="empty-cart">
+                <div className="empty-cart1">
                   <h3>Your cart is empty</h3>
                 </div>
               )}
