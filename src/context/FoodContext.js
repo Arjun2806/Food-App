@@ -121,6 +121,7 @@ const decreaseQuantity = (itemId) => {
       );
       setDisplayFood(filteredCards);
     }
+    //eslint-disable-next-line
   }, [input]);
 
  // click event to change the state

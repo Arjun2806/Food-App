@@ -218,10 +218,10 @@ body {
 /* RECIPE PAGE */
 .close-icon1 {
   position: absolute;
-  top: 3.5rem;
+  /* top: 3.5rem; */
   right: 2rem;
   cursor: pointer;
-  font-size:3rem;
+  font-size:2.8rem;
   transition: background-color 0.3s ease;
 }
 
@@ -233,7 +233,7 @@ body {
   flex-direction: column;
   background-color: white;
   height:calc(100vh - 160px);
-  padding: 0.5rem;
+  padding: 1.5rem;
 }
 
 .recipe-page h2 {
@@ -242,9 +242,9 @@ body {
   margin-bottom: 1.2rem;
 }
 
-.recipe-page h4 {
-  align-self: center;
-  font-size: 20px;
+.recipe-page p {
+  /* align-self: center; */
+  font-size: 19px;
   margin-top: 10px;
 }
 
@@ -334,11 +334,13 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  height:100%;
 }
 
 .cart-heading {
   display: flex;
   margin-top: 1rem;
+  height:10%;
 }
 
 .cart-details h3 {
@@ -365,7 +367,8 @@ body {
   flex-grow: 1;
   padding: 10px;
   overflow: auto;
-  height: 412px;
+  /* height: 412px; */
+  height:70%;
 }
 
 .empty-cart h3 {
@@ -458,6 +461,7 @@ body {
   background-color: #fefcfc;
   padding: 20px;
   z-index: 1;
+  height:20%;
 }
 
 .checkout-summary h4 {
@@ -482,7 +486,7 @@ body {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  width: 386px;
+  width: 88%;
   font-size: 1.2rem;
   text-align: center;
   display: inline-block; 
@@ -523,20 +527,21 @@ body {
 .left-section {
   display: flex;
   flex-direction: column;
-  margin-right: -3rem;
-  width:100%;
+  /* margin-right: -3rem; */
+  width:70%;
+  gap:15px;
 }
 
 .delivery-section,
 .payment-section,
 .order-review {
   width: 680px;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .delivery-section {
   background-color: #ffffff;
-  height: 420px;
+  /* height: 420px; */
 }
 
  /* DELEVERY SECTION STARTS */
@@ -694,8 +699,8 @@ body {
   padding:0.6rem;
   width:660px; */
   background: white;
-  margin-bottom: 20px;
-  width:680px;
+  /* margin-bottom: 20px; */
+  /* width:680px; */
 }
 
 .order-review h2{
@@ -711,25 +716,41 @@ body {
 .order-info{
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.order-info h4{
+/* .order-info h4{
   font-size: 1.6rem;
-  margin-bottom: 10px;
-  text-align: center;
-}
+} */
 
 .order-info p{
-  margin-top:1.2rem;
+  margin-top:1rem;
   font-size: 1.2rem;
-  flex-wrap: wrap;
+  word-break: break-all;
+  width: 100%;
+  box-sizing:border-box ;
 }
 
-.order-info h5{
-  font-size: 1.4rem;
-  font-weight: 450;
+.place-order-button{
+  margin-left:33rem; 
+  display: flex;
+  width:4rem;
+  align-items:flex-end;
+  font-size: 0.79rem;
+  background-color: #34d399;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.place-order-button:hover{
+  background-color: #059669;
 }
 
 
@@ -737,42 +758,6 @@ body {
 
 
 /* CSS TRANSITION STARTS */
-
-/* .section-enter {
-  height: 0;
-  overflow: hidden;
-  opacity:0;
-}
-
-.section-enter-active {
-  height: auto;
-  opacity: 1;
-  transition: height 1.5s ease-in, opacity 1.5s ease-in;
-}
-
-.section-exit {
-  height: auto;
-  opacity: 1;
-}
-
-.section-exit-active {
-  height: 0;
-  opacity:0;
-  overflow: hidden;
-  transition: height 1.5s ease-out, opacity 1.5s ease-out;
-}
-
-.section-appear {
-  height: 0;
-  overflow: hidden;
-  opacity:0;
-}
-
-.section-appear-active {
-  height: auto;
-  opacity:1;
-  transition: height 1.5s ease-in, opacity 1.5s ease-in;
-} */
 
 
 .section-enter {
@@ -783,12 +768,12 @@ body {
 }
 
 .section-enter-active {
-  max-height: 640px; /* a value large enough to accommodate the content */
+  max-height: 620px; /* a value large enough to accommodate the content */
   opacity: 1;
 }
 
 .section-exit {
-  max-height: 640px;
+  max-height: 620px;
   opacity: 1;
 }
 
@@ -798,20 +783,6 @@ body {
   overflow: hidden;
   transition: max-height 500ms ease-in, opacity 700ms ease-in;
 }
-
-.section-appear {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-}
-
-.section-appear-active {
-  max-height: 640px; /* a value large enough to accommodate the content */
-  opacity: 1;
-  transition: max-height 500ms ease-in, opacity 700ms ease-in;  
-}
-
-
 
 
 /* CSS TANSTION ENDS */
@@ -873,7 +844,7 @@ body {
   margin-top: 7rem;
   color: rgb(152, 148, 148);
   font-weight: 10;
-  margin-left: 1.8rem;
+  margin-left: 3.8rem;
 }
 
 /* CART SECTION ENDS */
@@ -962,7 +933,8 @@ body {
   }
 
   .close-icon1{
-    margin-top:0.8rem;
+    margin-top:-1rem;
+    margin-left: 2.5rem;
     font-size: 2.5rem;
   }
 

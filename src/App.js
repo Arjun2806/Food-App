@@ -1,5 +1,5 @@
 import React from "react";
-import FoodContextProvider from "./context/foodContext";
+import FoodContextProvider from "./context/FoodContext";
 import './App.css';
 import Card from "./components/Card";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

@@ -1,6 +1,7 @@
-import React, { useContext, useRef, useState } from "react";
-import { FoodContext } from "../context/foodContext";
+import React, { useContext, useRef, useState, useEffect } from "react";
+import { FoodContext } from "../context/FoodContext";
 import { CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const { cartItems, quantity } = useContext(FoodContext);
@@ -13,6 +14,27 @@ const Checkout = () => {
   });
 
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [discount, setDiscount] = useState({ label: "", amount: 0 });
+
+  useEffect(() => {
+    const savedPaymentMethod = localStorage.getItem("paymentMethod");
+    if (savedPaymentMethod) {
+      setPaymentMethod(savedPaymentMethod);
+    }
+
+    //clear localStorage on page refresh
+
+    const clearLocalStorage = () => {
+      localStorage.removeItem("paymentMethod");
+    }
+
+    window.addEventListener('beforeunload', clearLocalStorage);
+
+    return () => {
+      window.removeEventListener('beforeunload', clearLocalStorage);
+    }
+
+  }, []);
 
   const handleDeliveryChange = (e) => {
     const { name, value } = e.target;
@@ -20,10 +42,24 @@ const Checkout = () => {
   };
 
   const handlePaymentChange = (e) => {
-    setPaymentMethod(e.target.value);
+    const selectedPayment = e.target.value;
+    setPaymentMethod(selectedPayment);
+    localStorage.setItem("paymentMethod", selectedPayment);
+
+    // Apply discount based on the selected payment method
+    let discountAmount = 0;
+    let discountLabel = "";
+    if (selectedPayment === "Yummly Gift Card") {
+      discountAmount = 100; // Example discount amount
+      discountLabel = "Yummly Gift Card Discount";
+    } else if (selectedPayment === "Yummly Rewards Redemption Card") {
+      discountAmount = 50; // Example discount amount
+      discountLabel = "Yummly Rewards Discount";
+    }
+    setDiscount({ label: discountLabel, amount: discountAmount });
   };
 
-  const [containerOpen, setContainerOpen] = useState(1);
+  const [containerOpen, setContainerOpen] = useState(0);
 
   const handleSaveAndContinue = () => {
     setContainerOpen(2);
@@ -44,13 +80,15 @@ const Checkout = () => {
   );
 
   const estimatedDelivery = 110;
-  const duration = 800;
+  const duration = 500;
 
   const today = new Date();
   const options = { weekday: "short", day: "numeric", month: "short" };
   const formattedDate = today
     .toLocaleDateString("en-IN", options)
     .toUpperCase();
+
+  const finalTotal = totalAmount + estimatedDelivery - discount.amount;
 
   return (
     <main>
@@ -68,7 +106,6 @@ const Checkout = () => {
                 classNames="section"
                 unmountOnExit
                 nodeRef={deliveryRef}
-                appear={true}
               >
                 <div className="address-section" ref={deliveryRef}>
                   <input
@@ -81,7 +118,8 @@ const Checkout = () => {
                   />
                   <div className="Mobile-number">
                     <input
-                      type="number"
+                      input type="number"
+                      max="10"
                       className="number"
                       placeholder="Mobile Number"
                       name="mobileNumber"
@@ -103,6 +141,7 @@ const Checkout = () => {
                     name="address"
                     rows="9"
                     cols="60"
+                    maxLength={100}
                     placeholder="Enter Your Address"
                     value={deliveryInfo.address}
                     onChange={handleDeliveryChange}
@@ -122,22 +161,22 @@ const Checkout = () => {
                 classNames="section"
                 unmountOnExit
                 nodeRef={paymentRef}
-                appear={true}
               >
                 <form ref={paymentRef}>
                   <div className="payment-method">
                     <input
                       type="checkbox"
-                      id="disney-gift-card"
+                      id="Yummly-gift-card"
                       name="payment"
-                      value="Disney Gift Card"
+                      value="Yummly Gift Card"
+                      checked={paymentMethod === "Yummly Gift Card"}
                       onChange={handlePaymentChange}
                     />
-                    <label htmlFor="disney-gift-card">Yummly Gift Card</label>
+                    <label htmlFor="Yummly-gift-card">Yummly Gift Card</label>
                     <div className="images">
                       <img
                         src="./gift-card.png"
-                        alt="Disney Rewards Redemption Card"
+                        alt="Yummly Rewards Redemption Card"
                       />
                     </div>
                     <div className="text">
@@ -151,18 +190,19 @@ const Checkout = () => {
                   <div className="payment-method">
                     <input
                       type="checkbox"
-                      id="disney-rewards"
+                      id="Yummly-rewards"
                       name="payment"
-                      value="Disney Rewards Redemption Card"
+                      value="Yummly Rewards Redemption Card"
+                      checked={paymentMethod === "Yummly Rewards Redemption Card"}
                       onChange={handlePaymentChange}
                     />
-                    <label htmlFor="disney-rewards">
+                    <label htmlFor="Yummly-rewards">
                       Yummly Rewards Redemption Card
                     </label>
                     <div className="images">
                       <img
                         src="./rewardcard.png"
-                        alt="Disney Rewards Redemption Card"
+                        alt="Yummly Rewards Redemption Card"
                       />
                     </div>
                   </div>
@@ -174,6 +214,7 @@ const Checkout = () => {
                       id="credit-card"
                       name="payment"
                       value="Credit or Debit Card"
+                      checked={paymentMethod === "Credit or Debit Card"}
                       onChange={handlePaymentChange}
                     />
                     <label htmlFor="credit-card">Credit or Debit Card</label>
@@ -197,6 +238,7 @@ const Checkout = () => {
                       id="netbanking"
                       name="payment"
                       value="Net Banking"
+                      checked={paymentMethod === "Net Banking"}
                       onChange={handlePaymentChange}
                     />
                     <label htmlFor="netbanking">Net Banking</label>
@@ -212,6 +254,7 @@ const Checkout = () => {
                       id="upi"
                       name="payment"
                       value="Upi"
+                      checked={paymentMethod === "Upi"}
                       onChange={handlePaymentChange}
                     />
                     <label htmlFor="upi">UPI</label>
@@ -235,16 +278,18 @@ const Checkout = () => {
                 classNames="section"
                 unmountOnExit
                 nodeRef={orderReviewRef}
-                appear={true}
               >
-                <div className="order-info" ref={orderReviewRef}>
-                  <h4>Delivery Information</h4>
+                <div className="order-info">
+                  {/* <h4>Delivery Information</h4> */}
                   <p>Name: {deliveryInfo.name}</p>
                   <p>Mobile Number: {deliveryInfo.mobileNumber}</p>
                   <p>Email: {deliveryInfo.email}</p>
                   <p>Address: {deliveryInfo.address}</p>
-                  <h4>Payment Method</h4>
-                  <h5>{paymentMethod}</h5>
+                  <p>Payment Method: {paymentMethod}</p>
+                  <Link to="/" 
+                  className="place-order-button" onClick={handleSaveAndContinue}>
+                    PLACE ORDER
+                  </Link>
                 </div>
               </CSSTransition>
             </div>
@@ -261,8 +306,13 @@ const Checkout = () => {
               <p>
                 Estimated Delivery <span>₹{estimatedDelivery}</span>
               </p>
+              {discount.amount > 0 && (
+                <p>
+                  {discount.label} <span>-₹{discount.amount.toFixed(2)}</span>
+                </p>
+              )}
               <h4>
-                TOTAL <span>₹{(totalAmount + estimatedDelivery).toFixed(2)}</span>
+                TOTAL <span>₹{finalTotal.toFixed(2)}</span>
               </h4>
             </div>
             <hr />

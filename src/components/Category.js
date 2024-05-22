@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 
 const Category = () => {
 

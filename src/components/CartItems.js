@@ -2,7 +2,7 @@ import { MdDelete } from "react-icons/md";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 import React, { useContext } from "react";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

@@ -1,6 +1,6 @@
 import React, { useContext,useRef } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 import CartItem from "./CartItems";
 import { Transition } from "react-transition-group";
 import { Link } from "react-router-dom";

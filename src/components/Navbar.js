@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 import { TiShoppingCart } from "react-icons/ti";
 
 const Navbar = ({ toggle }) => {

@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import CartPanel from "./CartPanel";
 import Modal from "react-modal";
 import Recipe from "./Recipe";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 
 const Layout = () => {
   const [showCart, setShowCart] = useState(false);
@@ -25,7 +25,7 @@ const Layout = () => {
       bottom: "0",
       border: "none",
       background: "#00000047",
-      paddingTop: "7rem",
+      paddingTop: "5.7rem",
       ...(window.innerWidth <= 768 && {
         marginTop:"-50px",
        

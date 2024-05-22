@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FoodContext } from "../context/foodContext";
+import { FoodContext } from "../context/FoodContext";
 import { AiFillStar } from "react-icons/ai";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
