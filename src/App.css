@@ -181,6 +181,7 @@ body {
 
 .description {
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .button-controller {
@@ -858,6 +859,10 @@ h4 {
   .navbar input {
     width: 122px;
     margin-right: 20px;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 15px;
+    box-sizing: border-box;
   }
 
   .navbar input::placeholder {
@@ -867,14 +872,16 @@ h4 {
   /* CART ICON */
   .cart-icon {
     position: fixed;
-    height: 3rem;
-    width: 3rem;
+    /* height: 3rem;
+    width: 3rem; */
     bottom: 20px;
     right: 20px;
     margin-right: 0;
     margin-top: 0;
-    background-color: rgb(191, 188, 188);
+    background-color: rgba(230, 178, 178,0.7);
+    padding: 10px;
     border-radius: 50%;
+    /* background: transparent; */
   }
 
   /* CATEGORY BUTTONS */
@@ -885,6 +892,9 @@ h4 {
   }
 
   .category-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.8rem;
   }
 
