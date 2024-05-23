@@ -91,7 +91,7 @@ const Checkout = () => {
   const finalTotal = totalAmount + estimatedDelivery - discount.amount;
 
   return (
-    <main>
+    
       <div className="checkout">
         <div className="heading">
           <h1>CHECKOUT</h1>
@@ -342,7 +342,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-    </main>
+    
   );
 };
 

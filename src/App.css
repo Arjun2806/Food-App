@@ -1,6 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
 * {
   margin: 0;
@@ -13,11 +12,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   background: rgb(235, 229, 229);
 }
-
 
 ::selection {
   background-color: #d33434;
@@ -55,8 +52,6 @@ body {
   margin-right: -300px;
   cursor: pointer;
 }
-
-
 
 /* .cart .cart-icon {
   width: 40px;
@@ -109,7 +104,6 @@ body {
   cursor: pointer;
 }
 
-
 /* CARD */
 
 .food-container {
@@ -132,19 +126,18 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.container{
+.container {
   display: flex;
-  flex:2;
+  flex: 2;
   width: 150px;
   align-self: center;
   align-items: center;
 }
 
-
 .food-image {
   width: 100%;
   height: 130px;
-  object-fit: contain; 
+  object-fit: contain;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -165,7 +158,7 @@ body {
   text-align: center;
 }
 
-.heading-details h2{
+.heading-details h2 {
   font-size: 1.4rem;
 }
 
@@ -175,7 +168,7 @@ body {
   align-items: center;
 }
 
-.price{
+.price {
   font-size: 1.2rem;
   font-weight: 500;
   color: #34d399;
@@ -186,7 +179,7 @@ body {
   font-size: 1.2rem;
 }
 
-.description{
+.description {
   font-size: 0.8rem;
 }
 
@@ -213,26 +206,24 @@ body {
   background-color: #059669;
 }
 
-
-
 /* RECIPE PAGE */
 .close-icon1 {
   position: absolute;
   /* top: 3.5rem; */
   right: 2rem;
   cursor: pointer;
-  font-size:2.8rem;
+  font-size: 2.8rem;
   transition: background-color 0.3s ease;
 }
 
 .close-icon1:hover {
- color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
 }
 .recipe-page {
   display: flex;
   flex-direction: column;
   background-color: white;
-  height:calc(100vh - 160px);
+  height: calc(100vh - 160px);
   padding: 1.5rem;
   border-radius: 25px;
 }
@@ -255,7 +246,6 @@ body {
   grid-template-rows: 1fr;
   grid-column-gap: 9px;
   margin-top: 2rem;
-
 }
 
 .video-container {
@@ -298,8 +288,8 @@ body {
 
 .footer {
   padding: 1.25rem;
-  background-color: #e0cccc; 
-  color: black; 
+  background-color: #e0cccc;
+  color: black;
 }
 
 .footer aside img {
@@ -335,13 +325,13 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  height:100%;
+  height: 100%;
 }
 
 .cart-heading {
   display: flex;
   margin-top: 1rem;
-  height:10%;
+  height: 10%;
 }
 
 .cart-details h3 {
@@ -369,7 +359,7 @@ body {
   padding: 10px;
   overflow: auto;
   /* height: 412px; */
-  height:70%;
+  height: 70%;
 }
 
 .empty-cart h3 {
@@ -462,7 +452,7 @@ body {
   background-color: #fefcfc;
   padding: 20px;
   z-index: 1;
-  height:20%;
+  height: 20%;
 }
 
 .checkout-summary h4 {
@@ -490,8 +480,8 @@ body {
   width: 88%;
   font-size: 1.2rem;
   text-align: center;
-  display: inline-block; 
-  text-decoration: none; 
+  display: inline-block;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
@@ -499,24 +489,22 @@ body {
   background-color: #059669;
 }
 
-
 /* CHECKOUT PAGE */
 
-.checkout{
+.checkout {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
   height: calc(100vh - 5rem);
-  
 }
 
-.heading h1{
+.heading h1 {
   font-size: 2.3rem;
   margin-bottom: 1.2rem;
 }
 
-.checkout-container{
+.checkout-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -529,8 +517,8 @@ body {
   display: flex;
   flex-direction: column;
   /* margin-right: -3rem; */
-  width:70%;
-  gap:15px;
+  width: 70%;
+  gap: 15px;
 }
 
 .delivery-section,
@@ -545,29 +533,29 @@ body {
   /* height: 420px; */
 }
 
- /* DELEVERY SECTION STARTS */
+/* DELEVERY SECTION STARTS */
 
-.delivery-section h2{
-  color:white;
+.delivery-section h2 {
+  color: white;
   font-size: 1.6rem;
   font-weight: 800;
-  padding:0.7rem;
+  padding: 0.7rem;
   background-color: black;
   cursor: pointer;
 }
 
-.address-section{
+.address-section {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
 }
 
-.address-section .name{
-   height:2.2rem;
-   border: 2px solid #e6e2e2;
+.address-section .name {
+  height: 2.2rem;
+  border: 2px solid #e6e2e2;
 }
 
-.Mobile-number{
+.Mobile-number {
   display: flex;
   flex-direction: row;
   margin-top: 0.5rem;
@@ -587,13 +575,13 @@ body {
   margin-left: 1rem;
 }
 
-.address-section .address{
+.address-section .address {
   border: 2px solid #e6e2e2;
 }
 
-.save-button{
+.save-button {
   margin-top: 0.8rem;
-  margin-left:33rem;
+  margin-left: 33rem;
   font-size: 0.78rem;
   background-color: #34d399;
   color: white;
@@ -603,23 +591,21 @@ body {
   cursor: pointer;
 }
 
-.save-button:hover{
+.save-button:hover {
   background-color: #059669;
 }
 
+/* DELEVERY SECTION ENDS */
 
- /* DELEVERY SECTION ENDS */
-
- 
- /* PAYMENT SECTION STARTS   */
+/* PAYMENT SECTION STARTS   */
 .payment-section h2 {
   background-color: #000000;
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
   font-weight: 800;
-  padding:0.6rem;
-  width:660px;
+  padding: 0.6rem;
+  width: 660px;
   cursor: pointer;
 }
 
@@ -640,17 +626,17 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.payment-method label{
+.payment-method label {
   display: flex;
   flex: 1;
   align-items: center;
   margin-left: 1rem;
 }
 
-.payment-method small{
+.payment-method small {
   margin-top: 1.5rem;
 }
 
@@ -667,9 +653,8 @@ body {
 
 .payment-method img {
   margin-left: 10px;
-  height:38px;
+  height: 38px;
 }
-
 
 .review-button {
   width: 100%;
@@ -704,17 +689,17 @@ body {
   /* width:680px; */
 }
 
-.order-review h2{
+.order-review h2 {
   background-color: #000000;
   color: #fff;
   height: 40px;
   font-size: 1.6rem;
   font-weight: 500;
   cursor: pointer;
-  padding:0.6rem;
+  padding: 0.6rem;
 }
 
-.order-info{
+.order-info {
   display: flex;
   flex-direction: column;
   /* margin-bottom: 20px; */
@@ -727,19 +712,19 @@ body {
   font-size: 1.6rem;
 } */
 
-.order-info p{
-  margin-top:1rem;
+.order-info p {
+  margin-top: 1rem;
   font-size: 1.2rem;
   word-break: break-all;
   width: 100%;
-  box-sizing:border-box ;
+  box-sizing: border-box;
 }
 
-.place-order-button{
-  margin-left:33rem; 
+.place-order-button {
+  margin-left: 33rem;
   display: flex;
-  width:4rem;
-  align-items:flex-end;
+  width: 4rem;
+  align-items: flex-end;
   font-size: 0.79rem;
   background-color: #34d399;
   color: white;
@@ -750,16 +735,13 @@ body {
   cursor: pointer;
 }
 
-.place-order-button:hover{
+.place-order-button:hover {
   background-color: #059669;
 }
 
-
 /* ORDER REVIEW SECTION ENDS */
 
-
 /* CSS TRANSITION STARTS */
-
 
 .section-enter {
   max-height: 0;
@@ -785,11 +767,10 @@ body {
   transition: max-height 500ms ease-in, opacity 700ms ease-in;
 }
 
-
 /* CSS TANSTION ENDS */
 
 /* CART SECTION STARTS FROM HERE */
-.cartpage{
+.cartpage {
   display: flex;
   flex-direction: column;
   /* flex-grow: 0;
@@ -798,34 +779,35 @@ body {
   align-self: auto;
   order: 0; */
   background-color: #ffffff;
-  width:350px;
+  width: 350px;
   height: calc(100vh - 14rem);
 }
 
-.cart-heading1{
-  color:black;
+.cart-heading1 {
+  color: black;
   font-size: 1rem;
   font-weight: 10;
-  padding:0.7rem;
+  padding: 0.7rem;
   background-color: rgb(202, 199, 199);
 }
 
-.cart-total{
+.cart-total {
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.cart-total p,h4{
+.cart-total p,
+h4 {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   font-size: 1rem;
   margin: 0;
 }
 
-.cart-total h4 span{
+.cart-total h4 span {
   color: #34d399;
 }
 .cart-items-container {
@@ -833,14 +815,13 @@ body {
   overflow-y: auto;
 }
 
-
-.cart-heading2{
-  color:black;
+.cart-heading2 {
+  color: black;
   font-size: 1rem;
   padding: 0.7rem;
 }
 
-.empty-cart1{
+.empty-cart1 {
   font-size: 1.5rem;
   margin-top: 7rem;
   color: rgb(152, 148, 148);
@@ -850,12 +831,9 @@ body {
 
 /* CART SECTION ENDS */
 
-
-          /* RESPONSIVE CODE*/
-
+/* RESPONSIVE CODE*/
 
 @media (max-width: 768px) {
-
   /* NAVBAR */
 
   .navbar {
@@ -875,16 +853,15 @@ body {
     font-size: 25px;
     margin-left: 40px;
   }
-  
+
   /* NAVBAR SEARCHBAR */
   .navbar input {
     width: 122px;
     margin-right: 20px;
-
   }
 
-  .navbar input::placeholder{
-  font-size:15px;
+  .navbar input::placeholder {
+    font-size: 15px;
   }
 
   /* CART ICON */
@@ -899,12 +876,12 @@ body {
     background-color: rgb(191, 188, 188);
     border-radius: 50%;
   }
-  
+
   /* CATEGORY BUTTONS */
   .category-buttons {
     flex-direction: row;
     overflow-x: scroll;
-   scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 
   .category-buttons button {
@@ -918,34 +895,34 @@ body {
   }
 
   /* CART PANEL */
-  .cart-panel{
-    height:100vh;
-    width:100%;
-    top:0;
-    z-index:1;
+  .cart-panel {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: 1;
   }
-  
-  .cart-heading h3{
+
+  .cart-heading h3 {
     /* text-align: center; */
     margin-left: 7rem;
     font-size: 1.7rem;
   }
-  
-  .cart-items{
+
+  .cart-items {
     height: 570px;
   }
 
-  .empty-cart h3{
+  .empty-cart h3 {
     margin-top: 17rem;
     margin-left: 5rem;
   }
 
-  .checkout-summary .checkout-button{
+  .checkout-summary .checkout-button {
     width: 295px;
   }
 
   /* RECIPE PAGE */
-  .recipe-page{
+  .recipe-page {
     padding: 1rem;
     position: relative;
     display: flex;
@@ -954,51 +931,107 @@ body {
     justify-content: center;
     text-align: center;
   }
-  
-  .close-icon1{
+
+  .close-icon1 {
     position: absolute;
-    top:1%;
+    top: 1%;
     left: 49%;
     font-size: 2.7rem;
   }
 
-  .recipe-page h2{
+  .recipe-page h2 {
     font-size: 1.7rem;
     margin-bottom: 3px;
   }
- 
-  .recipe-page p{
+
+  .recipe-page p {
     font-size: 0.89rem;
     /* font-weight: 50; */
   }
 
-  .recipe-page h4 span{
+  .recipe-page h4 span {
     font-size: 0.9rem;
     display: flex;
     font-weight: 10;
   }
 
-  .details{
+  .details {
     display: flex;
     flex-direction: column;
   }
 
-  .video-container{
+  .video-container {
     width: 300px;
     height: 200px;
     margin-top: -10px;
   }
 
-  .recipe-details h2{
-  font-size: 1.3rem;
-  font-weight: 400;
+  .recipe-details h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
   }
 
-  .recipe-details ol{
+  .recipe-details ol {
     font-size: 0.6rem;
     margin-left: 1rem;
   }
 
   /* CHECKOUT PAGE */
+
+  .checkout {
+    margin-top: 2rem;
+  }
+
+  .heading h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+    margin-right: 0.5rem;
+    /* text-align: center; */
+  }
+
+  .checkout-container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+  }
+
+  .cartpage {
+    /* margin-left: 10rem; */
+    margin: 0.8rem;
+    width: 100%;
+    /* border-radius: 10px; */
+  }
+
+  .cart-heading1 {
+    font-size: 1.3rem;
+  }
+
+  .cart-items-container {
+    max-height: 378px;
+  }
+
+  .left-section {
+    padding: 8px;
+  }
+
+  .delivery-section,
+  .payment-section,
+  .order-review {
+    width: 365px;
+  }
+  
+  .save-button{
+    margin-top: 0.8rem;
+    margin-left:10rem;
+  }
+
+  .payment-section h2 {
+    width: 345px;
+  }
+  
+  .place-order-button {
+    margin-top: 0.8rem;
+    margin-left: 15rem;
+  }
 
 }
