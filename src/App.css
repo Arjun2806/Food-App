@@ -17,8 +17,8 @@ body {
 }
 
 ::selection {
-  background-color: #d33434;
-  color: yellow;
+  background-color: #302ade;
+  color: whitesmoke;
 }
 
 /* NAVBAR */
@@ -44,6 +44,7 @@ body {
 .navbar h1 {
   font-size: 40px;
   margin-left: 110px;
+  /* gap:80px; */
 }
 
 .cart-icon {
@@ -52,13 +53,6 @@ body {
   margin-right: -300px;
   cursor: pointer;
 }
-
-/* .cart .cart-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: -300px;
-  cursor: pointer;
-} */
 
 .navbar input {
   width: 200px;
@@ -120,7 +114,7 @@ body {
   flex-direction: column;
   width: 300px;
   height: 320px;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -187,6 +181,7 @@ body {
 .button-controller {
   display: flex;
   justify-content: space-between;
+  gap:10px;
 }
 
 .go-to-recipe,
@@ -198,7 +193,6 @@ body {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 5px;
   transition: background-color 0.3s ease;
 }
 
