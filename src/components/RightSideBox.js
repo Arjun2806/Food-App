@@ -4,8 +4,7 @@ import { CheckoutContext } from "../context/CheckOutContext";
 
 const RightSideBox = () => {
   const { cartItems, quantity } = useContext(FoodContext);
-  const {discount} = useContext(CheckoutContext);
-
+  const { discount } = useContext(CheckoutContext);
 
   // Calculate total amount
   const totalAmount = cartItems.reduce(
@@ -17,7 +16,9 @@ const RightSideBox = () => {
 
   const today = new Date();
   const options = { weekday: "short", day: "numeric", month: "short" };
-  const formattedDate = today.toLocaleDateString("en-IN", options).toUpperCase();
+  const formattedDate = today
+    .toLocaleDateString("en-IN", options)
+    .toUpperCase();
 
   // Calculate discount based on certain conditions
   const finalTotal = totalAmount + estimatedDelivery - discount.amount;

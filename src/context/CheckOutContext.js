@@ -43,7 +43,7 @@ export const CheckoutContextWrapper = ({ children }) => {
   const handlePaymentChange = (e) => {
     const selectedPayment = e.target.value;
     setPaymentMethod(selectedPayment);
-  
+
     // Apply discount based on the selected payment method
     let discountAmount = 0;
     let discountLabel = "";
@@ -56,7 +56,6 @@ export const CheckoutContextWrapper = ({ children }) => {
     }
     setDiscount({ label: discountLabel, amount: discountAmount });
   };
-  
 
   const validate = (values) => {
     const errors = {};
