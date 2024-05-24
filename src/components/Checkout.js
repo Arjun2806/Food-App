@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState, useEffect } from "react";
 import { FoodContext } from "../context/FoodContext";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
+import { Formik } from "formik";
 
 const Checkout = () => {
   const { cartItems, quantity } = useContext(FoodContext);
@@ -60,6 +61,28 @@ const Checkout = () => {
   };
 
   const [containerOpen, setContainerOpen] = useState(0);
+  
+  const validate = (values) => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = "Name is required";
+    }
+    if (!values.mobileNumber) {
+      errors.mobileNumber = "Mobile Number is required";
+    } else if (!/^\d{10}$/.test(values.mobileNumber)) {
+      errors.mobileNumber = "Invalid mobile number";
+    }
+    if (!values.email) {
+      errors.email = "Email is required";
+    }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+      errors.email = "Invalid email address";
+    }
+    if (!values.address) {
+      errors.address = "Address is required";
+    }
+    return errors;
+  };
+
 
   const handleSaveAndContinue = () => {
     setContainerOpen(2);
@@ -107,49 +130,96 @@ const Checkout = () => {
                 unmountOnExit
                 nodeRef={deliveryRef}
               >
-                <div className="address-section" ref={deliveryRef}>
-                  <input
-                    type="text"
-                    className="name"
-                    placeholder="Enter Full Name"
-                    name="name"
-                    value={deliveryInfo.name}
-                    onChange={handleDeliveryChange}
-                  />
-                  <div className="Mobile-number">
-                    <input
-                      input type="number"
-                      max="10"
-                      className="number"
-                      placeholder="Mobile Number"
-                      name="mobileNumber"
-                      value={deliveryInfo.mobileNumber}
-                      onChange={handleDeliveryChange}
-                    />
-                    <input
-                      type="text"
-                      className="email"
-                      placeholder="Email Address"
-                      name="email"
-                      value={deliveryInfo.email}
-                      onChange={handleDeliveryChange}
-                    />
-                  </div>
-                  <textarea
-                    id="address"
-                    className="address"
-                    name="address"
-                    rows="9"
-                    cols="60"
-                    maxLength={100}
-                    placeholder="Enter Your Address"
-                    value={deliveryInfo.address}
-                    onChange={handleDeliveryChange}
-                  ></textarea>
-                  <button className="save-button" onClick={handleSaveAndContinue}>
-                    SAVE & CONTINUE
-                  </button>
-                </div>
+                <Formik
+                 initialValues={{name:"",mobileNumber:"",email:"",address:""}}
+                 validate={validate}
+                 onSubmit={(values, { setSubmitting }) => {
+                  setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                  }, 400);
+                }}
+                >
+                 {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting,
+                }) => (
+                  <form onSubmit={handleSubmit}>
+                    <div className="address-section">
+                      <input
+                        type="text"
+                        className="name"
+                        placeholder="Enter Full Name"
+                        name="name"
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      {errors.name && touched.name && (
+            <div className="error-message">{errors.name}</div>
+          )}
+
+                      <div className="Mobile-number">
+                        <input
+                          type="number"
+                          className="number"
+                          placeholder="Mobile Number"
+                          name="mobileNumber"
+                          value={values.mobileNumber}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                       {errors.mobileNumber && touched.mobileNumber && (
+              <div className="error-message">{errors.mobileNumber}</div>
+            )}
+
+
+                        <input
+                          type="text"
+                          className="email"
+                          placeholder="Email Address"
+                          name="email"
+                          value={values.email}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
+                        {errors.email && touched.email && (
+              <div className="error-message">{errors.email}</div>
+            )}
+                      </div>
+
+                      <textarea
+                        id="address"
+                        className="address"
+                        name="address"
+                        rows="9"
+                        cols="60"
+                        maxLength={100}
+                        placeholder="Enter Your Address"
+                        value={values.address}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      ></textarea>
+                      {errors.address && touched.address && (
+            <div className="error-message">{errors.address}</div>
+          )}
+
+                      <button
+                        className="save-button"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
+                        SAVE & CONTINUE
+                      </button>
+                    </div>
+                  </form>
+                )}
+                </Formik>
               </CSSTransition>
             </div>
 
