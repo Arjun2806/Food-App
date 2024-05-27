@@ -540,7 +540,31 @@ body {
   cursor: pointer;
 }
 
-.address-section {
+.option-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top:15px;
+}
+
+.option-button {
+  flex: 1;
+  padding: 12px;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  margin: 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.option-button.active {
+  background-color: #34d399;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.address-section,.pickup-section {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -582,7 +606,8 @@ body {
 
 
 .save-button {
-  margin-top: 0.8rem;
+  /* margin-top: 0.8rem; */
+  margin-bottom:0.5rem;
   margin-left: 33rem;
   font-size: 0.78rem;
   background-color: #34d399;
@@ -596,6 +621,40 @@ body {
 .save-button:hover {
   background-color: #059669;
 }
+
+/* PICKUP SECTION STARTS */
+
+.date-picker {
+  margin-top: 15px;
+}
+
+.custom-datepicker {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pickup-option{
+  margin-left: 2rem;
+}
+
+.date-picker-container {
+  position: relative;
+}
+
+.clock {
+  position: absolute;
+  top:8px;
+  right:29.6rem;
+  height:1.5rem;
+  width:1.5rem;
+  cursor: pointer;
+}
+
+
+
 
 /* DELEVERY SECTION ENDS */
 
