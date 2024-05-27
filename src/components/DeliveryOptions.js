@@ -1,15 +1,16 @@
 import React, { useContext, useRef } from "react";
-import { Formik } from "formik";
 import { CSSTransition } from "react-transition-group";
 import { CheckoutContext } from "../context/CheckOutContext";
+import { useFormikContext } from "formik";
 
 const DeliveryOptions = () => {
   const {
-    deliveryInfo,
-    validate,
     containerOpen,
     setContainerOpen,
+    handleSaveAndContinue
   } = useContext(CheckoutContext);
+
+ const {handleChange,handleBlur, values,isSubmitting} = useFormikContext()
 
   const deliveryRef = useRef(null);
   const duration = 500;
@@ -24,26 +25,7 @@ const DeliveryOptions = () => {
         unmountOnExit
         nodeRef={deliveryRef}
       >
-        <Formik
-          initialValues={deliveryInfo}
-          validate={validate}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-          }) => (
-            <form onSubmit={handleSubmit}>
+      <form >
               <div className="address-section">
                 <input
                   type="text"
@@ -54,9 +36,7 @@ const DeliveryOptions = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                {errors.name && touched.name && (
-                  <div className="error-message">{errors.name}</div>
-                )}
+                
 
                 <div className="Mobile-number">
                   <input
@@ -68,9 +48,7 @@ const DeliveryOptions = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {errors.mobileNumber && touched.mobileNumber && (
-                    <div className="error-message">{errors.mobileNumber}</div>
-                  )}
+                 
 
                   <input
                     type="text"
@@ -81,9 +59,7 @@ const DeliveryOptions = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {errors.email && touched.email && (
-                    <div className="error-message">{errors.email}</div>
-                  )}
+                 
                 </div>
 
                 <textarea
@@ -98,21 +74,16 @@ const DeliveryOptions = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 ></textarea>
-                {errors.address && touched.address && (
-                  <div className="error-message">{errors.address}</div>
-                )}
 
                 <button
                   className="save-button"
-                  type="submit"
-                  disabled={isSubmitting}
+                  type="button"
+                  onClick={()=>handleSaveAndContinue()}
                 >
                   SAVE & CONTINUE
                 </button>
               </div>
             </form>
-          )}
-        </Formik>
       </CSSTransition>
     </div>
   );
