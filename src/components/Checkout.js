@@ -1,11 +1,15 @@
-import React from "react";
-import { CheckoutContextWrapper } from "../context/CheckOutContext";
+import React, { useContext } from "react";
+import { CheckoutContext, CheckoutContextWrapper } from "../context/CheckOutContext";
 import DeliveryOptions from "./DeliveryOptions";
 import PaymentOptions from "./PaymentOptions";
 import ReviewOrder from "./ReviewOrder";
 import RightSideBox from "./RightSideBox";
+import { Formik } from "formik";
 
 const Checkout = () => {
+
+  const {validate} = useContext(CheckoutContext);
+
   return (
     <CheckoutContextWrapper>
       <div className="checkout">
@@ -14,9 +18,15 @@ const Checkout = () => {
         </div>
         <div className="checkout-container">
           <div className="left-section">
+            <Formik 
+            initialValues={{name:"",mobileNumber:"",email:"",address:"",PaymentOptions:""}}
+            onSubmit={(values) => console.log(values)}
+            validate={validate}
+            >
             <DeliveryOptions />
             <PaymentOptions />
             <ReviewOrder />
+            </Formik>
           </div>
           <RightSideBox />
         </div>
