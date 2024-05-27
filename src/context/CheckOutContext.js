@@ -57,26 +57,6 @@ export const CheckoutContextWrapper = ({ children }) => {
     setDiscount({ label: discountLabel, amount: discountAmount });
   };
 
-  const validate = (values) => {
-    const errors = {};
-    if (!values.name) {
-      errors.name = "Name is required";
-    }
-    if (!values.mobileNumber) {
-      errors.mobileNumber = "Mobile Number is required";
-    } else if (!/^\d{10}$/.test(values.mobileNumber)) {
-      errors.mobileNumber = "Invalid mobile number";
-    }
-    if (!values.email) {
-      errors.email = "Email is required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email address";
-    }
-    if (!values.address) {
-      errors.address = "Address is required";
-    }
-    return errors;
-  };
 
   const handleSaveAndContinue = () => {
     setContainerOpen(2);
@@ -108,7 +88,6 @@ export const CheckoutContextWrapper = ({ children }) => {
     setContainerOpen,
     handleDeliveryChange,
     handlePaymentChange,
-    validate,
     handleSaveAndContinue,
     handleSubmit,
     cartItems,

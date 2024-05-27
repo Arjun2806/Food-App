@@ -7,7 +7,6 @@ import { useFormikContext } from 'formik';
 const ReviewOrder = () => {
 
  const {values} = useFormikContext();
- console.log(values);
 
   const {
     paymentMethod,
