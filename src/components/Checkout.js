@@ -1,4 +1,3 @@
-import React  from "react";
 import { CheckoutContextWrapper } from "../context/CheckOutContext";
 import DeliveryOptions from "./DeliveryOptions";
 import PaymentOptions from "./PaymentOptions";
@@ -7,9 +6,6 @@ import RightSideBox from "./RightSideBox";
 import { Formik } from "formik";
 
 const Checkout = () => {
-
-  
-
 
   return (
     <CheckoutContextWrapper>

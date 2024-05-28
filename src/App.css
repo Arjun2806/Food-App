@@ -21,6 +21,47 @@ body {
   color: whitesmoke;
 }
 
+/* VARIABLE OF CSS */
+
+:root {
+  /* Colors */
+  --color-whitesmoke: whitesmoke;
+  --color-green: #34d399;
+  --color-dark-green: #059669;
+  --color-red: rgb(255, 0, 0);
+  --color-dark-gray: #2d3748;
+  --color-light-green: rgb(36, 212, 36);
+  --color-light-gray: #a0aec0;
+  --color-black: #000000;
+  --color-bright-red: red;
+  --color-white: #fff;
+  --color-true-white: #ffffff;
+  --color-true-black: black;
+  --color-gray:rgb(152, 148, 148);
+  --color-smooth-gray:#e6e2e2;
+  --color-gray-border:#ccc;
+
+  /* Background Colors */
+  --bg-light-gray: rgb(235, 229, 229);
+  --bg-blue: #302ade;
+  --bg-light-pink: #e0cccc;
+  --bg-light-gray-opacity: rgb(229, 231, 235 / var(--tw-bg-opacity));
+  --bg-light-green: rgb(126, 237, 126);
+  --bg-white: white;
+  --bg-off-white: #fefcfc;
+  --bg-true-white: #ffffff;
+  --bg-black: #000000;
+  --bg-light-grayish: rgb(202, 199, 199);
+  --bg-green:#34d399;
+  --bg-color-dark-green: #059669;
+  --bg-green-smooth:rgb(52, 211, 153);
+  --bg-pinkish-red:rgba(230, 178, 178,0.7);
+
+  /* Fill */
+  --fill:#ffd700;
+
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -28,7 +69,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #e0cccc;
+  background-color: var(--bg-light-pink);
   height: 70px;
   width: 100%;
   position: fixed;
@@ -86,15 +127,15 @@ body {
   margin-left: 0.95rem;
   margin-right: 0.75rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: var(--bg-light-gray-opacity);
   border: none;
   border-radius: 10px;
   font-size: 17px;
 }
 
 .category-buttons button:hover {
-  background-color: rgb(126, 237, 126);
-  color: white;
+  background-color: var(--bg-light-green);
+  color: var(--color-white);
   cursor: pointer;
 }
 
@@ -116,7 +157,7 @@ body {
   height: 320px;
   border-radius: 10px;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--bg-white);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -165,11 +206,11 @@ body {
 .price {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #34d399;
+  color: var(--color-green);
 }
 
 .rating .star {
-  fill: #ffd700;
+  fill: var(--fill);
   font-size: 1.2rem;
 }
 
@@ -189,8 +230,8 @@ body {
   flex: 1;
   padding: 10px;
   border: none;
-  background-color: #34d399;
-  color: #fff;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -198,7 +239,7 @@ body {
 
 .go-to-recipe:hover,
 .add-to-cart:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* RECIPE PAGE */
@@ -212,12 +253,12 @@ body {
 }
 
 .close-icon1:hover {
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 .recipe-page {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--bg-white);
   height: calc(100vh - 160px);
   padding: 1.5rem;
   border-radius: 25px;
@@ -283,8 +324,8 @@ body {
 
 .footer {
   padding: 1.25rem;
-  background-color: #e0cccc;
-  color: black;
+  background-color: var(--bg-light-pink);
+  color: var(--color-true-black);
 }
 
 .footer aside img {
@@ -311,7 +352,7 @@ body {
 .cart-panel {
   top: 110px;
   width: clamp(200px, 30%, 600px);
-  background-color: white;
+  background-color: var(--bg-white);
   position: fixed;
   height: calc(100vh - 70px);
 }
@@ -344,7 +385,7 @@ body {
 }
 
 .close-icon:hover {
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 /*  cart item */
@@ -360,7 +401,7 @@ body {
 .empty-cart h3 {
   font-size: 2rem;
   margin-top: 10rem;
-  color: rgb(152, 148, 148);
+  color: var(--color-gray);
   font-weight: 100;
   margin-left: 8rem;
 }
@@ -389,13 +430,13 @@ body {
 .cart-item-details h4 {
   margin: 0;
   font-size: 18px;
-  color: #2d3748;
+  color: var(--color-dark-gray);
 }
 
 .cart-item-details h5 {
   margin: 5px 0;
   font-size: 16px;
-  color: rgb(36, 212, 36);
+  color: var(--color-light-green);
 }
 
 .cart-item-details .quantity {
@@ -406,12 +447,12 @@ body {
 
 .cart-item-details .quantity .minus-icon:hover {
   cursor: pointer;
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 .cart-item-details .quantity .plus-icon:hover {
   cursor: pointer;
-  color: rgb(255, 0, 0);
+  color: var(--color-red);
 }
 
 .cart-item-details .quantity span {
@@ -422,19 +463,19 @@ body {
 .cart-item-details .quantity .minus-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
 }
 
 .cart-item-details .quantity .plus-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
 }
 
 .delete-icon {
   cursor: pointer;
   font-size: 1.8rem;
-  color: #a0aec0;
+  color: var(--color-light-gray);
   margin-bottom: 3.2rem;
 }
 
@@ -444,7 +485,7 @@ body {
   position: sticky;
   bottom: 0;
   left: 0;
-  background-color: #fefcfc;
+  background-color: var(--bg-off-white);
   padding: 20px;
   z-index: 1;
   height: 20%;
@@ -456,18 +497,18 @@ body {
 }
 
 .checkout-summary h4 span {
-  color: red;
+  color: var(--color-bright-red);
 }
 
 .checkout-summary hr {
   border: 0;
-  border-top: 1px solid #000000;
+  border-top: 1px solid var(--color-black);
   margin: 10px 0;
 }
 
 .checkout-summary .checkout-button {
-  background-color: rgb(52, 211, 153);
-  color: white;
+  background-color: var(--bg-green-smooth);
+  color: var(--color-white);
   padding: 10px 20px;
   border: none;
   border-radius: 15px;
@@ -481,7 +522,7 @@ body {
 }
 
 .checkout-summary .checkout-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* CHECKOUT PAGE */
@@ -525,18 +566,18 @@ body {
 }
 
 .delivery-section {
-  background-color: #ffffff;
+  background-color: var(--bg-true-white);
   /* height: 420px; */
 }
 
 /* DELEVERY SECTION STARTS */
 
 .delivery-section h2 {
-  color: white;
+  color: var(--color-white);
   font-size: 1.6rem;
   font-weight: 800;
   padding: 0.7rem;
-  background-color: black;
+  background-color: var(--bg-black);
   cursor: pointer;
 }
 
@@ -549,8 +590,8 @@ body {
 .option-button {
   flex: 1;
   padding: 12px;
-  background-color: #fff;
-  color: black;
+  background-color: var(--bg-true-white);
+  color: var(--color-black);
   cursor: pointer;
   border: none;
   text-align: center;
@@ -559,8 +600,8 @@ body {
 }
 
 .option-button.active {
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -572,7 +613,7 @@ body {
 
 .address-section .name {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
 }
 
 .Mobile-number {
@@ -584,23 +625,23 @@ body {
 
 .Mobile-number .number {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
   width: 15rem;
 }
 
 .Mobile-number .email {
   height: 2.2rem;
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
   width: 24rem;
   margin-left: 1rem;
 }
 
 .address-section .address {
-  border: 2px solid #e6e2e2;
+  border: 2px solid var(--color-smooth-gray);
 }
 
 .error-message {
-  color: red;
+  color: var(--color-bright-red);
   font-size: 12px;
 }
 
@@ -610,8 +651,8 @@ body {
   margin-bottom:0.5rem;
   margin-left: 33rem;
   font-size: 0.78rem;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   padding: 10px 10px;
   border: none;
   transition: background-color 0.3s ease;
@@ -619,7 +660,7 @@ body {
 }
 
 .save-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* PICKUP SECTION STARTS */
@@ -631,7 +672,7 @@ body {
 .custom-datepicker {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-gray-border);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -642,6 +683,7 @@ body {
 
 .date-picker-container {
   position: relative;
+  margin-top:12px;
 }
 
 .clock {
@@ -660,8 +702,8 @@ body {
 
 /* PAYMENT SECTION STARTS   */
 .payment-section h2 {
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--bg-black);
+  color: var(--color-white);
   height: 40px;
   font-size: 1.6rem;
   font-weight: 800;
@@ -673,12 +715,12 @@ body {
 .payment-section form {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--bg-white);
   padding: 1rem;
 }
 
 .payment-section hr {
-  border: 1px solid #e6e2e2;
+  border: 1px solid var(--color-smooth-gray);
   margin-bottom: 0.5rem;
 }
 
@@ -720,8 +762,8 @@ body {
 .review-button {
   width: 100%;
   padding: 10px;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -730,7 +772,7 @@ body {
 }
 
 .review-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* PAYMENT SECTION ENDS */
@@ -738,21 +780,12 @@ body {
 /* ORDER REVIEW SECTION STARTS FROM HERE */
 
 .order-review {
-  /* background-color: #000000;
-  color: #fff;
-  height: 40px;
-  font-size: 1.3rem;
-  font-weight: 10;
-  padding:0.6rem;
-  width:660px; */
-  background: white;
-  /* margin-bottom: 20px; */
-  /* width:680px; */
+  background: var(--bg-true-white);
 }
 
 .order-review h2 {
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--bg-black);
+  color: var( --color-white);
   height: 40px;
   font-size: 1.6rem;
   font-weight: 500;
@@ -787,8 +820,8 @@ body {
   width: 4rem;
   align-items: flex-end;
   font-size: 0.79rem;
-  background-color: #34d399;
-  color: white;
+  background-color: var(--bg-green);
+  color: var(--color-white);
   text-decoration: none;
   padding: 0.8rem;
   border: none;
@@ -797,7 +830,7 @@ body {
 }
 
 .place-order-button:hover {
-  background-color: #059669;
+  background-color: var(--bg-color-dark-green);
 }
 
 /* ORDER REVIEW SECTION ENDS */
@@ -839,17 +872,17 @@ body {
   flex-basis: auto;
   align-self: auto;
   order: 0; */
-  background-color: #ffffff;
+  background-color: var(--bg-true-white);
   width: 350px;
   height: calc(100vh - 14rem);
 }
 
 .cart-heading1 {
-  color: black;
+  color: var(--color-true-black);
   font-size: 1rem;
   font-weight: 10;
   padding: 0.7rem;
-  background-color: rgb(202, 199, 199);
+  background-color: var(--bg-light-grayish);
 }
 
 .cart-total {
@@ -869,7 +902,7 @@ h4 {
 }
 
 .cart-total h4 span {
-  color: #34d399;
+  color: var(--color-green);
 }
 .cart-items-container {
   max-height: 330px; /* Adjust as needed */
@@ -877,7 +910,7 @@ h4 {
 }
 
 .cart-heading2 {
-  color: black;
+  color: var(--color-true-black);
   font-size: 1rem;
   padding: 0.7rem;
 }
@@ -885,7 +918,7 @@ h4 {
 .empty-cart1 {
   font-size: 1.5rem;
   margin-top: 7rem;
-  color: rgb(152, 148, 148);
+  color: var(--color-gray);
   font-weight: 10;
   margin-left: 3.8rem;
 }
@@ -938,7 +971,7 @@ h4 {
     right: 20px;
     margin-right: 0;
     margin-top: 0;
-    background-color: rgba(230, 178, 178,0.7);
+    background-color: var(--bg-pinkish-red);
     padding: 10px;
     border-radius: 50%;
     /* background: transparent; */
@@ -1092,8 +1125,17 @@ h4 {
   
   .save-button{
     margin-top: 0.8rem;
-    margin-left:10rem;
+    margin-left:15.4rem;
   }
+
+  .radio-button{
+    height:1rem;  
+    width:1rem;
+  }
+
+.date-picker-container{
+  margin-top:10px;
+}
 
   .payment-section h2 {
     width: 345px;
