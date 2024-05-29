@@ -19,7 +19,6 @@ const Navbar = ({ toggle }) => {
       <h1>Yummly</h1>
       <div className="search-container">
       <TiShoppingCart className="cart-icon" onClick={toggle} />
-      <FaMagnifyingGlass className="search-icon" />
       <DarkModeSwitch
         onChange={setIsDark}
         checked={isDark}
@@ -28,6 +27,7 @@ const Navbar = ({ toggle }) => {
         aria-label="Dark mode toggle"
         sunColor="#ebeb2c"
       />
+      <FaMagnifyingGlass className="search-icon" />
        <input
         type="search"
         name="search"
