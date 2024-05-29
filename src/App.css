@@ -19,7 +19,7 @@ body {
 /* DARK THEME COLORS STARTS */
 
 body.dark{
-  background-color:#000000;
+  background-color:#c2c0c8;
 }
 
 body.dark .navbar{
@@ -27,9 +27,22 @@ body.dark .navbar{
   color: #fff;
 }
 
-body.dark .category-buttons button{
-  background-color:rgba(72, 72, 72,1);
+/* body.dark .category-buttons button{
+  background-color:rgba(72, 72, 72,0.6);
+} */
+
+body.dark .category h2{
+color: #020202;
 }
+
+/* body.dark .card{
+  background-color: #c2c0c8;
+} */
+
+body.dark .footer{
+  background-color:#5a3d3d ;
+}
+
 
 /* DARK THEME COLORS ENDS */
 
@@ -96,6 +109,10 @@ body.dark .category-buttons button{
   position: fixed;
 }
 
+.navbar .logo-container{
+  width:318px;
+}
+
 .navbar img {
   width: 100px;
   height: 100px;
@@ -105,21 +122,33 @@ body.dark .category-buttons button{
 
 .navbar h1 {
   font-size: 40px;
-  margin-left: 110px;
+  /* margin-left: 110px; */
   /* gap:80px; */
+}
+
+.search-container{
+  display: inline-flex;
+  gap:10px;
+  justify-content: space-around;
+  padding-right: 25px;
+  width: 318px;
 }
 
 .cart-icon {
   width: 40px;
   height: 40px;
-  margin-right: -300px;
+  /* margin-right: -300px; */
   cursor: pointer;
+}
+
+.search-icon{
+  display: none;
 }
 
 /* DARK-MODE SWITCH */
 
 .dark-mode-switch{
-  margin-right: -20rem;
+  /* margin-right: -20rem; */
   width:33px;
   height:33px;
 }
@@ -132,7 +161,7 @@ body.dark .category-buttons button{
   border: none;
   padding: 10px;
   font-size: 20px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 /* CATEGORY */
@@ -156,16 +185,12 @@ body.dark .category-buttons button{
   margin-bottom: 0.5rem;
   margin-left: 0.95rem;
   margin-right: 0.75rem;
-  --tw-bg-opacity: 1;
-  background-color: var(--bg-light-gray-opacity);
   border: none;
   border-radius: 10px;
   font-size: 17px;
 }
 
 .category-buttons button:hover {
-  background-color: var(--bg-light-green);
-  color: var(--color-black);
   cursor: pointer;
 }
 
@@ -976,7 +1001,7 @@ h4 {
   /* NAVBAR APP NAME */
   .navbar h1 {
     font-size: 25px;
-    margin-left: 40px;
+    margin-left: -140px;
   }
 
 
@@ -988,6 +1013,7 @@ h4 {
     line-height: 1.5;
     font-size: 15px;
     box-sizing: border-box;
+    display: none;
   }
 
   .navbar input::placeholder {
@@ -1008,6 +1034,12 @@ h4 {
     border-radius: 50%;
     /* background: transparent; */
   }
+
+  .search-icon {
+    display: block; 
+    
+  }
+
 
   /* CATEGORY BUTTONS */
   .category-buttons {

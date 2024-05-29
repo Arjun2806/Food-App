@@ -14,7 +14,7 @@ const Category = () => {
       <div className="category-buttons">
         {
           categoryArr.map((data)=>{
-              return <button key={data} style={{backgroundColor: category[data] ? '#34d399' : '#e0cccc', color: category[data] ? 'white' : 'black'}} onClick={()=>handleClick(data)} >{data}</button>
+              return <button key={data} style={{backgroundColor: category[data] ? '#34d399' : '#e0cccc', color: category[data] ? 'black' : 'black'}} onClick={()=>handleClick(data)} >{data}</button>
           })
         }
       </div>
