@@ -22,6 +22,7 @@ const Navbar = ({ toggle }) => {
         className="dark-mode-switch"
         animationProperties={{ duration: 300 }}
         aria-label="Dark mode toggle"
+        sunColor="#ebeb2c"
       />
 
       <input

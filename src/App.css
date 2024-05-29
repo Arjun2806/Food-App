@@ -16,10 +16,22 @@ body {
   background: var(--bg-light-gray);
 }
 
+/* DARK THEME COLORS STARTS */
+
 body.dark{
   background-color:#000000;
 }
 
+body.dark .navbar{
+  background-color:#5a3d3d;
+  color: #fff;
+}
+
+body.dark .category-buttons button{
+  background-color:rgba(72, 72, 72,1);
+}
+
+/* DARK THEME COLORS ENDS */
 
 
 ::selection {
@@ -68,12 +80,6 @@ body.dark{
 
   /* Fill Star */
   --fill:#ffd700;
-
-/*  dark mode variables */
-
-
-
-
 
 }
 
@@ -159,7 +165,7 @@ body.dark{
 
 .category-buttons button:hover {
   background-color: var(--bg-light-green);
-  color: var(--color-white);
+  color: var(--color-black);
   cursor: pointer;
 }
 
@@ -255,7 +261,7 @@ body.dark{
   padding: 10px;
   border: none;
   background-color: var(--bg-green);
-  color: var(--color-white);
+  color: var(--color-black);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -264,6 +270,7 @@ body.dark{
 .go-to-recipe:hover,
 .add-to-cart:hover {
   background-color: var(--bg-color-dark-green);
+  color:var(--color-white);
 }
 
 /* RECIPE PAGE */
