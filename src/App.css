@@ -13,17 +13,26 @@ html {
 }
 
 body {
-  background: rgb(235, 229, 229);
+  background: var(--bg-light-gray);
 }
 
+body.dark{
+  background-color:#000000;
+}
+
+
+
 ::selection {
-  background-color: #302ade;
-  color: whitesmoke;
+  background-color: var(--bg-blue);
+  color: var(--color-whitesmoke);
 }
 
 /* VARIABLE OF CSS */
 
 :root {
+
+ /* LIGHT MODE VARIABLES */
+
   /* Colors */
   --color-whitesmoke: whitesmoke;
   --color-green: #34d399;
@@ -43,7 +52,7 @@ body {
 
   /* Background Colors */
   --bg-light-gray: rgb(235, 229, 229);
-  --bg-blue: #302ade;
+  --bg-blue: #3833d4;
   --bg-light-pink: #e0cccc;
   --bg-light-gray-opacity: rgb(229, 231, 235 / var(--tw-bg-opacity));
   --bg-light-green: rgb(126, 237, 126);
@@ -57,8 +66,14 @@ body {
   --bg-green-smooth:rgb(52, 211, 153);
   --bg-pinkish-red:rgba(230, 178, 178,0.7);
 
-  /* Fill */
+  /* Fill Star */
   --fill:#ffd700;
+
+/*  dark mode variables */
+
+
+
+
 
 }
 
@@ -94,6 +109,15 @@ body {
   margin-right: -300px;
   cursor: pointer;
 }
+
+/* DARK-MODE SWITCH */
+
+.dark-mode-switch{
+  margin-right: -20rem;
+  width:33px;
+  height:33px;
+}
+
 
 .navbar input {
   width: 200px;
@@ -947,6 +971,7 @@ h4 {
     font-size: 25px;
     margin-left: 40px;
   }
+
 
   /* NAVBAR SEARCHBAR */
   .navbar input {
