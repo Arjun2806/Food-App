@@ -26,6 +26,7 @@ const Layout = () => {
       border: "none",
       background: "#00000047",
       paddingTop: "5.7rem",
+      zIndex:"4",
       ...(window.innerWidth <= 768 && {
         marginTop:"-50px",
        
@@ -38,7 +39,11 @@ const Layout = () => {
       style={{ position: "relative", maxwidth: "100vw", overflow: "hidden" }}
     >
       <CartPanel showCart={showCart} toggle={handlevisible} />
-      <Modal isOpen={showModal} style={customStyles}>
+      <Modal 
+      isOpen={showModal} 
+      style={customStyles}
+      overlayClassName="overlay"
+      >
         <Recipe />
       </Modal>
       <Navbar toggle={handlevisible} />

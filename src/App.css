@@ -23,7 +23,7 @@ body.dark{
 }
 
 body.dark .navbar{
-  background-color:#5a3d3d;
+  background-color:#946262;
   color: #fff;
 }
 
@@ -40,13 +40,16 @@ color: #020202;
 } */
 
 body.dark .footer{
-  background-color:#5a3d3d ;
+  background-color:#946262 ;
   color: #fff;
 }
 body.dark .theme-container{
   color: black;
 }
 
+body.dark .cart-icon{
+ color: black;
+}
 
 /* DARK THEME COLORS ENDS */
 
@@ -78,6 +81,7 @@ body.dark .theme-container{
   --color-gray:rgb(152, 148, 148);
   --color-smooth-gray:#e6e2e2;
   --color-gray-border:#ccc;
+  --color-recipe-heading:#8B0000;
 
   /* Background Colors */
   --bg-light-gray: rgb(235, 229, 229);
@@ -94,7 +98,7 @@ body.dark .theme-container{
   --bg-color-dark-green: #059669;
   --bg-green-smooth:rgb(52, 211, 153);
   --bg-pinkish-red:rgba(230, 178, 178,0.7);
-
+  --bg-recipe-page:#F5F5DC;
   /* Fill Star */
   --fill:#ffd700;
 
@@ -328,12 +332,15 @@ input[type="search"] {
   height: calc(100vh - 160px);
   padding: 1.5rem;
   border-radius: 25px;
+  background-color: var( --bg-recipe-page);
 }
 
 .recipe-page h2 {
   align-self: center;
   font-size: 45px;
   margin-bottom: 1.2rem;
+  background-color: var( --color-recipe-heading);
+  color: var(--color-white);
 }
 
 .recipe-page p {
@@ -1015,14 +1022,22 @@ h4 {
     /* margin-left: -140px; */
   }
 
-  .search-icon{
-    /* position: relative;
-    right:-58px; */
+  .search-bar-container{
     position: relative;
-    left:75px; 
-    top:18px;
+    top:-15px;
+    right:48px;
+  }
+
+
+  .search-icon{
+    position: absolute;
+    /* right:0;  */
+    left:10px;
+    top:17px;
     font-size: 18px;
     color:#000000;
+    z-index: 1;
+
   }
 
   /* THEME CHANGER AND THEIR TEXT */
@@ -1049,8 +1064,9 @@ h4 {
     border: 1px solid #ddd;
     outline: none;
     width:20px;
-    height: 35px;
+    /* height: 35px; */
     transition: width 0.3s ease;
+    position: absolute;
   }
 
 
@@ -1090,6 +1106,7 @@ h4 {
     flex-direction: row;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    gap:2px;
   }
 
   .category-buttons button {
@@ -1132,6 +1149,19 @@ h4 {
     width: 295px;
   }
 
+/* MODAL STYLING */
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:1;
+}
+
+
+
   /* RECIPE PAGE */
   .recipe-page {
     padding: 1rem;
@@ -1145,9 +1175,9 @@ h4 {
 
   .close-icon1 {
     position: absolute;
-    top: 1%;
+    top: 0.5%;
     left: 49%;
-    font-size: 2.7rem;
+    font-size: 2.2rem;
   }
 
   .recipe-page h2 {

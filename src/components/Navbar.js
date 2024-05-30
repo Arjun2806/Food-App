@@ -34,10 +34,11 @@ const handleonClick = () => {
         className="dark-mode-switch"
         animationProperties={{ duration: 400 }}
         aria-label="Dark mode toggle"
-        sunColor="#ebeb2c"
+        // sunColor="#FFA500"
+        sunColor="#FF7F50"
       />
       </div>
-      {/* <i className="search-icon" onClick={()=> handleonClick}>🔍</i> */}
+      <div className="search-bar-container">
       <FaMagnifyingGlass className="search-icon" onClick={handleonClick} />
        <input
         type="search"
@@ -49,6 +50,7 @@ const handleonClick = () => {
         className={isFocused ? "focused" : ""}
         onBlur={() => setIsFocused(false)}
       />
+      </div>
       </div>
    
     </div>
