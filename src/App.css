@@ -41,6 +41,10 @@ color: #020202;
 
 body.dark .footer{
   background-color:#5a3d3d ;
+  color: #fff;
+}
+body.dark .theme-container{
+  color: black;
 }
 
 
@@ -142,6 +146,11 @@ body.dark .footer{
 
 /* DARK-MODE SWITCH */
 
+.theme-container p {
+  display: none;
+}
+
+
 .dark-mode-switch{
   /* margin-right: -20rem; */
   width:33px;
@@ -171,7 +180,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  margin-top: 7rem;
+  padding-top: 7.5rem;
 }
 
 .category-buttons {
@@ -988,6 +997,7 @@ h4 {
   /* NAVBAR */
 
   .navbar {
+    position: static;
     flex-direction: row;
     padding: 10px;
     height: auto;
@@ -1002,22 +1012,52 @@ h4 {
   /* NAVBAR APP NAME */
   .navbar h1 {
     font-size: 25px;
-    margin-left: -140px;
+    /* margin-left: -140px; */
   }
 
+  .search-icon{
+    /* position: relative;
+    right:-58px; */
+    position: relative;
+    left:75px; 
+    top:18px;
+    font-size: 18px;
+    color:#000000;
+  }
+
+  /* THEME CHANGER AND THEIR TEXT */
+
+  .theme-container{
+    position:absolute;
+    right:30px;
+    top:90px;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+  }
+
+  .theme-container p {
+    display: inline;
+    font-size: 1.1rem;
+  }
 
   /* NAVBAR SEARCHBAR */
-  .navbar input {
-    width: 122px;
-    margin-right: 20px;
-    padding: 10px;
-    line-height: 1.5;
-    font-size: 15px;
-    box-sizing: border-box;
+
+  input[type="search"] {
+    padding: 5px 1px 5px 30px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    width:20px;
+    height: 35px;
+    transition: width 0.3s ease;
   }
 
-  .navbar input::placeholder {
+
+  /* input[type="search"]:focus, */
+  input[type="search"].focused {
     font-size: 15px;
+    width:130px;
   }
 
   /* CART ICON */
@@ -1039,6 +1079,13 @@ h4 {
 
 
   /* CATEGORY BUTTONS */
+
+  .category{
+    padding-top: 3rem;
+  }
+
+
+
   .category-buttons {
     flex-direction: row;
     overflow-x: scroll;
