@@ -1,9 +1,48 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { FoodContext } from "../context/FoodContext";
 import { TiShoppingCart } from "react-icons/ti";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { useColorScheme } from "../hooks/useColorScheme";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { useMediaQuery } from "react-responsive";
+
+
+// set localstorage and read the values from localstorage
+const useColorScheme =() => {
+  const systemPrefersDark = useMediaQuery({
+    query: "(prefers-color-scheme: dark)",
+  });
+
+  const [isDark, setIsDark] = useState(() => {
+    // Retrieve the color scheme from localStorage
+    const savedScheme = localStorage.getItem("colorScheme");
+    return savedScheme !== null ? JSON.parse(savedScheme) : undefined;
+  });
+
+  const value = useMemo(
+    () => (isDark === undefined ? !!systemPrefersDark : isDark),
+    [isDark, systemPrefersDark]
+  );
+
+  useEffect(() => {
+    // Persist the color scheme to localStorage
+    localStorage.setItem("colorScheme", JSON.stringify(isDark));
+  }, [isDark]);
+
+  useEffect(() => {
+    console.log(value);
+    if (value) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [value]);
+
+  return {
+    isDark: value,
+    setIsDark,
+  };
+}
+
 
 const Navbar = ({ toggle }) => {
   const { handleSearch, input } = useContext(FoodContext);
