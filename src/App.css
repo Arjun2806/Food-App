@@ -1176,7 +1176,7 @@ h4 {
   height:30px;
 } */
 
- input[type="text"],input[type="email"] {
+ .input{
   height:2rem;
   width: 25rem;
   padding: 10px 30px 10px 10px;
@@ -1190,7 +1190,7 @@ h4 {
   z-index: 1;
 }
 
-textarea {
+.textarea {
   height:10rem;
   width: 25rem;
   padding: 12px 30px 10px 10px;
@@ -1527,8 +1527,140 @@ textarea {
     margin-left: 15rem;
   }
 
-  /* Error Page */
+  /* About Page */
   
+  .about-us{
+     width:1200px;
+  }
+
+  .first-container{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .left-side-content .logo{
+    height: 12rem;
+    width:12rem;
+  }
+
+  .about-us-content{
+    width:66rem;
+  }
+
+  .about-us-content h3{
+    font-size: 8.5rem;
+  }
+
+  .about-us-text p{
+    font-size: 3rem;
+    line-height: 3.8rem;
+    padding-bottom: 2rem;
+  }                           
+
+  .small-img img{
+    width:31.5rem;
+    height: 22rem;
+  }
+
+  .right-side-content{
+    padding-left: 4rem;
+  }
+
+  .right-side-content img{
+    width:66rem;
+    /* height: 53rem; */
+  }
+  
+  .second-container{
+    padding: 80px 75px 0px 56px;
+    gap:60px;
+  }
+  
+  .second-container p{
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .second-container .highlighted-text{
+    font-size: 3rem;
+    line-height: 3.8rem;
+  }
+
+  .third-container{
+    padding: 80px 75px 0px 56px;
+  }
+
+  .third-container video{
+    width:60rem;
+  }
+
+  .third-container p{
+   font-size: 2.5rem;
+   line-height: 3rem;
+   padding: 3rem;
+  }
+
+  .contact-us{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-side-imag{
+    padding: 40px 0px 0px 0px;
+  }
+
+  .left-side-imag img{
+    width:75.4rem;
+    height:35rem;
+    border-radius: 0;
+  }
+
+  .contact-us-content{
+    padding-left:18rem;
+  }
+  
+  .contact-us-content p{
+    font-size: 6rem;
+  }
+
+  .contact-form{
+    height:40rem;
+    width:40rem;
+  }
+
+  .input{
+    height:5rem;
+    width:50rem;
+    font-size: 3rem;
    
+  }
+
+  .textarea{
+    height:10rem;
+    width:50rem;
+    font-size: 3rem;
+  }
+
+  .form-group{
+    padding-bottom: 1.5rem;
+  }
+
+  .form-group img{
+    padding-top: 1.2rem;
+    height:3.5rem;
+    width:3.5rem;
+  }
+
+
+  .send-button{
+    /* padding:15px 40px; */
+    width:40rem; 
+    font-size:3.5rem;
+  }
+
+
+  
+
+
 
 }
