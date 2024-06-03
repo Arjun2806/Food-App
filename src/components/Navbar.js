@@ -15,7 +15,8 @@ const useColorScheme = () => {
   const [isDark, setIsDark] = useState(() => {
     // Retrieve the color scheme from localStorage
     const savedScheme = localStorage.getItem("colorScheme");
-    return savedScheme !== null ? JSON.parse(savedScheme) : undefined;
+    console.log(savedScheme);
+    return savedScheme !== null ? JSON.parse(savedScheme) : null;
   });
 
   const value = useMemo(
