@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "./Footer";
 
 const About = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ const About = () => {
   };
 
   return (
+    <>
     <main className="about-us">
       <div className="first-container">
         <div className="left-side-content">
@@ -139,7 +141,9 @@ const About = () => {
           </form>
         </div>
       </div>
+    <Footer/>
     </main>
+    </>
   );
 };
 
