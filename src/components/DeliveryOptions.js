@@ -164,7 +164,12 @@ const DeliveryOptions = () => {
             <div className="pickup-section">
               <div className="pickup-options">
                 <label>
-                  <Field type="radio" name="pickupOption" value="one" className="radio-button" />
+                  <Field
+                    type="radio"
+                    name="pickupOption"
+                    value="one"
+                    className="radio-button"
+                  />
                   <div className="pickup-option">
                     <strong>Downtown Location</strong>
                     <br />
@@ -172,7 +177,12 @@ const DeliveryOptions = () => {
                   </div>
                 </label>
                 <label>
-                  <Field type="radio" name="pickupOption" value="two" className="radio-button" />
+                  <Field
+                    type="radio"
+                    name="pickupOption"
+                    value="two"
+                    className="radio-button"
+                  />
                   <div className="pickup-option">
                     <strong>Suburban Location</strong>
                     <br />
@@ -213,7 +223,7 @@ const DeliveryOptions = () => {
             type="button"
             onClick={async () => {
               const errors = await validateForm();
-              if (Object.keys(errors).length ===0) {
+              if (Object.keys(errors).length === 0) {
                 handleSaveAndContinue();
               }
             }}

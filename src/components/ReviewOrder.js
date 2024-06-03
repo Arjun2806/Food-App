@@ -2,11 +2,10 @@ import React, { useContext, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { CheckoutContext } from "../context/CheckOutContext";
 import { Link } from "react-router-dom";
-import { useFormikContext } from 'formik';
+import { useFormikContext } from "formik";
 
 const ReviewOrder = () => {
-
- const {values} = useFormikContext();
+  const { values } = useFormikContext();
 
   const {
     paymentMethod,
@@ -34,7 +33,11 @@ const ReviewOrder = () => {
           <p>Email: {values.email}</p>
           <p>Address: {values.address}</p>
           <p>Payment Method: {paymentMethod}</p>
-          <Link to="/" className="place-order-button" onClick={handleSaveAndContinue}>
+          <Link
+            to="/"
+            className="place-order-button"
+            onClick={handleSaveAndContinue}
+          >
             PLACE ORDER
           </Link>
         </div>

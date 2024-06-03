@@ -59,7 +59,10 @@ const PaymentOptions = () => {
               Yummly Rewards Redemption Card
             </label>
             <div className="images">
-              <img src="./rewardcard.png" alt="Yummly Rewards Redemption Card" />
+              <img
+                src="./rewardcard.png"
+                alt="Yummly Rewards Redemption Card"
+              />
             </div>
           </div>
           <hr />

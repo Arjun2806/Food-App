@@ -2,11 +2,9 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import FoodData from "../FoodData";
 import FoodReducer from "./FoodReducer";
 
-
 export const FoodContext = createContext();
 
 const FoodContextProvider = ({ children }) => {
-
   // for intial value
   const intialCategories = {
     All: false,
@@ -19,13 +17,11 @@ const FoodContextProvider = ({ children }) => {
 
   const [input, setInput] = useState("");
 
-
   const intializeFucc = (args) => {
     args.All = true;
     return args;
   };
 
-  
   //  userReducer to change the state
   const [category, dispatch] = useReducer(
     FoodReducer,
@@ -35,82 +31,74 @@ const FoodContextProvider = ({ children }) => {
 
   const [displayFood, setDisplayFood] = useState(FoodData);
 
-// we set the carItems
+  // we set the carItems
 
-const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-// for quantity
-const [quantity, setQuantity] = useState({});
+  // for quantity
+  const [quantity, setQuantity] = useState({});
 
-// for show modal in card 
-const [showModal, setShowModal] = useState(false);
+  // for show modal in card
+  const [showModal, setShowModal] = useState(false);
 
-
-// for handle search input
+  // for handle search input
   const handleSearch = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
     setInput(inputValue);
   };
 
-  
-// for set the recipe items in modal
+  // for set the recipe items in modal
 
-const [recipeItems, setRecipeItems] = useState(null);
+  const [recipeItems, setRecipeItems] = useState(null);
 
+  // increase the quantity based on item is present in cart or not
 
+  const addToCart = (itemToAdd) => {
+    const testIdFucntion = (input) => {
+      return input.id === itemToAdd.id;
+    };
 
+    const index = cartItems.findIndex(testIdFucntion);
 
+    if (index === -1) {
+      const updatedCartItems = [...cartItems, itemToAdd];
+      setCartItems(updatedCartItems);
+      setQuantity((prev) => ({ ...prev, [itemToAdd.id]: 1 }));
+    } else {
+      setQuantity((prev) => ({
+        ...prev,
+        [itemToAdd.id]: prev[itemToAdd.id] + 1,
+      }));
+    }
+  };
 
+  // decerese the quantity based on item is present in cart or not
 
-// increase the quantity based on item is present in cart or not 
+  const decreaseQuantity = (itemId) => {
+    // Calculate the updated quantity for the given item ID
+    const updatedquantity = quantity[itemId] - 1;
 
-const addToCart = (itemToAdd) => {
+    //Check if the updated quantity is less than or equal to 0
 
-  const testIdFucntion = (input) => {
-    return input.id === itemToAdd.id
-  }
+    if (updatedquantity <= 0) {
+      //If the updated quantity is 0 or less, remove the item from cartItems
+      const newCartItems = cartItems.filter(
+        (cartItem) => cartItem.id !== itemId
+      );
+      setCartItems(newCartItems);
 
-  const index = cartItems.findIndex(testIdFucntion);
-
-  if (index === -1) {
-    const updatedCartItems = [...cartItems, itemToAdd];
-    setCartItems(updatedCartItems);
-    setQuantity(prev => ({...prev, [itemToAdd.id]: 1}));
-  } else {
-    setQuantity(prev => ({...prev, [itemToAdd.id]: prev[itemToAdd.id] + 1}))
-  }
-};  
-
-// decerese the quantity based on item is present in cart or not
-
-const decreaseQuantity = (itemId) => {
- 
-  // Calculate the updated quantity for the given item ID
-  const updatedquantity = quantity[itemId] - 1;  
-  
-  //Check if the updated quantity is less than or equal to 0
-
-  if (updatedquantity <= 0) {
-    //If the updated quantity is 0 or less, remove the item from cartItems
-    const newCartItems = cartItems.filter((cartItem) => cartItem.id !== itemId);
-    setCartItems(newCartItems);
-
-    //Also remove the item from the quantity state
-    setQuantity(prev => {
-      const updatedQuantity = {...prev};
-      delete updatedQuantity[itemId];
-      return updatedQuantity;
-    })
-  }
-  else {
-    //If the updated quantity is more than 0, simply update the quantity state
-    setQuantity(prev => ({...prev, [itemId]: updatedquantity}))
-  }
-
-};
-
-
+      //Also remove the item from the quantity state
+      setQuantity((prev) => {
+        const updatedQuantity = { ...prev };
+        delete updatedQuantity[itemId];
+        return updatedQuantity;
+      });
+    } else {
+      //If the updated quantity is more than 0, simply update the quantity state
+      setQuantity((prev) => ({ ...prev, [itemId]: updatedquantity }));
+    }
+  };
 
   useEffect(() => {
     if (input === "") {
@@ -124,20 +112,17 @@ const decreaseQuantity = (itemId) => {
     //eslint-disable-next-line
   }, [input]);
 
- // click event to change the state
+  // click event to change the state
   const handleClick = (data) => {
     dispatch({ type: data, intialCategories });
   };
 
-
-// for delete the item from the cart
+  // for delete the item from the cart
 
   const handleDelete = (id) => {
     const newCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(newCartItems);
   };
-
-
 
   useEffect(() => {
     const newArray = Object.keys(category);
@@ -166,7 +151,7 @@ const decreaseQuantity = (itemId) => {
     showModal,
     setShowModal,
     recipeItems,
-    setRecipeItems
+    setRecipeItems,
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

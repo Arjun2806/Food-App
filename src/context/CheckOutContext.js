@@ -57,7 +57,6 @@ export const CheckoutContextWrapper = ({ children }) => {
     setDiscount({ label: discountLabel, amount: discountAmount });
   };
 
-
   const handleSaveAndContinue = () => {
     setContainerOpen(2);
   };

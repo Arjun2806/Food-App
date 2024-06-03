@@ -29,7 +29,6 @@ const useColorScheme = () => {
   }, [isDark]);
 
   useEffect(() => {
-    // console.log(value);
     if (value) {
       document.body.classList.add("dark");
     } else {
@@ -73,7 +72,6 @@ const Navbar = ({ toggle }) => {
             className="dark-mode-switch"
             animationProperties={{ duration: 400 }}
             aria-label="Dark mode toggle"
-            // sunColor="#FFA500"
             sunColor="#FF7F50"
           />
         </div>

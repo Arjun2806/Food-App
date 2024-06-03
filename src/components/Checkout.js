@@ -6,7 +6,6 @@ import RightSideBox from "./RightSideBox";
 import { Formik } from "formik";
 
 const Checkout = () => {
-
   return (
     <CheckoutContextWrapper>
       <div className="checkout">
@@ -15,12 +14,17 @@ const Checkout = () => {
         </div>
         <div className="checkout-container">
           <div className="left-section">
-            <Formik 
-            initialValues={{name:"",mobileNumber:"",email:"",address:"",PaymentOptions:""}}
-            onSubmit={(values) => console.log(values)}
-           
+            <Formik
+              initialValues={{
+                name: "",
+                mobileNumber: "",
+                email: "",
+                address: "",
+                PaymentOptions: "",
+              }}
+              onSubmit={(values) => console.log(values)}
             >
-            {() => (
+              {() => (
                 <>
                   <DeliveryOptions />
                   <PaymentOptions />

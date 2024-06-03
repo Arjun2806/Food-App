@@ -1,4 +1,4 @@
-import React, { useContext,useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
 import CartItem from "./CartItems";
@@ -9,7 +9,6 @@ const duration = 250;
 
 const defaultStyle = {
   transition: `right ${duration}ms ease-in-out`,
-  // right:"0px",
 };
 
 const transitionStyles = {
@@ -43,7 +42,6 @@ const CartPanel = ({ showCart, toggle }) => {
           className="cart-panel"
           style={{ ...defaultStyle, ...transitionStyles[state] }}
           ref={nodeRef}
-
         >
           <div className="cart-details">
             <div className="cart-heading">
@@ -72,8 +70,9 @@ const CartPanel = ({ showCart, toggle }) => {
               <h4>Items: {totalItems}</h4>
               <h4>Total Amount: ₹{totalAmount.toFixed(2)}</h4>
               <hr />
-              <Link to="/checkout" 
-               className="checkout-button">Buy Now</Link>
+              <Link to="/checkout" className="checkout-button">
+                Buy Now
+              </Link>
             </div>
           </div>
         </div>
