@@ -165,6 +165,10 @@ body.dark .left-side-imag img {
   width: 318px;
 }
 
+.search-bar-container{
+  width:190px;
+}
+
 .cart-icon {
   width: 40px;
   height: 40px;

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { FoodContext } from "../context/FoodContext";
 import CartItem from "./CartItems";
@@ -19,7 +19,7 @@ const transitionStyles = {
 };
 
 const CartPanel = ({ showCart, toggle }) => {
-  const { cartItems, quantity } = useContext(FoodContext);
+  const { cartItems, quantity, setCartItems } = useContext(FoodContext);
 
   const nodeRef = useRef(null);
 
@@ -34,6 +34,19 @@ const CartPanel = ({ showCart, toggle }) => {
     (sum, item) => sum + item.price * quantity[item.id],
     0
   );
+
+// save cart Items in local Storage
+
+useEffect(() => {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+},[cartItems]);
+
+useEffect(() => {
+  const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
+  if (storedCartItems) {
+    setCartItems(storedCartItems);
+  }
+},[setCartItems]);
 
   return (
     <Transition nodeRef={nodeRef} in={showCart} timeout={duration}>
