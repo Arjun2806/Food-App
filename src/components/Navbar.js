@@ -15,7 +15,6 @@ const useColorScheme = () => {
   const [isDark, setIsDark] = useState(() => {
     // Retrieve the color scheme from localStorage
     const savedScheme = localStorage.getItem("colorScheme");
-    console.log(savedScheme);
     return savedScheme !== null ? JSON.parse(savedScheme) : null;
   });
 

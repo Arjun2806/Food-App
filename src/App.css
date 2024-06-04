@@ -1238,18 +1238,19 @@ h4 {
   /* NAVBAR APP NAME */
   .navbar h1 {
     font-size: 25px;
+    padding-left: 70px;
   }
 
   .search-bar-container {
     position: relative;
     top: -15px;
-    right: 48px;
+    left: 5px;
   }
 
   .search-icon {
     position: absolute;
-    left: 10px;
-    top: 17px;
+    left: 8px;
+    top: 15px;
     font-size: 18px;
     color: var(--color-black);
     z-index: 1;
@@ -1525,7 +1526,7 @@ h4 {
   }
 
   .small-img img {
-    width: 10rem;
+    width: 8.75rem;
     height: 6rem;
     flex-shrink: 0;
   }
@@ -1538,7 +1539,7 @@ h4 {
 
   .right-side-content img {
     border-radius: 10px;
-    width: 20.6rem;
+    width: 19rem;
   }
 
   .second-container {
@@ -1607,13 +1608,15 @@ h4 {
   .input {
     height: 1.5rem;
     width: 15.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    background-color: var(--bg-white);
   }
 
   .textarea {
     height: 10rem;
     width: 16rem;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
+    background-color: var(--bg-white);
   }
 
   .form-group img {
@@ -1621,6 +1624,7 @@ h4 {
     width: 1.6rem;
     position: absolute;
     right: 10px;
+    z-index:2;
   }
 
   .send-button {

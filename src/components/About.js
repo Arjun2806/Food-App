@@ -131,8 +131,6 @@ const About = () => {
                   onChange={handleChange}
                   required
                   wrap="soft"
-                  // rows="60"
-                  // cols="50"
                 />
               </div>
               <button type="submit" className="send-button">

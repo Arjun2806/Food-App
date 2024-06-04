@@ -32,8 +32,7 @@ const FoodContextProvider = ({ children }) => {
   const [displayFood, setDisplayFood] = useState(FoodData);
 
 
-  
-  // we set the carItems
+                     // we set the carItems
 
    // Initialize cart items and quantity from local storage
    const [cartItems, setCartItems] = useState(() => {
