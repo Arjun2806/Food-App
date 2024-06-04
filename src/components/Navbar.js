@@ -42,8 +42,9 @@ const useColorScheme = () => {
   };
 };
 
+
 const Navbar = ({ toggle }) => {
-  const { handleSearch, input } = useContext(FoodContext);
+  const { handleSearch, input, totalItems } = useContext(FoodContext);
   const { isDark, setIsDark } = useColorScheme();
 
   const [isFocused, setIsFocused] = useState(false);
@@ -54,6 +55,8 @@ const Navbar = ({ toggle }) => {
     searchInputRef.current.focus();
   };
 
+  console.log("Total items:", totalItems);
+
   return (
     <div className="navbar">
       <div className="logo-container">
@@ -63,7 +66,14 @@ const Navbar = ({ toggle }) => {
       </div>
       <h1>Yummly</h1>
       <div className="search-container">
-        <TiShoppingCart className="cart-icon" onClick={toggle} />
+        <div className="cart-icon">
+          <TiShoppingCart
+            onClick={toggle}
+            style={{ height: "38px", width: "38px" }}
+          />
+          {/* <span>{totalItems}</span> */}
+          {totalItems > 0 ? (<span>{totalItems}</span>) : null}
+        </div>
         <div className="theme-container">
           <p>Switch Theme</p>
           <DarkModeSwitch

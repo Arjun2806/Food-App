@@ -52,6 +52,14 @@ const FoodContextProvider = ({ children }) => {
     localStorage.setItem("quantity", JSON.stringify(quantity));
   }, [cartItems, quantity]);
 
+// Calculate total number of items
+const totalItems = cartItems.reduce(
+  (sum, item) => sum + quantity[item.id],
+  0
+);
+
+
+
 
 
   // for show modal in card
@@ -168,6 +176,7 @@ const FoodContextProvider = ({ children }) => {
     setShowModal,
     recipeItems,
     setRecipeItems,
+    totalItems
   };
 
   return <FoodContext.Provider value={values}>{children}</FoodContext.Provider>;

@@ -173,7 +173,24 @@ body.dark .left-side-imag img {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  position: relative;
 }
+
+.cart-icon span{
+  position: absolute;
+  top: -10px;
+  right:-3px;
+  font-size: 0.8rem;
+  color:var( --color-bright-red);
+  background-color: var(--bg-white);
+  border-radius: 50%;
+  height:20px;
+  width:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* DARK-MODE SWITCH */
 

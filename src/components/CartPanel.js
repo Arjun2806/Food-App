@@ -19,15 +19,10 @@ const transitionStyles = {
 };
 
 const CartPanel = ({ showCart, toggle }) => {
-  const { cartItems, quantity, setCartItems } = useContext(FoodContext);
+  const { cartItems, quantity, setCartItems,totalItems } = useContext(FoodContext);
 
   const nodeRef = useRef(null);
 
-  // Calculate total number of items
-  const totalItems = cartItems.reduce(
-    (sum, item) => sum + quantity[item.id],
-    0
-  );
 
   // Calculate total amount
   const totalAmount = cartItems.reduce(
