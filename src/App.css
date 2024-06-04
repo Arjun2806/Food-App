@@ -178,14 +178,14 @@ body.dark .left-side-imag img {
 
 .cart-icon span{
   position: absolute;
-  top: -10px;
-  right:-3px;
-  font-size: 0.8rem;
-  color:var( --color-bright-red);
-  background-color: var(--bg-white);
+  top: -14px;
+  right:-5px;
+  font-size: 0.9rem;
+  color:var( --color-white);
+  background-color: var(--bg-black);
   border-radius: 50%;
-  height:20px;
-  width:20px;
+  height:23px;
+  width:23px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1317,6 +1317,16 @@ h4 {
     padding: 10px;
     border-radius: 50%;
   }
+ 
+  .cart-icon span{
+   height: 30px;
+   width:30px;
+   font-size: 1.2rem;
+   top:-15px;
+   right:-5px;
+  }
+
+
 
   /* CATEGORY BUTTONS */
 
