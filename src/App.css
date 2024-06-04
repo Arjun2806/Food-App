@@ -1244,7 +1244,7 @@ h4 {
   .search-bar-container {
     position: relative;
     top: -15px;
-    left: 5px;
+    left: 12px;
   }
 
   .search-icon {
@@ -1341,7 +1341,7 @@ h4 {
   }
 
   .cart-items {
-    height: 570px;
+    height: 750px;
   }
 
   .empty-cart h3 {
