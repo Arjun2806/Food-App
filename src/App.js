@@ -10,6 +10,7 @@ import About from "./components/About";
 import { Login } from "./components/Login";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
+import HomePage from "./components/HomePage";
 
 const App = () => {
   return (
@@ -25,18 +26,19 @@ const App = () => {
           <FoodContextProvider>
             <Routes>
               <Route element={<Layout />}>
-                <Route path="/" element={<Card />} />
+                <Route
+                  path="/card"
+                  element={
+                    <ProtectedRoute>
+                      <Card />
+                    </ProtectedRoute>
+                  }
+                />
               </Route>
-              <Route
-                path="/checkout"
-                element={
-                  <ProtectedRoute>
-                    <Checkout />
-                  </ProtectedRoute>
-                }
-              />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/" element={<HomePage />} />
             </Routes>
           </FoodContextProvider>
         </AuthProvider>
