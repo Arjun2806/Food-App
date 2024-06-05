@@ -1,25 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
-
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // const navigate = useNavigate();
-  
-    // useEffect(() => {
-    //   // Check login status (e.g., from local storage or an API)
-    //   const userLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    //   setIsLoggedIn(userLoggedIn);
-    // }, []);
-  
-    // const handleOrderFoodClick = () => {
-    //   if (isLoggedIn) {
-    //     navigate('/cart');
-    //   } else {
-    //     navigate('/login');
-    //   }
-    // };
-
 
   return (
     <div className="home">

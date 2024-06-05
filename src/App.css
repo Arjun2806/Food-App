@@ -191,8 +191,25 @@ nav {
  .content-main h2 {
   /* margin-top: 350px; */
   font-size: 80px;
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
 }
 
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
 
 .center-button {
   padding: 10px 20px;
@@ -223,7 +240,204 @@ nav {
   transform: translateY(4px);
 }
 
+/* LOGIN */
 
+
+.main-container{
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+form {
+  display:flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.login-heading p {
+  font-size: 30px;
+  padding: 0 0 20px 0;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.group {
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  position: relative;
+  max-width: 400px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  padding: 0 6rem;
+  padding-left: 3rem;
+  border: 2px solid transparent;
+  outline: none;
+  background-color: #f8fafc;
+  color: #0d0c22;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus {
+  outline: none;
+  /* border-color: rgba(129, 140, 248); */
+  border-color: #FF0072;
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
+
+.icon {
+  position: absolute;
+  bottom:2.3rem;
+  left: 17rem;
+  fill: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  z-index:2;
+}
+
+.button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight:800;
+  padding: 0.7em 2em;
+  border: 3px solid #FF0072;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: var(--color-black);
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF0072;
+  z-index: -1;
+}
+
+.button:hover, .button:focus {
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover:before, .button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+/* LOADER */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(30deg);
+  animation: treeAnimate 5s linear infinite;
+}
+
+@keyframes treeAnimate {
+  0% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+
+  100% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+}
+
+.tree div {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateY(calc(25px * var(--x))) translateZ(0px);
+}
+
+.tree div.branch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #69c069, #77dd77);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-bottom: 5px solid #00000019;
+  transform-origin: bottom;
+  transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(28.5px);
+}
+
+.tree div.stem span {
+  position: absolute;
+  top: 110px;
+ /* updated top value */
+  left: calc(50% - 7.5px);
+  width: 15px;
+  height: 50%;
+  background: linear-gradient(90deg, #bb4622, #df7214);
+  border-bottom: 5px solid #00000019;
+  transform-origin: bottom;
+  transform: rotateY(calc(90deg * var(--i))) translateZ(7.5px);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(20px);
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateZ(-65px);
+}
 
 
 /* NAVBAR */

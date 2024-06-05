@@ -11,6 +11,7 @@ import { Login } from "./components/Login";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./routes/ProtectedRoutes";
 import HomePage from "./components/HomePage";
+import Loader from "./components/Loader";
 
 const App = () => {
   return (
@@ -35,10 +36,11 @@ const App = () => {
                   }
                 />
               </Route>
-              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/" element={<HomePage />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/loader" element={<Loader />} />
             </Routes>
           </FoodContextProvider>
         </AuthProvider>

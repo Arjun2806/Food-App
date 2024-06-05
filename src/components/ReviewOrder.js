@@ -34,7 +34,7 @@ const ReviewOrder = () => {
           <p>Address: {values.address}</p>
           <p>Payment Method: {paymentMethod}</p>
           <Link
-            to="/"
+            to="/loader"
             className="place-order-button"
             onClick={handleSaveAndContinue}
           >
