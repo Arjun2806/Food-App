@@ -1079,14 +1079,14 @@ h4 {
 
 .right-side-content {
   padding-right: 2rem;
-  width: 35%;
+  width: 33%;
 }
 
 .right-side-content img {
-  width: 32.2rem;
+  width: 31.4rem;
   height: 53rem;
   border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  /* border-bottom-right-radius: 10px; */
 }
 
 /* Second Container */
@@ -1142,6 +1142,7 @@ h4 {
   flex-direction: row;
   padding-top: 5rem;
   gap: 6rem;
+  padding-bottom: 4rem;
 }
 
 .left-side-imag {
@@ -1188,7 +1189,7 @@ h4 {
   border: 1px solid var(--color-gray-border);
   border-radius: 5rem;
   font-size: 16px;
-  background-color: transparent;
+  background-color: var(--bg-white);
   position: relative;
   z-index: 1;
 }
@@ -1202,7 +1203,7 @@ h4 {
   border: 1px solid var(--color-gray-border);
   font-size: 16px;
   border-radius: 1.8rem;
-  background-color: transparent;
+  background-color: var(--bg-white);
   position: relative;
   z-index: 1;
 }
@@ -1213,7 +1214,7 @@ h4 {
   height: 1.5rem;
   width: 1.5rem;
   right: 2rem;
-  z-index: 0;
+  z-index: 2;
 }
 
 .send-button {

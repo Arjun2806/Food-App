@@ -4,13 +4,23 @@ import PaymentOptions from "./PaymentOptions";
 import ReviewOrder from "./ReviewOrder";
 import RightSideBox from "./RightSideBox";
 import { Formik } from "formik";
+import { useAuth } from "../hooks/useAuth";
 
 const Checkout = () => {
+
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
+
   return (
     <CheckoutContextWrapper>
       <div className="checkout">
         <div className="heading">
           <h1>CHECKOUT</h1>
+          <button onClick={handleLogout}>Logout</button>
         </div>
         <div className="checkout-container">
           <div className="left-section">

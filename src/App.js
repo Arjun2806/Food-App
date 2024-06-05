@@ -7,7 +7,9 @@ import Layout from "./components/Layout";
 import { ToastContainer } from "react-toastify";
 import Checkout from "./components/Checkout";
 import About from "./components/About";
-import Error from "./components/Error";
+import { Login } from "./components/Login";
+import { AuthProvider } from "./hooks/useAuth";
+import { ProtectedRoute } from "./routes/ProtectedRoutes";
 
 const App = () => {
   return (
@@ -18,18 +20,27 @@ const App = () => {
         hideProgressBar={true}
         closeOnClick
       />
-      <FoodContextProvider>
-        <Router>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Card />} />
-            </Route>
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </Router>
-      </FoodContextProvider>
+      <Router>
+        <AuthProvider>
+          <FoodContextProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Card />} />
+              </Route>
+              <Route
+                path="/checkout"
+                element={
+                  <ProtectedRoute>
+                    <Checkout />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </FoodContextProvider>
+        </AuthProvider>
+      </Router>
     </>
   );
 };
