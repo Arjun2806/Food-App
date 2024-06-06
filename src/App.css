@@ -189,27 +189,26 @@ nav {
 }
 
  .content-main h2 {
-  /* margin-top: 350px; */
   font-size: 80px;
-  overflow: hidden; 
+  /* overflow: hidden; 
   border-right: .15em solid orange; 
   white-space: nowrap; 
   margin: 0 auto; 
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
 }
 
 
 /* The typing effect */
-@keyframes typing {
+/* @keyframes typing {
   from { width: 0 }
   to { width: 100% }
-}
+} */
 
 /* The typewriter cursor effect */
-@keyframes blink-caret {
+/* @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
-}
+} */
 
 .center-button {
   padding: 10px 20px;
@@ -253,7 +252,7 @@ nav {
 }
 
 
-form {
+.form {
   display:flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -454,7 +453,7 @@ form {
 }
 
 .navbar .logo-container {
-  width: 318px;
+  width: 332px;
 }
 
 .navbar img {
@@ -470,10 +469,10 @@ form {
 
 .search-container {
   display: inline-flex;
-  gap: 10px;
+  gap: 13px;
   justify-content: space-around;
   padding-right: 25px;
-  width: 318px;
+  width: 332px;
 }
 
 .search-bar-container{
@@ -502,6 +501,53 @@ form {
   align-items: center;
 }
 
+/* PROFILE SECTION */
+.profile-container{
+  position: relative;
+  cursor: pointer;
+  top:5px;
+}
+
+.profile-container img{
+  height: 27px;
+  width:27px;
+}
+
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+   right:-115px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  width: 250px;
+  z-index: 1000;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  /* background-color: #f0f0f0; */
+  color:#e45d15;
+  text-decoration: underline;
+}
+
+
 
 /* DARK-MODE SWITCH */
 
@@ -516,8 +562,8 @@ form {
 
 .search-icon {
   position: absolute;
-  right: 216px;
-  top: 49%;
+  right: 212px;
+  top: 48%;
   transform: translateY(-50%);
   font-size: 18px;
   color: var(--color-black);

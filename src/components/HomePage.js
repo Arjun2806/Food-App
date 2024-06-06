@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactTypingEffect from 'react-typing-effect';
+
 
 const HomePage = () => {
 
@@ -11,7 +13,15 @@ const HomePage = () => {
         </Link>
       </nav>
       <div className="content-main">
-        <h2>Welcome to the Yummly</h2>
+        <h2>
+        <ReactTypingEffect
+            text={["Taste the love in every bite."]}
+            speed={80}
+            eraseSpeed={80}
+            eraseDelay={2000}
+            typingDelay={500}
+          />
+        </h2>
       </div>
       <Link to="/card">
       <button className="center-button">Order Food</button>

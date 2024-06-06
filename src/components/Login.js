@@ -17,7 +17,7 @@ export const Login = () => {
   };
   return (
     <div className="main-container">
-      <form onSubmit={handleLogin}>
+      <form className="form" onSubmit={handleLogin}>
         <div className="login-heading">
           <p>Login</p>
         </div>
@@ -31,8 +31,8 @@ export const Login = () => {
           >
             <path
               d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-2.5 0-7 1.25-7 3.75V20h14v-2.25c0-2.5-4.5-3.75-7-3.75z"
-              // strokeLinejoin="round"
-              // strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeLinecap="round"
             ></path>
           </svg>
 
@@ -42,6 +42,7 @@ export const Login = () => {
             placeholder="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
         </div>
         <div className="group">
@@ -64,6 +65,7 @@ export const Login = () => {
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <button className="button" type="submit">Login</button>
