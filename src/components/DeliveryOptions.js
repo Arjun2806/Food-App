@@ -12,8 +12,15 @@ const DeliveryOptions = () => {
   const deliveryRef = useRef(null);
   const duration = 500;
 
-  const { values, handleChange, handleBlur, errors, touched, validateForm } =
-    useFormikContext();
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+    validateForm,
+    submitForm,
+  } = useFormikContext();
 
   //validation of the fields
 
@@ -57,6 +64,20 @@ const DeliveryOptions = () => {
   const handleOptionChange = (option) => {
     setDeliveryOption(option);
   };
+
+  const handleForm = async () => {
+    const errors = await validateForm();
+    if (Object.keys(errors).length === 0) {
+      handleSaveAndContinue();
+    }
+  }
+
+  // const handleForm = async () => {
+  //   const errors = await submitForm();
+  //   if (errors && Object.keys(errors).length === 0) {
+  //     handleSaveAndContinue();
+  //   }
+  // };
 
   const filterPassedTime = (time) => {
     const currentDate = new Date();
@@ -217,19 +238,15 @@ const DeliveryOptions = () => {
               </div>
             </div>
           )}
-
-          <button 
-            className="save-button"
-            type="button"
-            onClick={async () => {
-              const errors = await validateForm();
-              if (Object.keys(errors).length === 0) {
-                handleSaveAndContinue();
-              }
-            }}
-          >
-            SAVE & CONTINUE
-          </button>
+          <div className="save-button-container">
+            <button
+              className="save-button"
+              type="button"
+              onClick={() => handleForm()}
+            >
+              SAVE & CONTINUE
+            </button>
+          </div>
         </Form>
       </CSSTransition>
     </div>

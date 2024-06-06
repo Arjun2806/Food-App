@@ -196,25 +196,7 @@ nav {
   background-color: #00000081;
   padding: 10px;
   border-radius: 5px;
-  /* overflow: hidden; 
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
 }
-
-
-/* The typing effect */
-/* @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-} */
-
-/* The typewriter cursor effect */
-/* @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-} */
 
 .center-button {
   margin-top:10px;
@@ -283,8 +265,8 @@ nav {
   max-width: 400px;
 }
 
-.input {
-  width: 100%;
+.input1{
+  /* width: 100%;
   height: 40px;
   line-height: 30px;
   padding: 0 6rem;
@@ -292,14 +274,26 @@ nav {
   border: 2px solid transparent;
   outline: none;
   background-color: #f8fafc;
-  color: #0d0c22;
+  color: #0d0c22; */
+
+  height: 2rem;
+  width: 25rem;
+  padding: 10px 30px 10px 10px;
+  margin-bottom: 1.2rem;
+  border: none;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 5rem;
+  font-size: 16px;
+  background-color: var(--bg-white);
+  position: relative;
+  z-index: 1;
 }
 
-.input::placeholder {
+.input1::placeholder {
   color: #94a3b8;
 }
 
-.input:focus {
+.input1:focus {
   outline: none;
   /* border-color: rgba(129, 140, 248); */
   border-color: #FF0072;
@@ -497,8 +491,8 @@ nav {
   top: -14px;
   right:-5px;
   font-size: 0.9rem;
-  color:var( --color-white);
-  background-color: var(--bg-black);
+  color:var( --color-red);
+  background-color: var(--bg-white);
   border-radius: 50%;
   height:23px;
   width:23px;
@@ -606,10 +600,18 @@ input[type="search"] {
   border: none;
   border-radius: 10px;
   font-size: 17px;
+  background-color: #e0cccc;
+  transition: background-color 0.3s;
+}
+
+.category-buttons button.active {
+  background-color: #34d399;
 }
 
 .category-buttons button:hover {
   cursor: pointer;
+  background-color:var(--bg-color-dark-green); 
+  color:white;
 }
 
 /* CARD */
@@ -740,7 +742,9 @@ input[type="search"] {
 }
 
 .recipe-page h2 {
+  padding: 6px;
   align-self: center;
+  border-radius: 12px;
   font-size: 45px;
   margin-bottom: 1.2rem;
   background-color: var(--color-recipe-heading);
@@ -843,7 +847,7 @@ input[type="search"] {
 .cart-heading {
   display: flex;
   margin-top: 1rem;
-  height: 10%;
+  height: 8%;
 }
 
 .cart-details h3 {
@@ -870,7 +874,7 @@ input[type="search"] {
   flex-grow: 1;
   padding: 10px;
   overflow: auto;
-  height: 70%;
+  height: 67%;
 }
 
 .empty-cart h3 {
@@ -958,12 +962,12 @@ input[type="search"] {
 
 .checkout-summary {
   position: sticky;
-  bottom: 0;
+  /* bottom:5px; */
   left: 0;
   background-color: var(--bg-off-white);
   padding: 20px;
   z-index: 1;
-  height: 20%;
+  height: 25%;
 }
 
 .checkout-summary h4 {
@@ -1006,17 +1010,22 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
-  height: calc(100vh - 5rem);
-  background-image: url("../public/bg.png");
+  /* margin-top: 5rem; */
+  height: 100vh;
+  /* background-image: url("../public/bg.png"); */
+  background-image: url("../public/checkout-bg.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 .heading h1 {
   font-size: 2.3rem;
-  margin-bottom: 1.2rem;
+  /* margin-bottom: 1.2rem; */
+  padding-top:2.5rem;
 }
 
 .checkout-container {
+  padding-top: 3.5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -1073,7 +1082,7 @@ input[type="search"] {
 
 .option-button.active {
   background-color: var(--bg-green);
-  color: var(--color-white);
+  color: var(--color-black);
   box-shadow: var(--section-active-shadow);
 }
 
@@ -1084,8 +1093,9 @@ input[type="search"] {
   padding: 1.5rem;
 }
 
-.address-section .name {
-  height: 2.2rem;
+.name {
+  /* height: 2.2rem; */
+  padding: 10px;;
   border: 2px solid var(--color-smooth-gray);
 }
 
@@ -1097,13 +1107,15 @@ input[type="search"] {
 }
 
 .Mobile-number .number {
-  height: 2.2rem;
+  /* height: 2.2rem; */
+  padding:10px;
   border: 2px solid var(--color-smooth-gray);
   width: 15rem;
 }
 
 .Mobile-number .email {
-  height: 2.2rem;
+  /* height: 2.2rem; */
+  padding:10px;
   border: 2px solid var(--color-smooth-gray);
   width: 24rem;
   margin-left: 1rem;
@@ -1111,15 +1123,21 @@ input[type="search"] {
 
 .address-section .address {
   border: 2px solid var(--color-smooth-gray);
+  padding:10px;
+
 }
 
-.error-message {
+/* .error-message {
   color: var(--color-bright-red);
-  font-size: 12px;
+  font-size: 8px;
+} */
+
+.save-button-container{
+  padding: 24px;
 }
 
 .save-button {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem;
   margin-left: 33rem;
   font-size: 0.78rem;
   background-color: var(--bg-green);
@@ -1127,7 +1145,17 @@ input[type="search"] {
   padding: 10px 10px;
   border: none;
   transition: background-color 0.3s ease;
+  cursor: pointer; */
+  width: 100%;
+  padding: 10px;
+  background-color: var(--bg-green);
+  color: var(--color-black);
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition:background-color 0.3s ease;
+  text-align: center;
 }
 
 .save-button:hover {
@@ -1231,7 +1259,7 @@ input[type="search"] {
   width: 100%;
   padding: 10px;
   background-color: var(--bg-green);
-  color: var(--color-white);
+  color: var(--color-black);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1256,15 +1284,15 @@ input[type="search"] {
   color: var(--color-white);
   height: 40px;
   font-size: 1.6rem;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: 800;
   padding: 0.6rem;
+  cursor: pointer;
 }
 
 .order-info {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1278,18 +1306,18 @@ input[type="search"] {
 }
 
 .place-order-button {
-  margin-left: 33rem;
-  display: flex;
-  width: 4rem;
-  align-items: flex-end;
-  font-size: 0.79rem;
+  margin-top: 15px;
+  width: 97%;
+  padding: 10px;
   background-color: var(--bg-green);
-  color: var(--color-white);
-  text-decoration: none;
-  padding: 0.8rem;
+  color: var(--color-black);
   border: none;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition:background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
 }
 
 .place-order-button:hover {
@@ -1362,7 +1390,7 @@ h4 {
   color: var(--color-green);
 }
 .cart-items-container {
-  max-height: 330px;
+  max-height: 370px;
   overflow-y: auto;
 }
 
@@ -1601,6 +1629,32 @@ h4 {
 /* RESPONSIVE CODE*/
 
 @media (max-width: 768px) {
+
+  /* HOME PAGE */
+
+ .home{
+  height:100vh;
+  overflow: auto;
+ }
+
+
+ nav{
+  left:0;
+ }
+ 
+ .content-main h2{
+  font-size:17px;
+ }
+
+ .center-button{
+  font-size:25px;
+  margin-top:20px;
+ }
+
+ /* LOGIN */
+
+
+
   /* NAVBAR */
 
   .navbar {
@@ -1687,7 +1741,11 @@ h4 {
 
   input[type="search"].focused {
     font-size: 15px;
-    width: 130px;
+    width: 120px;
+  }
+
+  input[type="search"]::placeholder{
+    font-size: 13px;
   }
 
   /* CART ICON */
@@ -1719,6 +1777,8 @@ h4 {
   }
 
   .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -1831,9 +1891,6 @@ h4 {
 
   /* CHECKOUT PAGE */
 
-  .checkout {
-    margin-top: 2rem;
-  }
 
   .heading h1 {
     font-size: 2.3rem;
@@ -1845,6 +1902,7 @@ h4 {
     display: flex;
     flex-wrap: wrap-reverse;
     gap: 20px;
+    width:100%;
   }
 
   .cartpage {
@@ -1867,13 +1925,30 @@ h4 {
   .delivery-section,
   .payment-section,
   .order-review {
-    width: 365px;
+    width: 352px;
   }
 
-  .save-button {
+  .Mobile-number .number{
+    width:5.2rem;
+  }
+
+  .Mobile-number .email{
+    margin-left:10px;
+    width: 10.5rem;
+  }
+
+  .name::placeholder,
+  .number::placeholder, 
+  .email::placeholder, 
+  .address::placeholder
+  {
+    font-size:13px;
+  }
+
+  /* .save-button {
     margin-top: 0.8rem;
     margin-left: 15.4rem;
-  }
+  } */
 
   .radio-button {
     height: 1rem;
@@ -1885,13 +1960,13 @@ h4 {
   }
 
   .payment-section h2 {
-    width: 345px;
+    width: 335px;
   }
 
-  .place-order-button {
+  /* .place-order-button {
     padding-top: 0.8rem;
     padding-left: 15rem;
-  }
+  } */
 
   /* About Page */
 

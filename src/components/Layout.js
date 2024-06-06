@@ -27,6 +27,7 @@ const Layout = () => {
       background: "#00000047",
       paddingTop: "5.7rem",
       zIndex: "4",
+      position:"fixed",
       ...(window.innerWidth <= 768 && {
         marginTop: "-50px",
       }),

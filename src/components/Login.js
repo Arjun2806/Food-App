@@ -37,7 +37,7 @@ export const Login = () => {
           </svg>
 
           <input
-            className="input"
+            className="input1"
             type="text"
             placeholder="username"
             value={username}
@@ -60,7 +60,7 @@ export const Login = () => {
             ></path>
           </svg>
           <input
-            className="input"
+            className="input1"
             type="password"
             placeholder="password"
             value={password}

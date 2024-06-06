@@ -15,10 +15,7 @@ const Category = () => {
             return (
               <button
                 key={data}
-                style={{
-                  backgroundColor: category[data] ? "#34d399" : "#e0cccc",
-                  color: category[data] ? "black" : "black",
-                }}
+                className={category[data] ? "active" : ""}
                 onClick={() => handleClick(data)}
               >
                 {data}
