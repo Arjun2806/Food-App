@@ -45,15 +45,13 @@ const useColorScheme = () => {
   };
 };
 
-
 const Navbar = ({ toggle }) => {
   const { handleSearch, input, totalItems } = useContext(FoodContext);
   const { isDark, setIsDark } = useColorScheme();
   const [isFocused, setIsFocused] = useState(false);
   const searchInputRef = useRef(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const {logout} = useAuth();
-
+  const { logout } = useAuth();
 
   const handleProfileClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -63,13 +61,10 @@ const Navbar = ({ toggle }) => {
     setIsDropdownOpen(false);
   };
 
-
   const handleonClick = () => {
     setIsFocused(true);
     searchInputRef.current.focus();
   };
-
-
 
   return (
     <div className="navbar">
@@ -80,11 +75,24 @@ const Navbar = ({ toggle }) => {
       </div>
       <h1>Yummly</h1>
       <div className="search-container">
-      <div className="profile-container" onClick={handleProfileClick} onBlur={handleBlur} tabIndex="0">
-          <img src="./profile.png" alt="profile icon" className="profile-icon"/>
-          <div className={`dropdown ${isDropdownOpen ? 'show' : ''}`}>
-            <div className="dropdown-item"><FaHistory /> Order History</div>
-            <div className="dropdown-item" onClick={logout}><TbLogout2 /> Logout</div>
+        <div
+          className="profile-container"
+          onClick={handleProfileClick}
+          onBlur={handleBlur}
+          tabIndex="0"
+        >
+          <img
+            src="./profile.png"
+            alt="profile icon"
+            className="profile-icon"
+          />
+          <div className={`dropdown ${isDropdownOpen ? "show" : ""}`}>
+            <div className="dropdown-item">
+              <FaHistory /> Order History
+            </div>
+            <div className="dropdown-item" onClick={logout}>
+              <TbLogout2 /> Logout
+            </div>
           </div>
         </div>
         <div className="cart-icon">
@@ -93,10 +101,10 @@ const Navbar = ({ toggle }) => {
             style={{ height: "38px", width: "38px" }}
           />
           {/* <span>{totalItems}</span> */}
-          {totalItems > 0 ? (<span>{totalItems}</span>) : null}
+          {totalItems > 0 ? <span>{totalItems}</span> : null}
         </div>
         <div className="theme-container">
-          <p>Switch Theme</p>
+          {/* <p>Switch Theme</p> */}
           <DarkModeSwitch
             onChange={setIsDark}
             checked={isDark}

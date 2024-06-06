@@ -524,7 +524,7 @@ nav {
   display: none;
   position: absolute;
   top: 100%;
-   right:-115px;
+  right:-115px;
   background: white;
   border: 1px solid #ccc;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
@@ -1625,7 +1625,7 @@ h4 {
   .search-bar-container {
     position: relative;
     top: -15px;
-    left: 12px;
+    left: 5px;
   }
 
   .search-icon {
@@ -1639,19 +1639,39 @@ h4 {
 
   /* THEME CHANGER AND THEIR TEXT */
 
-  .theme-container {
+  .profile-container{
     position: absolute;
-    right: 30px;
-    top: 90px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+    top:90px;
   }
 
-  .theme-container p {
+  .profile-container img{
+    width:35px;
+    height: 35px;
+  }
+
+  .dropdown{
+    top: 100%;
+    right:0px;
+  }
+
+
+  .theme-container {
+    position: absolute;
+    right: 60px;
+    top: 90px;
+    /* display: flex;
+    flex-direction: row;
+    gap: 10px; */
+  }
+
+
+
+
+
+  /* .theme-container p {
     display: inline;
     font-size: 1.1rem;
-  }
+  } */
 
   /* NAVBAR SEARCHBAR */
 
