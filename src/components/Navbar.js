@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { TbLogout2 } from "react-icons/tb";
+import { FaHistory } from "react-icons/fa";
 
 // set localstorage and read the values from localstorage
 const useColorScheme = () => {
@@ -82,8 +83,8 @@ const Navbar = ({ toggle }) => {
       <div className="profile-container" onClick={handleProfileClick} onBlur={handleBlur} tabIndex="0">
           <img src="./profile.png" alt="profile icon" className="profile-icon"/>
           <div className={`dropdown ${isDropdownOpen ? 'show' : ''}`}>
-            <div className="dropdown-item">Order History</div>
-            <div className="dropdown-item" onClick={logout}><TbLogout2 />Logout</div>
+            <div className="dropdown-item"><FaHistory /> Order History</div>
+            <div className="dropdown-item" onClick={logout}><TbLogout2 /> Logout</div>
           </div>
         </div>
         <div className="cart-icon">

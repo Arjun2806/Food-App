@@ -15,7 +15,7 @@ const HomePage = () => {
       <div className="content-main">
         <h2>
         <ReactTypingEffect
-            text={["Taste the love in every bite."]}
+            text={["Taste the ❤️ in every bite 🍔 with Yummly."]}
             speed={80}
             eraseSpeed={80}
             eraseDelay={2000}
