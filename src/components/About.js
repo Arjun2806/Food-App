@@ -106,7 +106,6 @@ const About = () => {
                   placeholder="Your name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-group">
@@ -118,7 +117,6 @@ const About = () => {
                   placeholder="Your email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-group">
@@ -129,7 +127,6 @@ const About = () => {
                   className="textarea"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   wrap="soft"
                 />
               </div>

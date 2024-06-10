@@ -4,15 +4,21 @@ import { CheckoutContext } from "../context/CheckOutContext";
 
 const PaymentOptions = () => {
   const {
-    paymentMethod,
-    handlePaymentChange,
     containerOpen,
     setContainerOpen,
     handleSubmit,
+    handlePaymentChange,
+    paymentMethod,
+    handleGiftCardChange,
+    selectedGiftCards,
   } = useContext(CheckoutContext);
 
+ 
   const paymentRef = useRef(null);
   const duration = 500;
+
+  
+
 
   return (
     <div className="payment-section">
@@ -25,14 +31,14 @@ const PaymentOptions = () => {
         nodeRef={paymentRef}
       >
         <form ref={paymentRef}>
-          <div className="payment-method">
+          <div className="gift-card-section">
             <input
               type="checkbox"
               id="Yummly-gift-card"
-              name="payment"
+              name="giftCards"
               value="Yummly Gift Card"
-              checked={paymentMethod === "Yummly Gift Card"}
-              onChange={handlePaymentChange}
+              checked={selectedGiftCards.includes("Yummly Gift Card")}
+              onChange={handleGiftCardChange}
             />
             <label htmlFor="Yummly-gift-card">Yummly Gift Card</label>
             <div className="images">
@@ -46,23 +52,20 @@ const PaymentOptions = () => {
           </div>
           <hr />
 
-          <div className="payment-method">
+          <div className="gift-card-section">
             <input
               type="checkbox"
               id="Yummly-rewards"
-              name="payment"
+              name="giftCards"
               value="Yummly Rewards Redemption Card"
-              checked={paymentMethod === "Yummly Rewards Redemption Card"}
-              onChange={handlePaymentChange}
+              checked={selectedGiftCards.includes("Yummly Rewards Redemption Card")}
+              onChange={handleGiftCardChange}
             />
             <label htmlFor="Yummly-rewards">
               Yummly Rewards Redemption Card
             </label>
             <div className="images">
-              <img
-                src="./rewardcard.png"
-                alt="Yummly Rewards Redemption Card"
-              />
+              <img src="./rewardcard.png" alt="Yummly Rewards Redemption Card" />
             </div>
           </div>
           <hr />
@@ -71,19 +74,16 @@ const PaymentOptions = () => {
             <input
               type="radio"
               id="credit-card"
-              name="payment"
+              name="paymentMethod"
               value="Credit or Debit Card"
               checked={paymentMethod === "Credit or Debit Card"}
-              onChange={handlePaymentChange}
+               onChange={handlePaymentChange}
             />
             <label htmlFor="credit-card">Credit or Debit Card</label>
             <div className="images">
               <img src="mastercard.png" alt="Credit or Debit Card logos" />
               <img src="visa.png" alt="Credit or Debit Card logos" />
-              <img
-                src="american-express.png"
-                alt="Credit or Debit Card logos"
-              />
+              <img src="american-express.png" alt="Credit or Debit Card logos" />
             </div>
           </div>
           <hr />
@@ -92,10 +92,10 @@ const PaymentOptions = () => {
             <input
               type="radio"
               id="netbanking"
-              name="payment"
+              name="paymentMethod"
               value="Net Banking"
               checked={paymentMethod === "Net Banking"}
-              onChange={handlePaymentChange}
+               onChange={handlePaymentChange}
             />
             <label htmlFor="netbanking">Net Banking</label>
             <div className="images">
@@ -108,10 +108,10 @@ const PaymentOptions = () => {
             <input
               type="radio"
               id="upi"
-              name="payment"
+              name="paymentMethod"
               value="Upi"
               checked={paymentMethod === "Upi"}
-              onChange={handlePaymentChange}
+               onChange={handlePaymentChange}
             />
             <label htmlFor="upi">UPI</label>
             <div className="images">

@@ -18,11 +18,11 @@ const DeliveryOptions = () => {
     handleBlur,
     errors,
     touched,
+    setTouched,
     validateForm,
-    submitForm,
   } = useFormikContext();
 
-  //validation of the fields
+  // validation of the fields
 
   const validateName = (name) => {
     if (!name) {
@@ -60,24 +60,31 @@ const DeliveryOptions = () => {
 
   const [deliveryOption, setDeliveryOption] = useState("Delivery");
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedPickupOption, setSelectedPickupOption] = useState("");
 
   const handleOptionChange = (option) => {
     setDeliveryOption(option);
+    setSelectedPickupOption(""); // Reset pickup option when changing delivery method
   };
 
   const handleForm = async () => {
+    setTouched({
+      name: true,
+      mobileNumber: true,
+      email: true,
+      address: true,
+    });
+
+
     const errors = await validateForm();
+    if (deliveryOption === "Pickup" && !selectedPickupOption) {
+      alert("Please select a pickup location.");
+      return;
+    }
     if (Object.keys(errors).length === 0) {
       handleSaveAndContinue();
     }
-  }
-
-  // const handleForm = async () => {
-  //   const errors = await submitForm();
-  //   if (errors && Object.keys(errors).length === 0) {
-  //     handleSaveAndContinue();
-  //   }
-  // };
+  };
 
   const filterPassedTime = (time) => {
     const currentDate = new Date();
@@ -183,60 +190,63 @@ const DeliveryOptions = () => {
 
           {deliveryOption === "Pickup" && (
             <div className="pickup-section">
-              <div className="pickup-options">
-                <label>
-                  <Field
-                    type="radio"
-                    name="pickupOption"
-                    value="one"
-                    className="radio-button"
-                  />
-                  <div className="pickup-option">
-                    <strong>Downtown Location</strong>
-                    <br />
-                    Address: 123 Main Street, Suite 101, Cityville, ST 12345
-                  </div>
-                </label>
-                <label>
-                  <Field
-                    type="radio"
-                    name="pickupOption"
-                    value="two"
-                    className="radio-button"
-                  />
-                  <div className="pickup-option">
-                    <strong>Suburban Location</strong>
-                    <br />
-                    Address: 456 Elm Avenue, Building B, Townsville, ST 67890
-                  </div>
-                </label>
-              </div>
-
-              <div className="date-picker">
-                <label>
-                  <strong>Selecte Pickup Time:</strong>
-                </label>
-                <div className="date-picker-container">
-                  <DatePicker
-                    selected={selectedDate}
-                    onChange={(date) => setSelectedDate(date)}
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={15}
-                    filterTime={filterPassedTime}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                    className="custom-datepicker"
-                  />
-                  <img
-                    src="./clock.png"
-                    alt="clock"
-                    className="clock"
-                    // onClick={() => document.querySelector('.custom-datepicker').click()}
-                  />
+            <div className="pickup-options">
+              <label className="pickup-option-wrapper">
+                <Field
+                  type="radio"
+                  name="pickupOption"
+                  value="one"
+                  className="radio-button"
+                  checked={selectedPickupOption === "one"}
+                  onChange={() => setSelectedPickupOption("one")}
+                />
+                <div className="pickup-option">
+                  <strong>Downtown Location</strong>
+                  <br />
+                  Address: 123 Main Street, Suite 101, Cityville, ST 12345
                 </div>
+              </label>
+              <label className="pickup-option-wrapper">
+                <Field
+                  type="radio"
+                  name="pickupOption"
+                  value="two"
+                  className="radio-button"
+                  checked={selectedPickupOption === "two"}
+                  onChange={() => setSelectedPickupOption("two")}
+                />
+                <div className="pickup-option">
+                  <strong>Suburban Location</strong>
+                  <br />
+                  Address: 456 Elm Avenue, Building B, Townsville, ST 67890
+                </div>
+              </label>
+            </div>
+          
+            <div className="date-picker">
+              <label>
+                <strong>Select Pickup Time:</strong>
+              </label>
+              <div className="date-picker-container">
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date) => setSelectedDate(date)}
+                  showTimeSelect
+                  showTimeSelectOnly
+                  timeIntervals={15}
+                  filterTime={filterPassedTime}
+                  timeCaption="Time"
+                  dateFormat="h:mm aa"
+                  className="custom-datepicker"
+                />
+                <img
+                  src="./clock.png"
+                  alt="clock"
+                  className="clock"
+                />
               </div>
             </div>
+          </div>
           )}
           <div className="save-button-container">
             <button
