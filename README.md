@@ -19,17 +19,19 @@ Install the necessary dependencies:
 npm install
 
 Start the project:
-
 npm run start
+
 Usage Instructions
 After starting the project, you can interact with the application in the following ways:
 
 Order Food: Browse through the available food items and place an order.
 View Recipes: Click on any food item to view its detailed recipe.
+
 Technologies Used
 React.js: A JavaScript library for building user interfaces.
 React-Transition-Group: For adding animations and transitions.
 Formik: For handling form validation.
+
 Contributing Guidelines
 We welcome contributions to enhance the functionality and features of Yummly. If you are interested in contributing, please follow these steps:
 
