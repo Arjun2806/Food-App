@@ -35,7 +35,6 @@ npm install
 ```
 
 Start the project:
-<<<<<<< HEAD
 
 ```bash
 npm run start
@@ -49,34 +48,20 @@ npm run start
 - Light/dark mode toggle
 - Cross platform
 
-=======
-npm run start
-
-Usage Instructions
->>>>>>> 6b5a3f6c4b99e814ab24ebf4d4f6d8acc0b8d199
 After starting the project, you can interact with the application in the following ways:
 
 Order Food: Browse through the available food items and place an order.
 View Recipes: Click on any food item to view its detailed recipe.
-<<<<<<< HEAD
 ## Technologies Used
 
-=======
-
-Technologies Used
->>>>>>> 6b5a3f6c4b99e814ab24ebf4d4f6d8acc0b8d199
 React.js: A JavaScript library for building user interfaces.
 
 React-Transition-Group: For adding animations and transitions.
 
 Formik: For handling form validation.
 
-<<<<<<< HEAD
 ## Contributing Guidelines
 
-=======
-Contributing Guidelines
->>>>>>> 6b5a3f6c4b99e814ab24ebf4d4f6d8acc0b8d199
 We welcome contributions to enhance the functionality and features of Yummly. If you are interested in contributing, please follow these steps:
 
 Fork the repository.
@@ -103,13 +88,8 @@ Create a pull request detailing your changes.
 
 This project is licensed under the MIT License.
 
-<<<<<<< HEAD
 
 ## Contact Information
 
 If you have any questions or need further assistance, feel free to contact us at: arjunsuthar3427@gmail.com
 
-=======
-Contact Information
-If you have any questions or need further assistance, feel free to contact us at: arjunsuthar3427@gmail.com
->>>>>>> 6b5a3f6c4b99e814ab24ebf4d4f6d8acc0b8d199
